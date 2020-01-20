@@ -62,36 +62,51 @@ Ellie: Decide what npm packages we need to install
 - Structure in words
 
 src\actions
+
 -index.js
 
 src\components
+
 -PrivateRoute.js
 
 src\components\forms (individual components/ redux form components here)
+
 -RegisterForm.js: Refer to Garret’s example of React-Bookmarks
+
 -SignInForm.js
 
 src\components\pages (individual components)
+
 -LandingPage.js
+
 -NotFoundPage.js
+
 -RegisterPage.js: Refer to Garret’s example of React-Bookmarks
+
 -SignInPage.js
-src\components\pages\admin (individual components)
+
 -AdminDashboard.js
-src\components\pages\users (individual components)
+
 -UserDashboard.js
 
 src\components\shared (reusable components)
+
 -NavBar.js
+
 -Footer.js
+
 -FilePath.js
 
 src\reducers
+
 -index.js
+
 -auth_reducer.js (example)
 
 src\App.js
+
 src\index.js
+
 src\store.js
 
 ---
