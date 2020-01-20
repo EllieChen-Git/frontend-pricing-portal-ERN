@@ -1,49 +1,40 @@
 import React, { Component } from "react";
-import axios from "axios";
 
 class UploadImage extends Component {
-  state = {
-    selectedFile: null
+  //we include two properties within our state.
+  state = { url: "", imgUrl: null };
+  //we create a handleChange function to grab the value from the input field.
+  handleChange = event => {
+    //we update url on state to event.target.value
+    this.setState({ url: event.target.value });
   };
-
-  fileSelectedHandler = event => {
-    this.setState({
-      selectedFile: event.target.files[0]
+  //we create another function, handleSumbit. This controls what happens after a user clicks the submit button.
+  handleSubmit = event => {
+    //prevent the form from automatically being submitted.
+    event.preventDefault();
+    //this.setState takes a callback function with the argument of state.
+    //this callback function returns the new value of imgUrl.
+    this.setState(state => {
+      return { imgUrl: state.url };
     });
-  };
-
-  fileUploadHandler = () => {
-    const fd = new FormData();
-    fd.append("image", this.state.selectedFile, this.state.selectedFile.name);
-    axios
-      .post("{url}", fd, {
-        onUploadProgress: progressEvent => {
-          console.log(
-            "Upload Progress: " +
-              Math.round((progressEvent.loaded / progressEvent.total) * 100) +
-              "%"
-          );
-        }
-      })
-      .then(res => {
-        console.log(res);
-      });
   };
 
   render() {
     return (
       <>
-        <h1>Upload Image</h1>
-        <div className="App">
-          <input
-            style={{ display: "none" }}
-            type="file"
-            onChange={this.fileSelectedHandler}
-            ref={fileInput => (this.fileInput = fileInput)}
-          />
-          <button onClick={() => this.fileInput.click()}>Choose File</button>
-          <button onClick={this.fileUploadHandler}>Upload</button>
-        </div>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Image:
+            <input
+              type="text"
+              value={this.state.value}
+              onChange={this.handleChange}
+            />
+          </label>
+          <input type="submit" value="Upload Image" />
+        </form>
+
+        <img src={this.state.imgUrl} alt="" />
       </>
     );
   }
