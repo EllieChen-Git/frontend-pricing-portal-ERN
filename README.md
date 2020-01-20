@@ -1,68 +1,136 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Proposed Workflow
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+### Overview
 
-### `npm start`
+1. Create-react-app
+2. Install npm packages
+3. Set up file structure
+4. Set up redux
+5. After finishing all the initial set-ups above, team lead push this project to GitHub (so that team members can have a copy of code)
+6. Project Management: distribute components based on complexity and priority (So that we can start working on different components)
+7. Work on reusable components
+8. Work on individual components
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### 1. create-react-app
 
-### `npm test`
+Ellie: We need to re-do this step hahahahaha. The usual way should be that we create a project using this command 'create-react-app image-annotation-frontend' and then push this project to GitHub lol (we must be too tired on Friday arvo XD)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+### 2. Install npm packages
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Ellie: Decide what npm packages we need to install
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```javascript
+"dependencies": {
+//Set up by create-react-app
+"react": "^16.12.0",
+"react-dom": "^16.12.0",
+"react-scripts": "3.3.0",
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+//Essential
+"react-router-dom": "^5.1.2",
+"react-redux": "^7.1.3",
+"redux": "^4.0.5"
+"redux-form": "^8.2.6",
+"redux-thunk": "^2.3.0"
 
-### `npm run eject`
+//CSS framework
+// 1. Need to decide what to use (e.g. bootstrap, material design or others)
+// 2. Check 'https://bundlephobia.com/' for cost of npm package
+// 3. Do you guys wanna use 'SASS'? Or just CSS framework (e.g. bootstrap) with plain CSS?
+"bootstrap": "^4.4.1",
+"react-bootstrap": "^1.0.0-beta.16",
+"node-sass": "^4.13.0",
+"normalize.css": "^8.0.1",
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+},
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 3. Set up file structure
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Structure in drawing
 
-## Learn More
+![FileStructure](./img/file_structure.JPG)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Structure in words
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+src\actions
+-index.js
 
-### Code Splitting
+src\components
+-PrivateRoute.js
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+src\components\forms (individual components/ redux form components here)
+-RegisterForm.js: Refer to Garret’s example of React-Bookmarks
+-SignInForm.js
 
-### Analyzing the Bundle Size
+src\components\pages (individual components)
+-LandingPage.js
+-NotFoundPage.js
+-RegisterPage.js: Refer to Garret’s example of React-Bookmarks
+-SignInPage.js
+src\components\pages\admin (individual components)
+-AdminDashboard.js
+src\components\pages\users (individual components)
+-UserDashboard.js
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+src\components\shared (reusable components)
+-NavBar.js
+-Footer.js
+-FilePath.js
 
-### Making a Progressive Web App
+src\reducers
+-index.js
+-auth_reducer.js (example)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+src\App.js
+src\index.js
+src\store.js
 
-### Advanced Configuration
+---
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+### 4. Set up redux
 
-### Deployment
+---
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+### 5. After finishing up all the initial setups above, push this project to GitHub
 
-### `npm run build` fails to minify
+- So that we can start working on different components
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+---
+
+### 6. Project Management: distribute components based on complexity and priority
+
+- Branch out based on features and setup branch names in certain format, e.g. ellie-navbar, robbie-footer
+
+---
+
+### 7. Work on reusable components
+
+- Top navbar
+- Footer
+- File path (e.g. Project 1 > Building B > Level 5 > Apt 301)
+
+---
+
+### 8. Work on individual components
+
+- Landing page
+- Sign up form
+- Sign in form
+- 3-card-column (projects, buildings)
+- Create apartments
+- Manage users
+
+---
+
+### 7. Styling & Connect to backend
+
+- Q: Do we do stying after finishing each component? Or do we do them all together at the end?
