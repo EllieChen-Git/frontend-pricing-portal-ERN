@@ -2,32 +2,25 @@ import React, { Component } from "react";
 import axios from "axios";
 
 class UploadImageUrl extends Component {
-  //we include two properties within our state.
-  state = { url: ""};
-  //we create inputChangeHandler  function to grab the value from the input field.
-  inputChangeHandler = event => {
-    //we update url on state to event.target.value
-    this.setState({ url: event.target.value });
-  };
-  //we create another function, handleSumbit. This controls what happens after a user clicks the submit button.
-  inputSubmitHandler = event => {
-   //prevent the form from automatically being submitted.
-    event.preventDefault();
-   // this.setState takes a callback function with the argument of state.
-    //this callback function returns the new value of imgUrl.
-    
+  state = { title: "", url: "" };
 
-   console.log(this.state.url);
-  axios 
-    .post("http://localhost:5000/images", {
-      images:  [{url: this.state.url}]
-    })
-    .then(data => {
-      console.log(data)
-    })
-    .catch(error => {
-      console.log(error)
-    })
+  inputChangeHandler = event => {
+    this.setState({ title: event.target.value, url: event.target.value });
+  };
+
+  inputSubmitHandler = event => {
+    event.preventDefault();
+    console.log(this.state);
+    axios
+      .post("http://localhost:5000/images", {
+        images: [{ title: this.state.title, url: this.state.url }]
+      })
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   };
 
   render() {
@@ -35,14 +28,27 @@ class UploadImageUrl extends Component {
       <>
         <form onSubmit={this.inputSubmitHandler}>
           <label>
-            Image:
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.inputChangeHandler}
-            />
+            Image Title:
+            <div>
+              <input
+                type="text"
+                value={this.state.value}
+                onChange={this.inputChangeHandler}
+              />
+            </div>
           </label>
-          <input type="submit" value="Enter Url" />
+          <label>
+            Image Url:
+            <div>
+              <input
+                type="text"
+                value={this.state.value}
+                onChange={this.inputChangeHandler}
+              />
+            </div>
+          </label>
+
+          <input type="submit" value="Enter Image Info" />
         </form>
       </>
     );
