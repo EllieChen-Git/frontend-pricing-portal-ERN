@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
-import TagList from './TagList';
+import Tags from './Tags';
+import Canvas from './Canvas';
 
 
 class ImageAnnotation extends Component{
     render() {
         return(
             <div>
-                <TagList />    
+                <Tags />
+                <Canvas />    
             </div>
         )
     }
