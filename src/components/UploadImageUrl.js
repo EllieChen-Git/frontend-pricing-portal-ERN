@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 class UploadImageUrl extends Component {
   //we include two properties within our state.
-  state = { url: "", imgUrl: null };
+  state = { url: ""};
   //we create inputChangeHandler  function to grab the value from the input field.
   inputChangeHandler = event => {
     //we update url on state to event.target.value
@@ -10,14 +11,23 @@ class UploadImageUrl extends Component {
   };
   //we create another function, handleSumbit. This controls what happens after a user clicks the submit button.
   inputSubmitHandler = event => {
-    //prevent the form from automatically being submitted.
+   //prevent the form from automatically being submitted.
     event.preventDefault();
-    //this.setState takes a callback function with the argument of state.
+   // this.setState takes a callback function with the argument of state.
     //this callback function returns the new value of imgUrl.
-    this.setState(state => {
-      return { imgUrl: state.url };
-    });
-    console.log(this.state.url);
+    
+
+   console.log(this.state.url);
+  axios 
+    .post("http://localhost:5000/images", {
+      images:  [{url: this.state.url}]
+    })
+    .then(data => {
+      console.log(data)
+    })
+    .catch(error => {
+      console.log(error)
+    })
   };
 
   render() {
@@ -34,8 +44,6 @@ class UploadImageUrl extends Component {
           </label>
           <input type="submit" value="Enter Url" />
         </form>
-
-        <img src={this.state.imgUrl} alt="" />
       </>
     );
   }
