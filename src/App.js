@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import UploadImageUrl from "./components/UploadImageUrl";
 import UploadImageFile from "./components/UploadImageFile";
+import DisplayImage from "./components/DisplayImage";
 
 class App extends Component {
   render() {
@@ -11,6 +12,8 @@ class App extends Component {
         <UploadImageUrl />
         <h3>Upload Images with File</h3>
         <UploadImageFile />
+        <h3>Display Images</h3>
+        <DisplayImage />
       </>
     );
   }

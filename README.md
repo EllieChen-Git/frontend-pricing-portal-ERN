@@ -1,37 +1,10 @@
-# Proposed Workflow
+# README
 
----
+### NPM packages
 
-### Overview
-
-1. Create-react-app
-2. Install npm packages
-3. Set up file structure
-4. Set up redux
-5. After finishing all the initial set-ups above, team lead push this project to GitHub (so that team members can have a copy of code)
-6. Project Management: distribute components based on complexity and priority (So that we can start working on different components)
-7. Work on reusable components
-8. Work on individual components
-
----
-
-### 1. create-react-app
-
-Ellie: We need to re-do this step hahahahaha. The usual way should be that we create a project using this command 'create-react-app image-annotation-frontend' and then push this project to GitHub lol (we must be too tired on Friday arvo XD)
-
----
-
-### 2. Install npm packages
-
-Ellie: Decide what npm packages we need to install
+- Frontend (React)
 
 ```javascript
-"dependencies": {
-//Set up by create-react-app
-"react": "^16.12.0",
-"react-dom": "^16.12.0",
-"react-scripts": "3.3.0",
-
 //Essential
 "react-router-dom": "^5.1.2",
 "react-redux": "^7.1.3",
@@ -50,6 +23,42 @@ Ellie: Decide what npm packages we need to install
 
 },
 ```
+
+- Backend (Express)
+
+```javascript
+"dependencies": {
+    "aws-sdk": "^2.607.0",
+    "celebrate": "^11.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "local": "^0.3.3",
+    "mongoose": "^5.8.7",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.2",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local-mongoose": "^6.0.1"
+  },
+  "devDependencies": {
+    "forever": "^2.0.0",
+    "nodemon": "^2.0.2"
+  }
+```
+
+---
+
+### Overview
+
+4. Set up redux
+5. After finishing all the initial set-ups above, team lead push this project to GitHub (so that team members can have a copy of code)
+6. Project Management: distribute components based on complexity and priority (So that we can start working on different components)
+7. Work on reusable components
+8. Work on individual components
+
+---
 
 ---
 
@@ -115,12 +124,6 @@ src\store.js
 
 ---
 
-### 5. After finishing up all the initial setups above, push this project to GitHub
-
-- So that we can start working on different components
-
----
-
 ### 6. Project Management: distribute components based on complexity and priority
 
 - Branch out based on features and setup branch names in certain format, e.g. ellie-navbar, robbie-footer
@@ -143,9 +146,3 @@ src\store.js
 - 3-card-column (projects, buildings)
 - Create apartments
 - Manage users
-
----
-
-### 7. Styling & Connect to backend
-
-- Q: Do we do stying after finishing each component? Or do we do them all together at the end?
