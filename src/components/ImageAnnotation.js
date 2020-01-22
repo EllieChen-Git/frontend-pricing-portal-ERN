@@ -1,16 +1,24 @@
 import React, {Component} from 'react';
 import Tags from './Tags';
-import Canvas from './Canvas';
 
+const imageSrc = "https://www.the-homestore.com/wp-content/uploads/2014/12/Bainbridge1.jpg";
 
 class ImageAnnotation extends Component{
+    state = {
+        selectedTag: null,
+        marks: {},
+        imageSrc: imageSrc
+    };
+
     render() {
-        return(
-            <div>
-                <Tags />
-                <Canvas />    
-            </div>
-        )
+      return(
+					<div>
+							<Tags
+								handleSelect={(t) => this.setState({selectedTag: t})}
+								selectedTag={this.state.selectedTag}
+							/>
+					</div>
+      )
     }
 }
 
