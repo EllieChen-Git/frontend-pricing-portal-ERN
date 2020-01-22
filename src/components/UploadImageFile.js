@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 class UploadImageFile extends Component {
   state = {
@@ -13,7 +14,18 @@ class UploadImageFile extends Component {
 
   fileUploadHandler = event => {
     event.preventDefault();
-    console.log(this.state.selectedFile.name);
+    const data = new FormData();
+    data.append("file", this.state.selectedFile);
+    console.log(this.state.selectedFile);
+
+    axios
+      .post("http://localhost:5000/upload", data, {
+        // receive two parameter endpoint url ,form data
+      })
+      .then(res => {
+        // then print response status
+        console.log(res.statusText);
+      });
   };
   render() {
     return (

@@ -4,8 +4,12 @@ import axios from "axios";
 class UploadImageUrl extends Component {
   state = { title: "", url: "" };
 
-  inputChangeHandler = event => {
-    this.setState({ title: event.target.value, url: event.target.value });
+  titleChangeHandler = event => {
+    this.setState({ title: event.target.value });
+  };
+
+  urlChangeHandler = event => {
+    this.setState({ url: event.target.value });
   };
 
   inputSubmitHandler = event => {
@@ -33,7 +37,7 @@ class UploadImageUrl extends Component {
               <input
                 type="text"
                 value={this.state.value}
-                onChange={this.inputChangeHandler}
+                onChange={this.titleChangeHandler}
               />
             </div>
           </label>
@@ -43,7 +47,7 @@ class UploadImageUrl extends Component {
               <input
                 type="text"
                 value={this.state.value}
-                onChange={this.inputChangeHandler}
+                onChange={this.urlChangeHandler}
               />
             </div>
           </label>
