@@ -16,10 +16,10 @@
 // 1. Need to decide what to use (e.g. bootstrap, material design or others)
 // 2. Check 'https://bundlephobia.com/' for cost of npm package
 // 3. Do you guys wanna use 'SASS'? Or just CSS framework (e.g. bootstrap) with plain CSS?
-"bootstrap": "^4.4.1",
-"react-bootstrap": "^1.0.0-beta.16",
-"node-sass": "^4.13.0",
-"normalize.css": "^8.0.1",
+// "bootstrap": "^4.4.1",
+// "react-bootstrap": "^1.0.0-beta.16",
+// "node-sass": "^4.13.0",
+// "normalize.css": "^8.0.1",
 
 },
 ```
