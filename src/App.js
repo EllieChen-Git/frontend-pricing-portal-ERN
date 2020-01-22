@@ -11,6 +11,7 @@ class App extends Component {
         {/* <h3>Upload Images with Url</h3>
         <UploadImageUrl /> */}
         <h3>Upload Images with File</h3>
+        <p>Can upload 1 or more files at a time</p>
         <UploadImageFile />
         {/* <h3>Display Images</h3>
         <DisplayImage /> */}
