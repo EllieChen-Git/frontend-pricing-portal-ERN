@@ -1,15 +1,44 @@
 import React, { Component } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 import ImageAnnotation from "./components/ImageAnnotation";
 
 
 class App extends Component {
   render() {
     return (
-      <>
-        <h1>Image annotation</h1>
-        <ImageAnnotation />
-        
-      </>
+      <Router>
+        <div>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/annotate">Annotate</Link>
+            </li>
+            <li>
+              <Link to="/images">Manage Images</Link>
+            </li>
+          </ul>
+          <hr />
+          <Switch>
+            <Route exact path="/">
+              <h1>Welcome</h1>
+            </Route>
+            <Route path="/annotate">
+              <ImageAnnotation />
+            </Route>
+            <Route path="/images">
+              <h1>Images</h1>
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
