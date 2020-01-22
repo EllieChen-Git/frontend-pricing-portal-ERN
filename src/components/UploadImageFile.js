@@ -19,7 +19,7 @@ class UploadImageFile extends Component {
     console.log(this.state.selectedFile);
 
     axios
-      .post("http://localhost:5000/upload", data, {
+      .post(`http://localhost:5000/images/upload`, data, {
         // receive two parameter endpoint url ,form data
       })
       .then(res => {
