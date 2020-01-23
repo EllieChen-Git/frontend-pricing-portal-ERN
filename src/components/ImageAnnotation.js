@@ -13,6 +13,10 @@ class ImageAnnotation extends Component{
 
     // update state with the coordinates
     handleNewCoordinate = (coordinates) => {
+      if (!this.state.selectedTag) {
+        console.log("No tag selected.");
+        return;
+      };
       let newMarksState = Object.assign({}, this.state.marks);
       if(!newMarksState[this.state.selectedTag.title]){
         newMarksState[this.state.selectedTag.title] = [];
@@ -22,7 +26,13 @@ class ImageAnnotation extends Component{
     };
 
     render() {
+      const data = {
+        image: this.state.imageSrc,
+        marks: this.state.marks
+      };
+      console.log(data)
       return(
+        <>
         <div>
           <Tags
             handleSelect={(t) => this.setState({selectedTag: t})}
@@ -34,6 +44,11 @@ class ImageAnnotation extends Component{
             imageSrc = {this.state.imageSrc}
           />
         </div>
+        <div>
+          <h4>Data</h4>
+           <pre>{JSON.stringify(data, null, 2)}</pre>
+        </div>
+        </>
       )
     }
 }

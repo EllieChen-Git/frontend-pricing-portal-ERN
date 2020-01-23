@@ -20,7 +20,7 @@ class Canvas extends Component {
 				y: e.nativeEvent.offsetY / currentTargetRect.height
 			};
       console.log(coordinates);
-      this.props.handleNewCoordinate(coordinates)
+      this.props.handleNewCoordinate(coordinates);
     }
     
     reloadImage(src) {
