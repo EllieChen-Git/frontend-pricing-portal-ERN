@@ -7,6 +7,9 @@ import {
 } from "react-router-dom";
 import ImageAnnotation from "./components/ImageAnnotation";
 import UploadImageFile from "./components/UploadImageFile";
+import NavBar from "./components/shared/NavBar";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from "./components/shared/Footer";
 
 
 class App extends Component {
@@ -14,6 +17,7 @@ class App extends Component {
     return (
       <Router>
         <div>
+          <NavBar />
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -38,6 +42,7 @@ class App extends Component {
               <UploadImageFile />
             </Route>
           </Switch>
+          <Footer />
         </div>
       </Router>
     );
