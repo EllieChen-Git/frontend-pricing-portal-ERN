@@ -12,13 +12,15 @@ class Canvas extends Component {
       // currentTarget is a html element of the canvas
       // call getBoundingClientRect() to get the size of the canvas
 			let currentTargetRect = e.currentTarget.getBoundingClientRect();
-			const coordinates = {
+      // normalizing coordinates
+      const coordinates = {
         //nativeEvent synthetic event, a wrapper around the browser's native events
         // normalizing coordinates 
 				x: e.nativeEvent.offsetX / currentTargetRect.width,
 				y: e.nativeEvent.offsetY / currentTargetRect.height
 			};
-			console.log(coordinates);
+      console.log(coordinates);
+      this.props.handleNewCoordinate(coordinates)
     }
     
     reloadImage(src) {
@@ -31,7 +33,7 @@ class Canvas extends Component {
     }
 
     componentDidMount() {
-      this.reloadImage(this.props.imageSrc)
+      this.reloadImage(this.props.imageSrc);
     }
 
     componentDidUpdate() {
@@ -44,6 +46,13 @@ class Canvas extends Component {
       ctx.drawImage(this.state.image, 0, 0, cv.width, cv.height);
       ctx.fillStyle = "#009900";
       ctx.font = "16px Courier";
+      for(let tag in this.props.marks){
+        for(let i = 0; i < this.props.marks[tag].length; i++){
+          const {x, y} = this.props.marks[tag][i];
+          // the coordinates are normalized, values are between 0 and 1
+          ctx.fillText(tag, x*cv.width, y*cv.height);
+        };
+      };
 		}
 
     render() {
@@ -56,8 +65,8 @@ class Canvas extends Component {
 					width={700} height={600}
 				/>;
 			</div>
-			)
-    }
+			);
+    };
 }
 
 export default Canvas;

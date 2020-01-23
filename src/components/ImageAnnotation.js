@@ -11,6 +11,16 @@ class ImageAnnotation extends Component{
       imageSrc: imageSrc
     };
 
+    // update state with the coordinates
+    handleNewCoordinate = (coordinates) => {
+      let newMarksState = Object.assign({}, this.state.marks);
+      if(!newMarksState[this.state.selectedTag.title]){
+        newMarksState[this.state.selectedTag.title] = [];
+      };
+      newMarksState[this.state.selectedTag.title].push(coordinates);
+      this.setState({marks: newMarksState});
+    };
+
     render() {
       return(
         <div>
@@ -19,6 +29,8 @@ class ImageAnnotation extends Component{
             selectedTag={this.state.selectedTag}
           />
           <Canvas
+            marks={this.state.marks}
+            handleNewCoordinate={this.handleNewCoordinate}
             imageSrc = {this.state.imageSrc}
           />
         </div>
