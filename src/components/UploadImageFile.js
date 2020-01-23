@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import DisplayImage from './DisplayImage';
 
 class UploadImageFile extends Component {
   state = {
@@ -37,6 +38,9 @@ class UploadImageFile extends Component {
           </label>
           <input type="submit" value="Upload File" />
         </form>
+        <div>
+          <DisplayImage />
+        </div>
       </>
     );
   }
