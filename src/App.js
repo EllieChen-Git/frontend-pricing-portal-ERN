@@ -5,8 +5,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
 import ImageAnnotation from "./components/ImageAnnotation";
+import UploadImageFile from "./components/UploadImageFile";
 
 
 class App extends Component {
@@ -34,7 +34,8 @@ class App extends Component {
               <ImageAnnotation />
             </Route>
             <Route path="/images">
-              <h1>Images</h1>
+              <h1>List of appartments</h1>
+              <UploadImageFile />
             </Route>
           </Switch>
         </div>
