@@ -7,6 +7,7 @@ import Footer from "./components/shared/Footer";
 import LandingPage from "./components/pages/LandingPage"; 
 import { BrowserRouter, Route } from "react-router-dom";
 import RegisterForm from "./components/forms/RegisterForm";
+import SigninForm from "./components/forms/SignInForm";
 
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
                     <Route path="/" component={NavBar} />
                     <Route exact path="/" component={LandingPage} />
                     <Route exact path="/register" component={RegisterForm} />
+                    <Route exact path="/signin" component={SigninForm} />
                     <Route path="/" component={Footer} />
                 </div>
             </BrowserRouter>

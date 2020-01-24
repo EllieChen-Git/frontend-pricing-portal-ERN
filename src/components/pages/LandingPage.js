@@ -7,7 +7,7 @@ class LandingPage extends Component {
     render() {
         return (
             <div>
-                <img src="landingpageimage.png" alt="What's up"/>
+                <img src="landingpageimage.png" alt="background image of sydney at night"/>
                 <h1>Company</h1>
                     <p>SkyChute, is a Sydney based technology company that makes software for the property industry. SkyChutes' software, is breaking new ground and changing the way technology and the building industry relates</p>
                 <h2>Purpose</h2>
