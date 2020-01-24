@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import DisplayImage from './DisplayImage';
-
+import DisplayImage from "./../images_uploading/DisplayImage";
 class UploadImageFile extends Component {
   state = {
     selectedFile: null
@@ -16,7 +15,6 @@ class UploadImageFile extends Component {
   fileUploadHandler = event => {
     event.preventDefault();
     const data = new FormData();
-    // data.append("file", this.state.selectedFile);
 
     for (let x = 0; x < this.state.selectedFile.length; x++) {
       data.append("file", this.state.selectedFile[x]);
@@ -35,7 +33,6 @@ class UploadImageFile extends Component {
         }
       })
       .then(res => {
-        // then print response status
         console.log(res.statusText);
       });
   };
