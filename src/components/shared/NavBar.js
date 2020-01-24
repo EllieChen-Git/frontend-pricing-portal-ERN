@@ -12,6 +12,15 @@ class NavBar extends Component {
             <Nav className="mr-auto">
             <Nav.Link href="signin">Sign In</Nav.Link>
             <Nav.Link href="register">Register</Nav.Link>
+            <Nav.Link href="createprojects">Create Projects</Nav.Link>
+            <Nav.Link href="createbuildings">Create Buildings</Nav.Link>
+            <Nav.Link href="createlevels">Create Levels</Nav.Link>
+            <Nav.Link href="createapartments">Create Apartments</Nav.Link>
+            <Nav.Link href="usermanagement">User Management</Nav.Link>
+            <Nav.Link href="userdashboard">User Dashboard</Nav.Link>
+            <Nav.Link href="userbuildings">User Buildings</Nav.Link>
+            <Nav.Link href="userannotation">User Annotation</Nav.Link>
+
             </Nav>
             </Navbar.Collapse>
             </Navbar>
