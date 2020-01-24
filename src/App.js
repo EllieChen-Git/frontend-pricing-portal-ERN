@@ -8,6 +8,8 @@ import LandingPage from "./components/pages/LandingPage";
 import { BrowserRouter, Route } from "react-router-dom";
 import RegisterForm from "./components/forms/RegisterForm";
 import SigninForm from "./components/forms/SignInForm";
+import CreateProjects from "./components/pages/CreateProjects";
+import ProjectCard from "./components/shared/ProjectCard";
 
 
 class App extends Component {
@@ -20,12 +22,10 @@ class App extends Component {
                     <Route exact path="/" component={LandingPage} />
                     <Route exact path="/register" component={RegisterForm} />
                     <Route exact path="/signin" component={SigninForm} />
-                    <Route exact path="/signin" component={SigninForm} />
                     <Route exact path="/images" component={UploadImageFile} />
                     <Route exact path="/annoate" component={ImageAnnotation} />
-
-
-
+                    <Route exact path="/createprojects" component={CreateProjects} />
+                    <Route path="/" component={Footer} />
                 </div>
             </BrowserRouter>
         </div>

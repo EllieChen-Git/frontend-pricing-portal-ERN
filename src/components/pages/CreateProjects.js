@@ -1,14 +1,69 @@
 import React, { Component } from "react";
+import ProjectCard from "../shared/ProjectCard";
+import { Card, Button, } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from "axios";
 
-class CreatProjecrts extends Component {
+class CreateProjects extends Component {
+
+state = {allCards: []} // Init state with empty array
+
+/*
+componentDidMount is a function that is called when the component mounts 
+make hhtp req to fake db
+set state to the response.data
+
+*/
+componentDidMount() {
+    axios.get("http://localhost:3000/projects")
+    .then(response => {
+    this.setState({ allCards: response.data})
+        }
+    )
+    // console.log(`%c Mr pickles`, 'color: blue')
+}
+
+/*
+Create function to create an array of jsx
+When called it will iterate over our state (which is an array of objects)
+and provide our Project card with data. 
+
+Therefore we must address the ProjectCard
+*/
+
+renderAllProjects () {
+    return this.state.allCards.map(project => {
+      return (
+        <ProjectCard title={project.title} id={project.id} description={project.description}/>
+      )
+    })
+  }
+
+
+// displayCards =()=> {
+//     this.state.allCards.map( (project)=>{
+//         <>
+//         <ProjectCard/>
+//         </>
+//     })
+// }
+
     render() {
+        
         return (
             <div>
-                <img src="landingpageimage.png" alt="background image of sydney at night"/>
-                <h1>Company</h1>
-                    <p>SkyChute, is a Sydney based technology company that makes software for the property industry. SkyChutes' software, is breaking new ground and changing the way technology and the building industry relates</p>
-                <h2>Purpose</h2>
-                    <p>The purpose of this website is image annotation. We hope that through the use of this software, various professionals within the construction industry will be better able to price their inventory of units and properties. This will enable developers and other intrested parties to solve problems relating to how best to price their stock.</p>
+                <h1>Create Projects</h1>
+                <form>
+                Project Name:
+                <input name="name" type="text" />
+                Project Description:
+                <input name="name" type="text" />
+                <button type="button">Add Project</button>
+                </form>
+                {/* We must call it like a normal function */}
+                {this.renderAllProjects() || "Loading"}
             </div>
         )
-    }
+    };
+};
+export default CreateProjects;
