@@ -8,7 +8,6 @@ import {
 import ImageAnnotation from "./components/ImageAnnotation";
 import UploadImageFile from "./components/UploadImageFile";
 
-
 class App extends Component {
   render() {
     return (
