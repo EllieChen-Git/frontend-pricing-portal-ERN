@@ -20,7 +20,12 @@ class App extends Component {
                     <Route exact path="/" component={LandingPage} />
                     <Route exact path="/register" component={RegisterForm} />
                     <Route exact path="/signin" component={SigninForm} />
-                    <Route path="/" component={Footer} />
+                    <Route exact path="/signin" component={SigninForm} />
+                    <Route exact path="/images" component={UploadImageFile} />
+                    <Route exact path="/annoate" component={ImageAnnotation} />
+
+
+
                 </div>
             </BrowserRouter>
         </div>

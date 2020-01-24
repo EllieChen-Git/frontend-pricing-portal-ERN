@@ -19,8 +19,8 @@ class NavBar extends Component {
             <Nav.Link href="usermanagement">User Management</Nav.Link>
             <Nav.Link href="userdashboard">User Dashboard</Nav.Link>
             <Nav.Link href="userbuildings">User Buildings</Nav.Link>
-            <Nav.Link href="userannotation">User Annotation</Nav.Link>
-
+            <Nav.Link href="annoate">User Annotation</Nav.Link>
+            <Nav.Link href="images">Manage Images</Nav.Link>
             </Nav>
             </Navbar.Collapse>
             </Navbar>
