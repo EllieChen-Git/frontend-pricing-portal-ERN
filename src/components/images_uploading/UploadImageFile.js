@@ -23,7 +23,7 @@ class UploadImageFile extends Component {
     console.log(this.state.selectedFile);
 
     axios
-      .post(`http://localhost:5000/images/upload`, data, {
+      .post(`${process.env.REACT_APP_BASEURL}/images/upload`, data, {
         onUploadProgress: progressEvent => {
           console.log(
             "Upload Progress: " +

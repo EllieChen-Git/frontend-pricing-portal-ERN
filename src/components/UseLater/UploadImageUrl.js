@@ -16,7 +16,7 @@ class UploadImageUrl extends Component {
     event.preventDefault();
     console.log(this.state);
     axios
-      .post("http://localhost:5000/images", {
+      .post(`${process.env.REACT_APP_BASEURL}/images`, {
         images: [{ title: this.state.title, url: this.state.url }]
       })
       .then(data => {
