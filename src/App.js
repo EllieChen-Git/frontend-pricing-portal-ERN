@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ImageAnnotation from "./components/ImageAnnotation";
+
 import UploadImageFile from "./components/images_uploading/UploadImageFile";
+
 
 class App extends Component {
   render() {
