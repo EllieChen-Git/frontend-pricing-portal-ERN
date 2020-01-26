@@ -27,9 +27,7 @@ class App extends Component {
             <Route path="/annotate">
               <ImageAnnotation />
             </Route>
-            <Route path="/images">
-              <ImageManagement />
-            </Route>
+            <Route exact path="/images" component={ImageManagement} />
           </Switch>
         </div>
       </Router>
