@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import DisplayImage from "./../images_uploading/DisplayImage";
+
 class UploadImageFile extends Component {
   state = {
     selectedFile: null
@@ -32,13 +32,17 @@ class UploadImageFile extends Component {
           );
         }
       })
-      .then(res => {
-        console.log(res.statusText);
+      .then(response => {
+        console.log(response.statusText);
+      })
+      .catch(error => {
+        console.log(error);
       });
   };
   render() {
     return (
       <>
+        <h1>Upload Apartment Image</h1>
         <form onSubmit={this.fileUploadHandler}>
           <label>
             Image:
@@ -46,9 +50,6 @@ class UploadImageFile extends Component {
           </label>
           <input type="submit" value="Upload File" />
         </form>
-        <div>
-          <DisplayImage />
-        </div>
       </>
     );
   }

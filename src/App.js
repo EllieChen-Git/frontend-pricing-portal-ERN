@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ImageAnnotation from "./components/ImageAnnotation";
-
-import UploadImageFile from "./components/images_uploading/UploadImageFile";
-
+import ImageManagement from "./components/images_uploading/ImageManagement";
 
 class App extends Component {
   render() {
@@ -30,8 +28,7 @@ class App extends Component {
               <ImageAnnotation />
             </Route>
             <Route path="/images">
-              <h1>List of appartments</h1>
-              <UploadImageFile />
+              <ImageManagement />
             </Route>
           </Switch>
         </div>
