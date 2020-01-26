@@ -8,14 +8,15 @@ class DisplayImageList extends Component {
   }
   render() {
     const { images } = this.props;
-    console.log(images);
 
     return (
       <ol>
         {images.map(image => {
           return (
             <>
-              <li key={`${image.lot}#${image}`}>
+              {/* Warning: Warning: Each child in a list should have a unique "key" prop.
+               */}
+              <li key={image.s3key}>
                 Lot: {image.lot}, Unit Number:
                 {image.unitNumber}, Product Descripion:
                 {image.productDescription}, s3key:{" "}

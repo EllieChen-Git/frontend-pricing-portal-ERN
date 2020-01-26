@@ -7,10 +7,6 @@ class ImageManagement extends Component {
     images: []
   };
 
-  // onImageFormSubmit = images => {
-  //   this.setState({ images });
-  // };
-
   render() {
     const { images } = this.state;
 
@@ -19,7 +15,7 @@ class ImageManagement extends Component {
         <h1>Image Management</h1>
         <div>
           <h3>Create New Apartments</h3>
-          <UploadImageFile onImageFormSubmit={this.onImageFormSubmit} />
+          <UploadImageFile />
           <h3>Apartment(Image) List</h3>
           <DisplayImageList items={images} />
         </div>

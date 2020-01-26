@@ -17,13 +17,13 @@ export const fetchImages = () => {
   };
 };
 
-export const createImages = image => {
-  return async (dispatch, getState) => {
-    const response = await LocalApi.post("/images", image);
-
-    return dispatch({
-      type: "SET_IMAGES",
-      payload: response.data
-    });
-  };
-};
+//[Use later? - Unable to use redux to create apartments]
+// export const createImages = image => {
+//   return async (dispatch, getState) => {
+//     const response = await LocalApi.post("/images", image);
+//     return dispatch({
+//       type: "SET_IMAGES",
+//       payload: response.data
+//     });
+//   };
+// };
