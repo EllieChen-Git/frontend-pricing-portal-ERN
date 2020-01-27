@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ImageAnnotation from "./components/ImageAnnotation";
-import UploadImageFile from "./components/UploadImageFile";
+import UploadImageFile from "./components/images_uploading/ImageManagement";
 import NavBar from "./components/shared/NavBar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from "./components/shared/Footer";

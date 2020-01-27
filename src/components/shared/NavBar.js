@@ -12,6 +12,7 @@ class NavBar extends Component {
             <Nav className="mr-auto">
             <Nav.Link href="signin">Sign In</Nav.Link>
             <Nav.Link href="register">Register</Nav.Link>
+            {/* }
             <Nav.Link href="createprojects">Create Projects</Nav.Link>
             <Nav.Link href="createbuildings">Create Buildings</Nav.Link>
             <Nav.Link href="createlevels">Create Levels</Nav.Link>
@@ -19,6 +20,7 @@ class NavBar extends Component {
             <Nav.Link href="usermanagement">User Management</Nav.Link>
             <Nav.Link href="userdashboard">User Dashboard</Nav.Link>
             <Nav.Link href="userbuildings">User Buildings</Nav.Link>
+            {*/}
             <Nav.Link href="annoate">User Annotation</Nav.Link>
             <Nav.Link href="images">Manage Images</Nav.Link>
             </Nav>
