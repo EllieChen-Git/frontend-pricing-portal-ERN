@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-// import { reducer as formReducer } from "redux-form";
-import authenticationReducer from "./authentication_reducer[example]";
+import { reducer as formReducer } from "redux-form";
+import imagesReducer from "./images_reducer";
 
 export default combineReducers({
-  auth: authenticationReducer
-  //   form: formReducer //must call it form here
+  images: imagesReducer,
+  form: formReducer
 });

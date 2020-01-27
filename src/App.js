@@ -11,7 +11,6 @@ import SigninForm from "./components/forms/SignInForm";
 import CreateProjects from "./components/pages/CreateProjects";
 import ProjectCard from "./components/shared/ProjectCard";
 
-
 class App extends Component {
   render() {
       return (
@@ -35,4 +34,3 @@ class App extends Component {
 }
 
 export default App;
-
