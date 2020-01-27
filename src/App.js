@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ImageAnnotation from "./components/ImageAnnotation";
 import ImageManagement from "./components/images_uploading/ImageManagement";
 
+
 class App extends Component {
   render() {
     return (
