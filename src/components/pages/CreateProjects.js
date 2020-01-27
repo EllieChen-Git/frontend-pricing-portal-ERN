@@ -39,15 +39,15 @@ renderAllProjects () {
     })
   }
 
-
-// displayCards =()=> {
-//     this.state.allCards.map( (project)=>{
-//         <>
-//         <ProjectCard/>
-//         </>
-//     })
-// }
-
+/*
+displayCards =()=> {
+   this.state.allCards.map( (project)=>{
+        <>
+        <ProjectCard/>
+        </>
+     })
+ }
+*/
     render() {
         
         return (
