@@ -18,7 +18,7 @@ class RegisterForm extends Component {
                 </form>
                 <input type="submit" value="Register"/>
                 <h2>All ready have an account with Skychute?</h2>
-                <input type="submit" value="Sign In"/>
+                <a href="/signin">Sign In</a>
             </div>
             );
   }

@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 
 class SigninForm extends Component {
+
+    handleclick 
     render() {
         return (
             <div>
                 <h1>Sign In</h1>
                 <form>
-                Email:
-                <input type="email" />
+                Username:
+                <input type="text" />
                 Password: 
                 <input type="password" />
                 <h3>Remember Me</h3>
@@ -15,7 +17,8 @@ class SigninForm extends Component {
                 </form>
                 <h3>Forgot Password?</h3>
                 <h3>Don't Have An Account?</h3>
-                <input type="submit" value="Register"/>
+                <a href="/register">Register</a>
+                
             </div>
             );
   }
