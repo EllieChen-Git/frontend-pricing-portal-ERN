@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchImages } from "./../../actions";
+import { Button } from "react-bootstrap";
 
 class DisplayImageList extends Component {
   componentDidMount() {
@@ -10,24 +11,31 @@ class DisplayImageList extends Component {
     const { images } = this.props;
 
     return (
-      <ol>
+      <ul>
         {images.map(image => {
           return (
             <>
               <li key={image._id}>
-                Lot: {image.lot}, Unit Number:
-                {image.unitNumber}, Product Descripion:
-                {image.productDescription}, s3key:{" "}
-                <a
+                Unit Number:
+                {image.unitNumber}
+                <Button
+                  className="m-2"
                   href={`${process.env.REACT_APP_BASEURL}/images/${image.s3key}`}
                 >
-                  {image.s3key}
-                </a>
+                  Show Floor Plan
+                </Button>
+                {/* The button below is currently doing nothing! */}
+                <Button
+                  className="m-2"
+                  href={`${process.env.REACT_APP_BASEURL}/images/${image.s3key}/annotate`}
+                >
+                  Add Annotation
+                </Button>
               </li>
             </>
           );
         })}
-      </ol>
+      </ul>
     );
   }
 }
