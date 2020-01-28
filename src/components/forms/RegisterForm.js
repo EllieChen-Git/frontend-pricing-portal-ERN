@@ -5,15 +5,11 @@ class RegisterForm extends Component {
         return (
             <div>
                 <form>
-                First Name:
-                <input name="name" type="text" />
-                Last Name:
-                <input name="name" type="text" />
-                Company: 
+                Username:
                 <input type="text" />
                 Email:
                 <input type="email" />
-                Password: 
+                Password:
                 <input type="password" />
                 </form>
                 <input type="submit" value="Register"/>
