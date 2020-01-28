@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 class RegisterForm extends Component {
+
+    
+
     render() {
         return (
             <div>
@@ -11,8 +14,8 @@ class RegisterForm extends Component {
                 <input type="email" />
                 Password:
                 <input type="password" />
+                <input type="submit" value="Register" />
                 </form>
-                <input type="submit" value="Register"/>
                 <h2>All ready have an account with Skychute?</h2>
                 <a href="/signin">Sign In</a>
             </div>
