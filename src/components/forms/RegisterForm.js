@@ -9,6 +9,7 @@ class RegisterForm extends Component {
         LocalApi.post("users", { username, email, password })
        .then(response => {
          // Redirect to login page for now.
+         console.log(response)
          this.props.history.push("/signin");
        })
        .catch(error => {
