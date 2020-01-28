@@ -1,9 +1,11 @@
 import axios from "axios";
 // import store from "./../store";
 
+
 const LocalApi = axios.create({
   baseURL: process.env.REACT_APP_BASEURL
 });
+
 
 // =====Code below not doing anything now. Useful for auth later======
 // LocalApi.interceptors.request.use(config => {
