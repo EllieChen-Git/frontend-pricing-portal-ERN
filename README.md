@@ -56,4 +56,4 @@
 
 - Structure in drawing
 
-![FileStructure](./img/file_structure.JPG)
+![FileStructure](./public/images/file_structure.JPG)

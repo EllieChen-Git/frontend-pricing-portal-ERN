@@ -1,7 +1,8 @@
 //Unable to make it happen with Redux - might try to refactor to Redux way later
 
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
+import LocalApi from "./../../apis/LocalApi";
 
 class UploadImageFile extends Component {
   state = {
@@ -26,11 +27,9 @@ class UploadImageFile extends Component {
 
     console.log(this.state); //Keep this line to see if upload successful in browser console
 
-    axios
-      .post(`${process.env.REACT_APP_BASEURL}/images`, formData)
-      .then(res => {
-        console.log(res.statusText);
-      });
+    LocalApi.post("/images", formData).then(res => {
+      console.log(res.statusText);
+    });
   };
 
   fileSelectedHandler = event => {
