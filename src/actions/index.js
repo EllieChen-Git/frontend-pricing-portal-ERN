@@ -1,5 +1,13 @@
 import LocalApi from "./../apis/LocalApi";
 
+export const setAuthToken = (token = null) => {
+  sessionStorage.setItem("token", token);
+  return {
+    type: "AUTH_TOKEN",
+    payload: token
+  };
+};
+
 export const setImages = images => {
   return {
     type: "SET_IMAGES",
