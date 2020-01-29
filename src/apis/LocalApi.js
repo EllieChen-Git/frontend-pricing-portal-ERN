@@ -1,16 +1,19 @@
 import axios from "axios";
-// import store from "./../store";
-
+import store from "./../store";
 
 const LocalApi = axios.create({
   baseURL: process.env.REACT_APP_BASEURL
 });
 
+LocalApi.interceptors.request.use(config => {
+  const state = store.getState();
 
-// =====Code below not doing anything now. Useful for auth later======
-// LocalApi.interceptors.request.use(config => {
-//   const state = store.getState();
-//   return config;
-// });
+  const token = state.auth.token;
+  if (token) {
+    config.headers["Authorization"] = `Bearer ${token}`;
+  }
+
+  return config;
+});
 
 export default LocalApi;
