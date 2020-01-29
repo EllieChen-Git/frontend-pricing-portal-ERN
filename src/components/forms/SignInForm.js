@@ -13,27 +13,12 @@ class SigninForm extends Component {
     event.preventDefault();
     const { username, password } = this.state;
 
-    // LocalApi.post("/users/login", { username, password })
-    //   .then(response => {
-    //     console.log(response);
-    //     this.props.setAuthToken(response.data);
-    //     this.props.history.push("/");
-    //   })
-    //   .catch(error => {
-    //     console.log(error);
-    //     console.log("not working");
-    //     this.setState({ error });
-    //   });
-
     try {
       const response = await LocalApi.post("/users/login", {
         username,
         password
       });
-
       this.props.setAuthToken(response.data.token);
-      this.props.history.push("/");
-      console.log(response);
     } catch (err) {
       console.log(err);
     }

@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setAuthToken } from "./../../actions";
 import LocalApi from "../../apis/LocalApi";
+import { useHistory } from "react-router-dom";
 
 //we create a class that extends our Component.
 class RegisterForm extends Component {
@@ -21,8 +22,7 @@ class RegisterForm extends Component {
     LocalApi.post("users", { username, email, password })
       .then(response => {
         setAuthToken(response.data.token);
-        console.log(response);
-        history.push("/signin");
+        useHistory().push("/");
       })
       .catch(error => {
         console.log(error);

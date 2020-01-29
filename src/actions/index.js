@@ -8,6 +8,13 @@ export const setAuthToken = (token = null) => {
   };
 };
 
+export const setUserInfo = (user = null) => {
+  return {
+    type: "USER_INFO",
+    payload: user
+  };
+};
+
 export const setImages = images => {
   return {
     type: "SET_IMAGES",
