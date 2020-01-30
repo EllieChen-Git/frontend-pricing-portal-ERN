@@ -1,16 +1,18 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch, Link, useHistory } from "react-router-dom";
-import ImageAnnotation from "./components/ImageAnnotation";
-import ImageManagement from "./components/images_uploading/ImageManagement";
+import { useHistory } from "react-router-dom";
+//import ImageAnnotation from "./components/ImageAnnotation";
+//import ImageManagement from "./components/images_uploading/ImageManagement";
 import { setAuthToken, setUserInfo } from "./actions";
 import LocalApi from "./apis/LocalApi";
-import RegisterPage from "./components/pages/RegisterPage";
-import SigninForm from "./components/forms/SignInForm";
-
-
+//import RegisterPage from "./components/pages/RegisterPage";
+//import SigninForm from "./components/forms/SignInForm";
 //import PrivateRoute from "./components/PrivateRoute";
 import { connect } from "react-redux";
+import UserNotLoggedIn from "./components/authentication/UserNotLoggedIn";
+import UserIsAdmin from "./components/authentication/UserIsAdmin";
+import RegularUser from "./components/authentication/RegularUser";
 
+/*
 function Logout(props) {
   console.log(props);
   props.setAuthToken();
@@ -19,6 +21,7 @@ function Logout(props) {
   sessionStorage.removeItem("token");
   return <p>logged out.</p>;
 }
+*/
 
 class App extends Component {
   render() {
@@ -28,39 +31,21 @@ class App extends Component {
         .then(r => this.props.setUserInfo(r.data))
         .catch(e => console.log(e));
     }
+
     if (!user) {
       return (
-      <BrowserRouter>
-        <Link to="/">Sign In</Link> | <Link to="/register">Register</Link>
-        <Switch>
-          <Route exact path="/"><SigninForm /></Route>
-          <Route path="/register"><RegisterPage /></Route>
-        </Switch>
-      </BrowserRouter>);
+        <UserNotLoggedIn />
+     );
     }
     if (user.is_admin === true) {
       return (
-      <BrowserRouter>
-        <Link to="/">Images</Link> | <Link to="/logout">Logout</Link>
-        <Switch>
-          <Route exact path="/"><ImageManagement /></Route>
-          <Route path="/logout">
-            <Logout {...this.props} />
-          </Route>
-        </Switch>
-      </BrowserRouter>);
+        <UserIsAdmin />
+      )
     }
     if (!user.is_admin) {
       return (
-        <BrowserRouter>
-          <Link to="/">Annotations</Link> | <Link to="/logout">Logout</Link>
-          <Switch>
-            <Route exact path="/"><ImageAnnotation /></Route>
-            <Route path="/logout">
-              <Logout {...this.props} />
-            </Route>
-          </Switch>
-        </BrowserRouter>);
+        <RegularUser />
+        );
     }
   }
 }

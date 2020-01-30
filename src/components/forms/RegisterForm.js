@@ -21,9 +21,9 @@ class RegisterForm extends Component {
 
     LocalApi.post("users", { username, email, password })
       .then(response => {
-        setAuthToken(response.data.token);
+        setAuthToken(response.data.token)
   //      useHistory().push("/");
-        history.push('/');
+        history.push("/");
       })
       .catch(error => {
         console.log(error);
