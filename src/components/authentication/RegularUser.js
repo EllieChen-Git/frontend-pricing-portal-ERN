@@ -23,15 +23,18 @@ function Logout(props) {
 class RegularUser extends Component {
     render() {
         return (
-            <BrowserRouter>
+          <BrowserRouter>
           <Link to="/">Annotations</Link> | <Link to="/logout">Logout</Link>
           <Switch>
-            <Route exact path="/"><ImageAnnotation /></Route>
+            <Route exact path="/">
+              <AnnotationList />
+            </Route>
+            <Route path = "/annotations/:id" children={<AnnotationPage />} /> 
             <Route path="/logout">
               <Logout {...this.props} />
             </Route>
           </Switch>
-            </BrowserRouter>
+        </BrowserRouter>
         )
     };
 };

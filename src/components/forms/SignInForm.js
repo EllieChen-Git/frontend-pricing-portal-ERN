@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import LocalApi from "../../apis/LocalApi";
 import { connect } from "react-redux";
 import { setAuthToken } from "../../actions";
+import { Form, Button, Container } from "react-bootstrap";
 
 class SigninForm extends Component {
   state = {
@@ -32,33 +33,42 @@ class SigninForm extends Component {
     const { username, password } = this.state;
 
     return (
-      <div>
+      <Container>
         <h1>Sign In</h1>
-        <form onClick={this.handleClick} onSubmit={this.onFormSubmit}>
-          <label htmlFor="current-username">Username:</label>
-          <input
-            type="text"
-            onChange={e => this.onInputChange("username", e)}
-            id="current-username"
-            required="required"
-            value={username}
-            autoComplete="current-username"
-          />
-          <label htmlFor="current-password">Password: </label>
-          <input
-            type="password"
-            id="current-password"
-            required="required"
-            autoComplete="current-password"
-            value={password}
-            onChange={e => this.onInputChange("password", e)}
-          />
-          <h3>Remember Me</h3>
-          <input type="submit" value="Sign In" />
-        </form>
-        <h3>Forgot Password?</h3>
+        <Form onClick={this.handleClick} onSubmit={this.onFormSubmit}>
+          <Form.Group controlId="formBasicUsername">
+            <Form.Label>Username:</Form.Label>
+            <Form.Control
+              type="text"
+              value={username}
+              placeholder="Enter Username"
+              autoComplete="current-username"
+              required="required"
+              onChange={e => this.onInputChange("username", e)}
+            />
+          </Form.Group>
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label>Password:</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Enter Password"
+              autoComplete="current-password"
+              value={password}
+              required="required"
+              onChange={e => this.onInputChange("password", e)}
+            />
+          </Form.Group>
+
+          <Button variant="success" type="submit">
+            Sign In
+          </Button>
+        </Form>
         <h3>Don't Have An Account?</h3>
-      </div>
+
+        <Button variant="danger" href="/register">
+          Register
+        </Button>
+      </Container>
     );
   }
 }
