@@ -34,3 +34,13 @@ export const fetchUsers = () => {
     });
   }
 }
+
+export const fetchAnnotations = () => {
+  return async (dispatch) => {
+    let response = await LocalApi.get("/annotations");
+    return dispatch({
+      type: "SET_ANNOTATIONS",
+      payload: response.data
+    });
+  }
+}

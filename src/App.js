@@ -10,6 +10,7 @@ import SigninForm from "./components/forms/SignInForm";
 
 //import PrivateRoute from "./components/PrivateRoute";
 import { connect } from "react-redux";
+import AnnotationList from "./components/AnnotationList";
 
 function Logout(props) {
   console.log(props);
@@ -55,7 +56,7 @@ class App extends Component {
         <BrowserRouter>
           <Link to="/">Annotations</Link> | <Link to="/logout">Logout</Link>
           <Switch>
-            <Route exact path="/"><ImageAnnotation /></Route>
+            <Route exact path="/"><AnnotationList /></Route>
             <Route path="/logout">
               <Logout {...this.props} />
             </Route>

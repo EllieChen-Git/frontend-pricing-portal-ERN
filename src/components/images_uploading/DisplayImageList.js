@@ -1,7 +1,6 @@
 import React, { Component, useReducer } from "react";
 import { connect } from "react-redux";
 import { fetchImages, fetchUsers } from "./../../actions";
-import { Button } from "react-bootstrap";
 import LocalApi from "../../apis/LocalApi";
 
 
