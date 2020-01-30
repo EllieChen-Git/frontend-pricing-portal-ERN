@@ -53,11 +53,10 @@ class SigninForm extends Component {
             value={password}
             onChange={e => this.onInputChange("password", e)}
           />
-          <h3>Remember Me</h3>
           <input type="submit" value="Sign In" />
         </form>
-        <h3>Forgot Password?</h3>
         <h3>Don't Have An Account?</h3>
+        <a href="/register">Sign In</a>
       </div>
     );
   }
