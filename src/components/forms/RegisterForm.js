@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-
 import { connect } from "react-redux";
 import { setAuthToken } from "./../../actions";
 import LocalApi from "../../apis/LocalApi";
+import { useHistory } from "react-router-dom";
+//access to the history object via useHistory
 
 //we create a class that extends our Component.
 class RegisterForm extends Component {
@@ -21,8 +22,8 @@ class RegisterForm extends Component {
     LocalApi.post("users", { username, email, password })
       .then(response => {
         setAuthToken(response.data.token);
-        console.log(response);
-        history.push("/signin");
+  //      useHistory().push("/");
+        history.push('/');
       })
       .catch(error => {
         console.log(error);
@@ -66,7 +67,7 @@ class RegisterForm extends Component {
           <input type="submit" value="Register" />
         </form>
         <h2>All ready have an account with Skychute?</h2>
-        <a href="/signin">Sign In</a>
+        {/* <a href="/signin">Sign In</a> */}
       </div>
     );
   }
