@@ -2,10 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setAuthToken } from "./../../actions";
 import LocalApi from "../../apis/LocalApi";
-import { useHistory } from "react-router-dom";
-//access to the history object via useHistory
+import { Form, Button, Container } from "react-bootstrap";
 
-//we create a class that extends our Component.
 class RegisterForm extends Component {
   state = {
     username: "",
@@ -23,7 +21,6 @@ class RegisterForm extends Component {
     LocalApi.post("users", { username, email, password })
       .then(response => {
         setAuthToken(response.data.token);
-        //      useHistory().push("/");
         history.push("/");
       })
       .catch(error => {
@@ -40,36 +37,53 @@ class RegisterForm extends Component {
     const { username, email, password } = this.state;
 
     return (
-      <div>
-        <form onClick={this.handleClick} onSubmit={this.onFormSubmit}>
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            value={username}
-            autoComplete="username"
-            onChange={e => this.onInputChange("username", e)}
-          />
+      <Container>
+        <h1>Register Account</h1>
+        <Form onClick={this.handleClick} onSubmit={this.onFormSubmit}>
+          <Form.Group controlId="formBasicUsername">
+            <Form.Label>Username:</Form.Label>
+            <Form.Control
+              type="text"
+              value={username}
+              autoComplete="current-username"
+              placeholder="Enter Username"
+              required="required"
+              onChange={e => this.onInputChange("username", e)}
+            />
+          </Form.Group>
 
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            value={email}
-            autoComplete="email"
-            onChange={e => this.onInputChange("email", e)}
-          />
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>Email:</Form.Label>
+            <Form.Control
+              type="email"
+              value={email}
+              autoComplete="current-email"
+              placeholder="Enter Email"
+              required="required"
+              onChange={e => this.onInputChange("email", e)}
+            />
+          </Form.Group>
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label>Password:</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Enter Password"
+              autoComplete="current-password"
+              value={password}
+              required="required"
+              onChange={e => this.onInputChange("password", e)}
+            />
+          </Form.Group>
+          <Button variant="danger" type="submit">
+            Register
+          </Button>
+        </Form>
+        <h3>All ready have an account with Skychute?</h3>
 
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            value={password}
-            autoComplete="current-password"
-            onChange={e => this.onInputChange("password", e)}
-          />
-          <input type="submit" value="Register" />
-        </form>
-        <h2>All ready have an account with Skychute?</h2>
-        <a href="/">Sign In</a>
-      </div>
+        <Button variant="success" href="/">
+          Sign In
+        </Button>
+      </Container>
     );
   }
 }

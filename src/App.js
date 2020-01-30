@@ -29,7 +29,7 @@ class App extends Component {
   render() {
     const { user, token } = this.props;
     if (!user && token !== null) {
-      LocalApi.get("/users/me")
+      LocalApi.get("/users/me") //Bug here: need to fix in the future
         .then(r => this.props.setUserInfo(r.data))
         .catch(e => console.log(e));
     }
