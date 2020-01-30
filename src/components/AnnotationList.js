@@ -14,7 +14,9 @@ class AnnotationList extends Component{
         {annotations && annotations.map(annotation => {
           const image = annotation.image_id;
           return <li key={annotation._id}>
-            {image.lot} {image.unitNumber} {image.productDescription}
+            <a href={"annotations/"+annotation._id}>
+              {image.lot} {image.unitNumber} {image.productDescription}
+            </a>
           </li>
         })}
       </ul>
@@ -24,7 +26,7 @@ class AnnotationList extends Component{
 
 const mapStateToProps = state => {
   return {
-    annotations: state.annotations,
+    annotations: state.annotations.all,
   };
 };
 

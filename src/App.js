@@ -6,7 +6,7 @@ import {
   Link,
   useHistory
 } from "react-router-dom";
-import ImageAnnotation from "./components/ImageAnnotation";
+import AnnotationPage from "./components/pages/AnnotationPage";
 import ImageManagement from "./components/images_uploading/ImageManagement";
 import { setAuthToken, setUserInfo } from "./actions";
 import LocalApi from "./apis/LocalApi";
@@ -76,6 +76,7 @@ class App extends Component {
             <Route exact path="/">
               <AnnotationList />
             </Route>
+            <Route path = "/annotations/:id" children={<AnnotationPage />} /> 
             <Route path="/logout">
               <Logout {...this.props} />
             </Route>

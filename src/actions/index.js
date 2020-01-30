@@ -44,3 +44,13 @@ export const fetchAnnotations = () => {
     });
   }
 }
+
+export const fetchAnnotationDetails = (id) => {
+  return async (dispatch) => {
+    let response = await LocalApi.get("/annotations/" + id);
+    return dispatch({
+      type: "SET_CURRENT_ANNOTATION",
+      payload: response.data
+    });
+  }
+}
