@@ -18,12 +18,13 @@ class RegisterForm extends Component {
     event.preventDefault();
     const { history, setAuthToken } = this.props;
     const { username, email, password } = this.state;
+    console.log(this.props);
 
     LocalApi.post("users", { username, email, password })
       .then(response => {
         setAuthToken(response.data.token);
-  //      useHistory().push("/");
-        history.push('/');
+        //      useHistory().push("/");
+        history.push("/");
       })
       .catch(error => {
         console.log(error);
@@ -67,7 +68,7 @@ class RegisterForm extends Component {
           <input type="submit" value="Register" />
         </form>
         <h2>All ready have an account with Skychute?</h2>
-        {/* <a href="/signin">Sign In</a> */}
+        <a href="/">Sign In</a>
       </div>
     );
   }

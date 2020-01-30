@@ -52,6 +52,11 @@ class DisplayImageList extends Component {
               <li key={image._id}>
                 {image.lot} {image.unitNumber} {image.productDescription}
                 <UserAssignmentDropDown imageId={image._id} users={users} />
+                <a
+                  href={`${process.env.REACT_APP_BASEURL}/images/${image.s3key}`}
+                >
+                  Show Floor Plan
+                </a>
               </li>
           );
         })}
