@@ -13,8 +13,8 @@ class UserAssignmentDropDown extends React.Component {
     e.preventDefault();
     LocalApi.post("annotations/",
       {image_id: this.props.imageId, user_id: this.state.value})
-      .then(res => this.state.value="unknown")
       .catch(err => console.log(err));
+    this.setState({value: "unknown"});
   }
 
   render() {
