@@ -15,15 +15,8 @@ export const setUserInfo = (user = null) => {
   };
 };
 
-export const setImages = images => {
-  return {
-    type: "SET_IMAGES",
-    payload: images
-  };
-};
-
 export const fetchImages = () => {
-  return async (dispatch, getState) => {
+  return async (dispatch) => {
     let response = await LocalApi.get("/images");
     return dispatch({
       type: "SET_IMAGES",
@@ -32,13 +25,32 @@ export const fetchImages = () => {
   };
 };
 
-//[Use later? - Unable to use redux to create apartments]
-// export const createImages = image => {
-//   return async (dispatch, getState) => {
-//     const response = await LocalApi.post("/images", image);
-//     return dispatch({
-//       type: "SET_IMAGES",
-//       payload: response.data
-//     });
-//   };
-// };
+export const fetchUsers = () => {
+  return async (dispatch) => {
+    let response = await LocalApi.get("/users");
+    return dispatch({
+      type: "SET_USERS",
+      payload: response.data
+    });
+  }
+}
+
+export const fetchAnnotations = () => {
+  return async (dispatch) => {
+    let response = await LocalApi.get("/annotations");
+    return dispatch({
+      type: "SET_ANNOTATIONS",
+      payload: response.data
+    });
+  }
+}
+
+export const fetchAnnotationDetails = (id) => {
+  return async (dispatch) => {
+    let response = await LocalApi.get("/annotations/" + id);
+    return dispatch({
+      type: "SET_CURRENT_ANNOTATION",
+      payload: response.data
+    });
+  }
+}

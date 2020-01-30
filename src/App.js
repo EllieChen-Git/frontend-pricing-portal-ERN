@@ -6,7 +6,7 @@ import {
   Link,
   useHistory
 } from "react-router-dom";
-import ImageAnnotation from "./components/ImageAnnotation";
+import AnnotationPage from "./components/pages/AnnotationPage";
 import ImageManagement from "./components/images_uploading/ImageManagement";
 import { setAuthToken, setUserInfo } from "./actions";
 import LocalApi from "./apis/LocalApi";
@@ -15,6 +15,7 @@ import SigninForm from "./components/forms/SignInForm";
 
 //import PrivateRoute from "./components/PrivateRoute";
 import { connect } from "react-redux";
+import AnnotationList from "./components/AnnotationList";
 
 function Logout(props) {
   console.log(props);
@@ -73,8 +74,9 @@ class App extends Component {
           <Link to="/">Annotations</Link> | <Link to="/logout">Logout</Link>
           <Switch>
             <Route exact path="/">
-              <ImageAnnotation />
+              <AnnotationList />
             </Route>
+            <Route path = "/annotations/:id" children={<AnnotationPage />} /> 
             <Route path="/logout">
               <Logout {...this.props} />
             </Route>

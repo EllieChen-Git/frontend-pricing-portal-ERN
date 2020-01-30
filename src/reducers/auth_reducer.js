@@ -1,4 +1,5 @@
 const defaultState = {
+  user: null,
   token: sessionStorage.getItem("token") || null
 };
 

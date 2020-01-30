@@ -2,13 +2,10 @@ import React, {Component} from 'react';
 import Tags from './Tags';
 import Canvas from './Canvas'
 
-const imageSrc = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Sample_Floorplan.jpg/800px-Sample_Floorplan.jpg";
-
 class ImageAnnotation extends Component{
     state = {
       selectedTag: null,
-      marks: {},
-      imageSrc: imageSrc
+      marks: {}
     };
 
     // update state with the coordinates
@@ -27,10 +24,9 @@ class ImageAnnotation extends Component{
 
     render() {
       const data = {
-        image: this.state.imageSrc,
+        image: this.props.imageSrc,
         marks: this.state.marks
       };
-      console.log(data)
       return(
         <>
         <div>
@@ -41,7 +37,7 @@ class ImageAnnotation extends Component{
           <Canvas
             marks={this.state.marks}
             handleNewCoordinate={this.handleNewCoordinate}
-            imageSrc = {this.state.imageSrc}
+            imageSrc = {this.props.imageSrc}
           />
         </div>
         <div>
