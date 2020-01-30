@@ -3,6 +3,7 @@
 import React, { Component } from "react";
 // import axios from "axios";
 import LocalApi from "./../../apis/LocalApi";
+import { Form, Button } from "react-bootstrap";
 
 class UploadImageFile extends Component {
   state = {
@@ -47,44 +48,51 @@ class UploadImageFile extends Component {
     const { lot, unitNumber, productDescription } = this.state;
 
     return (
-      <form onSubmit={this.fileUploadHandler}>
-        <div>
-          <label htmlFor="lot">Lot: </label>
-          <input
-            type="text"
+      <Form onSubmit={this.fileUploadHandler}>
+        <Form.Group>
+          <Form.Label>Lot:</Form.Label>
+          <Form.Control
+            type="number"
+            min="1"
             value={lot}
-            name="lot"
+            required="required"
             onChange={event => this.onInputChange("lot", event)}
           />
-        </div>
-        <div>
-          <label htmlFor="unitNumber">Unit Number: </label>
-          <input
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Unit Number:</Form.Label>
+          <Form.Control
             type="text"
             value={unitNumber}
-            name="unitNumber"
+            placeholder="Enter Unit Number"
+            required="required"
             onChange={event => this.onInputChange("unitNumber", event)}
           />
-        </div>
-        <div>
-          <label htmlFor="productDescription">Product Description: </label>
-          <input
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Product Description: </Form.Label>
+          <Form.Control
             type="text"
             value={productDescription}
-            name="productDescription"
+            placeholder="Enter Product Description"
+            required="required"
             onChange={event => this.onInputChange("productDescription", event)}
           />
-        </div>
-        <div>
-          <label>
-            Image:
-            <input type="file" multiple onChange={this.fileSelectedHandler} />
-          </label>
-        </div>
-        <div>
-          <input type="submit" value="Upload File" />
-        </div>
-      </form>
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Label>Floor Plan: </Form.Label>
+          <Form.Control
+            type="file"
+            required="required"
+            multiple
+            onChange={this.fileSelectedHandler}
+          />
+        </Form.Group>
+        <Button variant="info" type="submit">
+          Create Apartments
+        </Button>
+      </Form>
     );
   }
 }
