@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchImages } from "./../../actions";
+import { fetchImages, fetchUsers } from "./../../actions";
 import { Button } from "react-bootstrap";
 
 class DisplayImageList extends Component {
   componentDidMount() {
     this.props.fetchImages();
+    this.props.fetchUsers();
   }
   render() {
-    const { images } = this.props;
+    const { images, users } = this.props;
 
     return (
       <ul>
@@ -42,8 +43,9 @@ class DisplayImageList extends Component {
 
 const mapStateToProps = state => {
   return {
-    images: state.images
+    images: state.images,
+    users: state.admin.users
   };
 };
 
-export default connect(mapStateToProps, { fetchImages })(DisplayImageList);
+export default connect(mapStateToProps, { fetchImages, fetchUsers })(DisplayImageList);
