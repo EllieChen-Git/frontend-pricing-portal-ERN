@@ -5,6 +5,5 @@ import imagesReducer from "./images_reducer";
 
 export default combineReducers({
   auth: authReducer,
-  images: imagesReducer,
-  form: formReducer
+  images: imagesReducer
 });

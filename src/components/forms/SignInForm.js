@@ -58,7 +58,6 @@ class SigninForm extends Component {
         </form>
         <h3>Forgot Password?</h3>
         <h3>Don't Have An Account?</h3>
-        <a href="/register">Register</a>
       </div>
     );
   }
