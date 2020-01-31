@@ -16,6 +16,7 @@ import SigninForm from "./components/forms/SignInForm";
 //import PrivateRoute from "./components/PrivateRoute";
 import { connect } from "react-redux";
 import AnnotationList from "./components/AnnotationList";
+import UserList from "./components/UserList";
 
 function Logout(props) {
   console.log(props);
@@ -56,13 +57,16 @@ class App extends Component {
     if (user.is_admin === true) {
       return (
         <BrowserRouter>
-          <Link to="/">Images</Link> | <Link to="/logout">Logout</Link>
+          <Link to="/">Images</Link> | <Link to="/users">Users</Link> | <Link to="/logout">Logout</Link>
           <Switch>
             <Route exact path="/">
               <ImageManagement />
             </Route>
             <Route path="/logout">
               <Logout {...this.props} />
+            </Route>
+            <Route exact path="/users">
+              <UserList />
             </Route>
           </Switch>
         </BrowserRouter>
