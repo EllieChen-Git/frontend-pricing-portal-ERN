@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import DisplayImageList from "./DisplayImageList";
 import UploadImageFile from "./UploadImageFile";
+import { Container } from "react-bootstrap";
 
 class ImageManagement extends Component {
   // const { token } = this.props;
@@ -13,18 +14,18 @@ class ImageManagement extends Component {
     const { images } = this.state;
 
     return (
-      <>
-        <h1>Image Management</h1>
+      <Container>
+        <h1>Apartment Management</h1>
         <div>
           <h3>Create New Apartments</h3>
           <UploadImageFile
           // token={token}
           // fileUploadHandler={this.fileUploadHandler}
           />
-          <h3>Apartment(Image) List</h3>
+          <h3>Apartment List</h3>
           <DisplayImageList items={images} />
         </div>
-      </>
+      </Container>
     );
   }
 }
