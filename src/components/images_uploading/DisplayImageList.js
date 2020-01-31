@@ -1,4 +1,4 @@
-import React, { Component, useReducer } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchImages, fetchUsers } from "./../../actions";
 import LocalApi from "../../apis/LocalApi";
@@ -61,11 +61,6 @@ class DisplayImageList extends Component {
               <div> Product Description:{image.productDescription}</div>
 
               <UserAssignmentDropDown imageId={image._id} users={users} />
-              {/* <a
-                href={`${process.env.REACT_APP_BASEURL}/images/${image.s3key}`}
-              >
-                Show Floor Plan
-              </a> */}
 
               <Button
                 variant="success"

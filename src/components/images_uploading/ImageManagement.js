@@ -22,7 +22,7 @@ class ImageManagement extends Component {
           // token={token}
           // fileUploadHandler={this.fileUploadHandler}
           />
-          <h3>Apartment List</h3>
+          <h3>List of Apartments</h3>
           <DisplayImageList items={images} />
         </div>
       </Container>
