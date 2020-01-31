@@ -38,7 +38,7 @@ class RegisterForm extends Component {
 
     return (
       <Container>
-        <h1>Register Account</h1>
+        <h1>Register New Account</h1>
         <Form onClick={this.handleClick} onSubmit={this.onFormSubmit}>
           <Form.Group controlId="formBasicUsername">
             <Form.Label>Username:</Form.Label>
@@ -78,7 +78,7 @@ class RegisterForm extends Component {
             Register
           </Button>
         </Form>
-        <h3>All ready have an account with Skychute?</h3>
+        <h3>Already have an account?</h3>
 
         <Button variant="success" href="/">
           Sign In

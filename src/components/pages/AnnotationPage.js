@@ -1,13 +1,13 @@
-import React, {Component}  from "react";
+import React from "react";
 import { connect } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { fetchAnnotationDetails } from "../../actions";
 import ImageAnnotation from "../ImageAnnotation";
 
-function AnnotationPage (props) {
+function AnnotationPage(props) {
   let { id } = useParams();
   const { annotation } = props;
-  if (!annotation || annotation._id != id) {
+  if (!annotation || annotation._id !== id) {
     props.fetchAnnotationDetails(id);
     return <p>Loading...</p>;
   }
@@ -18,8 +18,10 @@ function AnnotationPage (props) {
 
 const mapStateToProps = state => {
   return {
-    annotation: state.annotations.current,
+    annotation: state.annotations.current
   };
 };
 
-export default connect(mapStateToProps, { fetchAnnotationDetails })(AnnotationPage);
+export default connect(mapStateToProps, { fetchAnnotationDetails })(
+  AnnotationPage
+);
