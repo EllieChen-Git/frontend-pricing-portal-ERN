@@ -13,7 +13,9 @@ class UploadImageFile extends Component {
   };
 
   fileUploadHandler = event => {
-    // event.preventDefault(); // uncomment this line so page will refresh after sumbitting the form (i.e. you will see the newly-added apartment). Not sure if it's the right thing to do here lol
+    // event.preventDefault();
+    // uncomment this line so page will refresh after sumbitting the form (i.e. you will see the newly-added apartment).
+    // I don't think this is the right way to do, but at least it achieve the effect we wanted lol
     const { lot, selectedFile, unitNumber, productDescription } = this.state;
     const formData = new FormData();
 

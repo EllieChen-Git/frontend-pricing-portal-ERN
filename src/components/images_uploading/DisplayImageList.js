@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { fetchImages, fetchUsers } from "./../../actions";
 import LocalApi from "../../apis/LocalApi";
 import { ListGroup, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 class UserAssignmentDropDown extends React.Component {
   state = { value: "unknown" };
@@ -45,13 +44,41 @@ class UserAssignmentDropDown extends React.Component {
 }
 
 class DisplayImageList extends Component {
+  constructor(props) {
+    super(props);
+    this.imageDeleteHandler = this.imageDeleteHandler.bind(this);
+  }
+
+  state = {
+    images: this.props.images
+  };
+
   componentDidMount() {
     this.props.fetchImages();
     this.props.fetchUsers();
   }
-  render() {
-    const { images, users } = this.props;
 
+  componentDidUpdate(prevProps) {
+    if (this.props.images !== prevProps.images) {
+      this.setState({ images: this.props.images });
+      console.log(this.props);
+    }
+  }
+
+  imageDeleteHandler = id => {
+    for (let i = 0; i < this.props.images.length; i++) {
+      if (this.props.images[i]._id === id) {
+        LocalApi.delete(`images/${this.props.images[i]._id}`)
+          .then(console.log("Deleted"))
+          .catch(err => console.log(err));
+      }
+    }
+    this.props.fetchImages();
+  };
+
+  render() {
+    const { users } = this.props;
+    const { images } = this.state;
     return (
       <ListGroup>
         {images.map(image => {
@@ -64,12 +91,29 @@ class DisplayImageList extends Component {
               <UserAssignmentDropDown imageId={image._id} users={users} />
 
               <Button
+                style={{ marginLeft: 3 }}
                 variant="success"
                 href={`${process.env.REACT_APP_BASEURL}/images/${image.s3key}`}
               >
                 {/* this one can't be changed to Link to. Btw, why is 'link to' better than href? 'Link to' wil attach url prefix 'http://localhost:3000' to the link you set up. For example, if I change the code below to link to, the url will become 'http://localhost:3000/http://localhost:5000/images/07cea77f-a2ff-422f-ab35-3e918a025262.jpeg', which is not the route we want to have to show image.
                  */}
                 Show Floor Plan
+              </Button>
+              <Button
+                style={{ marginLeft: 3 }}
+                variant="warning"
+                href={`${process.env.REACT_APP_BASEURL}/images/edit/${image._id}`}
+                onClick={this.imageUpdateHandler}
+              >
+                Edit Apartment
+              </Button>
+              <Button
+                id={image._id}
+                style={{ marginLeft: 3 }}
+                variant="danger"
+                onClick={e => this.imageDeleteHandler(image._id)}
+              >
+                Delete
               </Button>
             </ListGroup.Item>
           );
