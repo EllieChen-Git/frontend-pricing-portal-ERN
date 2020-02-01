@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { fetchImages, fetchUsers } from "./../../actions";
 import LocalApi from "../../apis/LocalApi";
 import { ListGroup, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 class UserAssignmentDropDown extends React.Component {
   state = { value: "unknown" };
@@ -66,6 +67,8 @@ class DisplayImageList extends Component {
                 variant="success"
                 href={`${process.env.REACT_APP_BASEURL}/images/${image.s3key}`}
               >
+                {/* this one can't be changed to Link to. Btw, why is 'link to' better than href? 'Link to' wil attach url prefix 'http://localhost:3000' to the link you set up. For example, if I change the code below to link to, the url will become 'http://localhost:3000/http://localhost:5000/images/07cea77f-a2ff-422f-ab35-3e918a025262.jpeg', which is not the route we want to have to show image.
+                 */}
                 Show Floor Plan
               </Button>
             </ListGroup.Item>

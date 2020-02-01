@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { setAuthToken } from "./../../actions";
 import LocalApi from "../../apis/LocalApi";
 import { Form, Button, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 class RegisterForm extends Component {
   state = {
@@ -79,10 +80,9 @@ class RegisterForm extends Component {
           </Button>
         </Form>
         <h3>Already have an account?</h3>
-
-        <Button variant="success" href="/">
-          Sign In
-        </Button>
+        <Link to="/">
+          <Button variant="success">Sign In</Button>
+        </Link>
       </Container>
     );
   }

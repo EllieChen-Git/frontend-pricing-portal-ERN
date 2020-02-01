@@ -3,6 +3,7 @@ import LocalApi from "../../apis/LocalApi";
 import { connect } from "react-redux";
 import { setAuthToken } from "../../actions";
 import { Form, Button, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 class SigninForm extends Component {
   state = {
@@ -68,9 +69,9 @@ class SigninForm extends Component {
         </Form>
         <h3>Don't Have An Account?</h3>
 
-        <Button variant="danger" href="/register">
-          Register
-        </Button>
+        <Link to="/register">
+          <Button variant="danger"> Register</Button>
+        </Link>
       </Container>
     );
   }
