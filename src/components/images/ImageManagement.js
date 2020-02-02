@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import DisplayImageList from "./DisplayImageList";
-import UploadImageFile from "./UploadImageFile";
+import DisplayImage from "./DisplayImage";
+import UploadImage from "./UploadImage";
 import { Container } from "react-bootstrap";
 
 class ImageManagement extends Component {
@@ -16,9 +16,9 @@ class ImageManagement extends Component {
         <h1>Apartment Management</h1>
         <div>
           <h3>Create New Apartments</h3>
-          <UploadImageFile />
+          <UploadImage />
           <h3>List of Apartments</h3>
-          <DisplayImageList items={images} />
+          <DisplayImage items={images} />
         </div>
       </Container>
     );

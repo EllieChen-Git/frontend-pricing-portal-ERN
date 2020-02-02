@@ -1,10 +1,13 @@
-//Unable to make it happen with Redux - might try to refactor to Redux way later
+//This is still not a Redux form - will try to refactor to Redux way later
 
 import React, { Component } from "react";
-import LocalApi from "./../../apis/LocalApi";
+import LocalApi from "../../apis/LocalApi";
 import { Form, Button } from "react-bootstrap";
+// import 'fetchImages' here only to make auto refresh happens (in this way, we don't need to un-comment 'event.preventDefault()' on 'fileUploadHandler' for better user experience)
+import { fetchImages } from "../../actions";
+import { connect } from "react-redux";
 
-class UploadImageFile extends Component {
+class UploadImage extends Component {
   state = {
     selectedFile: null,
     lot: 0,
@@ -12,10 +15,13 @@ class UploadImageFile extends Component {
     productDescription: ""
   };
 
+  componentDidMount() {
+    this.props.fetchImages();
+  }
+
   fileUploadHandler = event => {
-    // event.preventDefault();
-    // uncomment this line so page will refresh after sumbitting the form (i.e. you will see the newly-added apartment).
-    // I don't think this is the right way to do, but at least it achieve the effect we wanted lol
+    event.preventDefault();
+
     const { lot, selectedFile, unitNumber, productDescription } = this.state;
     const formData = new FormData();
 
@@ -31,14 +37,16 @@ class UploadImageFile extends Component {
 
       LocalApi.post("/images", formData).then(res => {
         console.log(res.statusText);
-      });
 
-      //clear input field (reset to original state) after submitting the form
-      this.setState({
-        selectedFile: null,
-        lot: 0,
-        unitNumber: "",
-        productDescription: ""
+        this.props.fetchImages(); //Page will auto fresh (without visiable notice) after you create a new apartment
+
+        this.setState({
+          //clear input field (reset to original state) after submitting the form
+          selectedFile: null,
+          lot: 0,
+          unitNumber: "",
+          productDescription: ""
+        });
       });
     }
   };
@@ -106,4 +114,5 @@ class UploadImageFile extends Component {
   }
 }
 
-export default UploadImageFile;
+// export default UploadImage;
+export default connect(null, { fetchImages })(UploadImage);
