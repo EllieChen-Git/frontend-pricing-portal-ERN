@@ -19,8 +19,8 @@ class ImageAnnotation extends Component{
       let newMarks = [...marks];
       // Erase tag and coordinate info so we send only what API requires.
       for (let i in newMarks) {
-        const tag_id = newMarks[i].tag_id._id;
-        newMarks[i].tag_id = tag_id;
+        const tmp_id = newMarks[i].tag_id._id;
+        newMarks[i].tag_id = tmp_id;
         delete newMarks[i]._id;
         for (let j in newMarks[i].coordinates) {
           delete newMarks[i].coordinates[j]._id;
@@ -30,8 +30,8 @@ class ImageAnnotation extends Component{
       // Find selected tag in the marks and put its reference to
       // selectedMark.
       for (let i in newMarks) {
-        if (newMarks[i].tag_id === selectedTag._id ||
-            newMarks[i].tag_id._id === selectedTag._id) {
+        if (newMarks[i].tag_id === selectedTag._id) {
+          // make reference to an alement in array newMarks
           selectedMark = newMarks[i];
           break;
         }
@@ -55,7 +55,6 @@ class ImageAnnotation extends Component{
         image: this.props.imageSrc,
         marks: this.props.marks
       };
-      console.log("Image URL: " + this.props.imageSrc);
       return(
         <>
         <div>

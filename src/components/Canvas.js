@@ -19,7 +19,6 @@ class Canvas extends Component {
         x: e.nativeEvent.offsetX / currentTargetRect.width,
         y: e.nativeEvent.offsetY / currentTargetRect.height
       };
-      console.log(coordinates);
       this.props.handleNewCoordinate(coordinates);
     }
     
@@ -64,7 +63,7 @@ class Canvas extends Component {
           ref={this.canvasRef}
           // need to search about resolution for images
           width={700} height={600}
-        />;
+        />
       </div>
       );
     };
