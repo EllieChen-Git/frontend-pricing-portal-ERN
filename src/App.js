@@ -59,6 +59,7 @@ class App extends Component {
         </BrowserRouter>
       );
     }
+    // Logged in as admin.
     if (user.is_admin) {
       return (
         <BrowserRouter>
@@ -77,7 +78,9 @@ class App extends Component {
           </Switch>
         </BrowserRouter>
       );
-    } else {
+    }
+    // Logged in as user.
+    if (!user.is_admin) {
       return (
         <BrowserRouter>
           <Link to="/">Annotations</Link> | <Link to="/logout">Logout</Link>

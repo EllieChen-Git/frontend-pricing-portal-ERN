@@ -52,7 +52,6 @@ class Tags extends Component{
     render() {
       let elements = this.state.tags.map(
         (tag) => <Tag key={tag._id} handleSelect={this.props.handleSelect} tag={tag}/>);
-        console.log(elements)
       return (
         <div>
           Tags: {elements} |  
