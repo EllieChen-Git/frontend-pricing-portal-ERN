@@ -1,7 +1,6 @@
 //Unable to make it happen with Redux - might try to refactor to Redux way later
 
 import React, { Component } from "react";
-// import axios from "axios";
 import LocalApi from "./../../apis/LocalApi";
 import { Form, Button } from "react-bootstrap";
 
@@ -14,7 +13,9 @@ class UploadImageFile extends Component {
   };
 
   fileUploadHandler = event => {
-    event.preventDefault();
+    // event.preventDefault();
+    // uncomment this line so page will refresh after sumbitting the form (i.e. you will see the newly-added apartment).
+    // I don't think this is the right way to do, but at least it achieve the effect we wanted lol
     const { lot, selectedFile, unitNumber, productDescription } = this.state;
     const formData = new FormData();
 
@@ -30,6 +31,14 @@ class UploadImageFile extends Component {
 
       LocalApi.post("/images", formData).then(res => {
         console.log(res.statusText);
+      });
+
+      //clear input field (reset to original state) after submitting the form
+      this.setState({
+        selectedFile: null,
+        lot: 0,
+        unitNumber: "",
+        productDescription: ""
       });
     }
   };
