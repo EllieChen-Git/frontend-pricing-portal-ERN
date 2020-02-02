@@ -7,7 +7,8 @@ import {
   useHistory
 } from "react-router-dom";
 import AnnotationPage from "./components/pages/AnnotationPage";
-import ImageManagement from "./components/images_uploading/ImageManagement";
+import ImageManagement from "./components/images/ImageManagement";
+import EditImage from "./components/images/EditImage";
 import { setAuthToken, setUserInfo } from "./actions";
 import LocalApi from "./apis/LocalApi";
 import RegisterPage from "./components/pages/RegisterPage";
@@ -62,12 +63,13 @@ class App extends Component {
     if (user.is_admin) {
       return (
         <BrowserRouter>
-          <Link to="/">Images</Link> | <Link to="/users">Users</Link> |{" "}
+          <Link to="/">Images</Link> | <Link to="/users">Users</Link> |
           <Link to="/logout">Logout</Link>
           <Switch>
             <Route exact path="/">
               <ImageManagement />
             </Route>
+            <Route path="/edit/:id" component={EditImage} />
             <Route path="/logout">
               <Logout {...this.props} />
             </Route>

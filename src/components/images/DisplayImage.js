@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchImages, fetchUsers } from "./../../actions";
+import { fetchImages, fetchUsers } from "../../actions";
 import LocalApi from "../../apis/LocalApi";
 import { ListGroup, Button } from "react-bootstrap";
 
@@ -43,12 +43,7 @@ class UserAssignmentDropDown extends React.Component {
   }
 }
 
-class DisplayImageList extends Component {
-  constructor(props) {
-    super(props);
-    this.imageDeleteHandler = this.imageDeleteHandler.bind(this);
-  }
-
+class DisplayImage extends Component {
   state = {
     images: this.props.images
   };
@@ -71,9 +66,9 @@ class DisplayImageList extends Component {
         LocalApi.delete(`images/${this.props.images[i]._id}`)
           .then(console.log("Deleted"))
           .catch(err => console.log(err));
+        this.props.fetchImages();
       }
     }
-    this.props.fetchImages();
   };
 
   render() {
@@ -95,15 +90,16 @@ class DisplayImageList extends Component {
                 variant="success"
                 href={`${process.env.REACT_APP_BASEURL}/images/${image.s3key}`}
               >
-                {/* this one can't be changed to Link to. Btw, why is 'link to' better than href? 'Link to' wil attach url prefix 'http://localhost:3000' to the link you set up. For example, if I change the code below to link to, the url will become 'http://localhost:3000/http://localhost:5000/images/07cea77f-a2ff-422f-ab35-3e918a025262.jpeg', which is not the route we want to have to show image.
-                 */}
                 Show Floor Plan
               </Button>
+
               <Button
+                id={image._id}
                 style={{ marginLeft: 3 }}
                 variant="warning"
-                href={`${process.env.REACT_APP_BASEURL}/images/edit/${image._id}`}
-                onClick={this.imageUpdateHandler}
+                href={`/edit/${image._id}`}
+                // I tried to change this one to link, but the app will break if I do so. At this moment, I decided to leave it as href.
+                onClick={e => this.imageUpdateHandler(image._id)}
               >
                 Edit Apartment
               </Button>
@@ -131,5 +127,5 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps, { fetchImages, fetchUsers })(
-  DisplayImageList
+  DisplayImage
 );
