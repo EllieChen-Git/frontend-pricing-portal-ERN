@@ -11,9 +11,19 @@ function AnnotationPage(props) {
     props.fetchAnnotationDetails(id);
     return <p>Loading...</p>;
   }
+
+  let handleNewMarks = m => props.fetchAnnotationDetails(id);
+
   const image = annotation.image_id;
   const url = `${process.env.REACT_APP_BASEURL}/images/${image.s3key}`;
-  return <ImageAnnotation imageSrc={url} />;
+  return (
+    <ImageAnnotation 
+      imageSrc={url}
+      id={id}
+      marks={annotation.marks}
+      handleNewMarks={handleNewMarks}
+    />
+  );
 }
 
 const mapStateToProps = state => {

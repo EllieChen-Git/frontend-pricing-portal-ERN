@@ -46,11 +46,12 @@ class Canvas extends Component {
       ctx.drawImage(this.state.image, 0, 0, cv.width, cv.height);
       ctx.fillStyle = "#009900";
       ctx.font = "16px Courier";
-      for(let tag in this.props.marks){
-        for(let i = 0; i < this.props.marks[tag].length; i++){
-          const {x, y} = this.props.marks[tag][i];
+      for(let i in this.props.marks){
+        const mark = this.props.marks[i];
+        for(let j in mark.coordinates){
+          const {x, y} = mark.coordinates[j];
           // the coordinates are normalized, values are between 0 and 1
-          ctx.fillText(tag, x*cv.width, y*cv.height);
+          ctx.fillText(mark.tag_id.title, x*cv.width, y*cv.height);
         };
       };
     }
