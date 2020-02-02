@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchAnnotations } from "../actions";
 import { Container, ListGroup, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 class AnnotationList extends Component {
   componentDidMount() {
@@ -22,12 +23,9 @@ class AnnotationList extends Component {
                   <div> Lot: {image.lot}</div>
                   <div> Unit Number: {image.unitNumber}</div>
                   <div> Product Description:{image.productDescription}</div>
-                  <Button
-                    variant="success"
-                    href={"annotations/" + annotation._id}
-                  >
-                    Go to Annotation
-                  </Button>
+                  <Link to={"annotations/" + annotation._id}>
+                    <Button variant="success"> Go to Annotation</Button>
+                  </Link>
                 </ListGroup.Item>
               );
             })}

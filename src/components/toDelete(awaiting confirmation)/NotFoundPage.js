@@ -1,5 +1,3 @@
-//Copied from Garret's template
-
 import React from "react";
 
 const NotFoundPage = () => {

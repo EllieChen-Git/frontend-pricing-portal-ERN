@@ -3,25 +3,29 @@ import LocalApi from "../../apis/LocalApi";
 import { connect } from "react-redux";
 import { setAuthToken } from "../../actions";
 import { Form, Button, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 class SigninForm extends Component {
   state = {
     username: "",
-    password: ""
+    password: "",
+    error: null
   };
 
   onFormSubmit = async event => {
     event.preventDefault();
+    const { setAuthToken } = this.props;
     const { username, password } = this.state;
+    console.log(this.props);
 
     try {
       const response = await LocalApi.post("/users/login", {
         username,
         password
       });
-      this.props.setAuthToken(response.data.token);
-    } catch (err) {
-      console.log(err);
+      setAuthToken(response.data.token);
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -65,9 +69,9 @@ class SigninForm extends Component {
         </Form>
         <h3>Don't Have An Account?</h3>
 
-        <Button variant="danger" href="/register">
-          Register
-        </Button>
+        <Link to="/register">
+          <Button variant="danger"> Register</Button>
+        </Link>
       </Container>
     );
   }

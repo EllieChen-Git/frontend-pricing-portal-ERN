@@ -11,7 +11,7 @@ import ImageManagement from "./components/images_uploading/ImageManagement";
 import { setAuthToken, setUserInfo } from "./actions";
 import LocalApi from "./apis/LocalApi";
 import RegisterPage from "./components/pages/RegisterPage";
-import SigninForm from "./components/forms/SignInForm";
+import SignInPage from "./components/pages/SignInPage";
 
 //import PrivateRoute from "./components/PrivateRoute";
 import { connect } from "react-redux";
@@ -40,9 +40,14 @@ class App extends Component {
         <BrowserRouter>
           <Link to="/">Sign In</Link> | <Link to="/register">Register</Link>
           <Switch>
-            <Route exact path="/">
-              <SigninForm />
-            </Route>
+            <Route
+              exact
+              path="/"
+              render={props => {
+                return <SignInPage {...props} />;
+              }}
+            />
+
             <Route
               exact
               path="/register"
@@ -54,10 +59,11 @@ class App extends Component {
         </BrowserRouter>
       );
     }
-    if (user.is_admin === true) {
+    if (user.is_admin) {
       return (
         <BrowserRouter>
-          <Link to="/">Images</Link> | <Link to="/users">Users</Link> | <Link to="/logout">Logout</Link>
+          <Link to="/">Images</Link> | <Link to="/users">Users</Link> |{" "}
+          <Link to="/logout">Logout</Link>
           <Switch>
             <Route exact path="/">
               <ImageManagement />
@@ -71,8 +77,7 @@ class App extends Component {
           </Switch>
         </BrowserRouter>
       );
-    }
-    if (!user.is_admin) {
+    } else {
       return (
         <BrowserRouter>
           <Link to="/">Annotations</Link> | <Link to="/logout">Logout</Link>
@@ -80,7 +85,7 @@ class App extends Component {
             <Route exact path="/">
               <AnnotationList />
             </Route>
-            <Route path = "/annotations/:id" children={<AnnotationPage />} /> 
+            <Route path="/annotations/:id" children={<AnnotationPage />} />
             <Route path="/logout">
               <Logout {...this.props} />
             </Route>
