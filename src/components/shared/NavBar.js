@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import "bootswatch/dist/minty/bootstrap.min.css";
 
 class NavBar extends Component {
@@ -75,6 +76,11 @@ class NavBar extends Component {
               <li className="nav-item active">
                 <a className="nav-link" href="/users">
                   Users
+                </a>
+              </li>
+              <li className="nav-item active">
+                <a className="nav-link" href="/annotations">
+                  Review List
                 </a>
               </li>
             </ul>

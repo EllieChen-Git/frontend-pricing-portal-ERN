@@ -10,8 +10,13 @@ class ImageAnnotation extends Component {
 
   // update state with the coordinates
   handleNewCoordinate = coordinates => {
+    if (this.props.isReadOnly === true) {
+      console.log("Read-only annotation.");
+      return;
+    }
     const { selectedTag } = this.state;
     const { marks } = this.props;
+
     if (!selectedTag) {
       console.log("No tag selected.");
       return;
