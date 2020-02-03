@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchAnnotationDetails } from "../../actions";
-import ImageAnnotation from "../ImageAnnotation";
+import { fetchAnnotationDetails } from "./../../actions";
+import ImageAnnotation from "./ImageAnnotation";
 
 function AnnotationPage(props) {
   let { id } = useParams();
@@ -15,9 +15,9 @@ function AnnotationPage(props) {
   let handleNewMarks = m => props.fetchAnnotationDetails(id);
 
   const image = annotation.image_id;
-  const url = `${process.env.REACT_APP_BASEURL}/images/${image.s3key}`;
+  const url = `${process.env.REACT_APP_BASEURL}/images/${image._id}/file`;
   return (
-    <ImageAnnotation 
+    <ImageAnnotation
       imageSrc={url}
       id={id}
       marks={annotation.marks}

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import LocalApi from "../../apis/LocalApi";
 import { connect } from "react-redux";
-import { setAuthToken } from "../../actions";
 import { Form, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { setAuthToken } from "./../../actions";
+import LocalApi from "./../../apis/LocalApi";
 
 class SigninForm extends Component {
   state = {
@@ -16,7 +16,6 @@ class SigninForm extends Component {
     event.preventDefault();
     const { setAuthToken } = this.props;
     const { username, password } = this.state;
-    console.log(this.props);
 
     try {
       const response = await LocalApi.post("/users/login", {

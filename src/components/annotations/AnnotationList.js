@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchAnnotations } from "../actions";
 import { Container, ListGroup, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { fetchAnnotations } from "./../../actions";
 
 class AnnotationList extends Component {
   componentDidMount() {

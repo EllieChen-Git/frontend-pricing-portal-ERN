@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import DisplayImage from "./DisplayImage";
+import DisplayImages from "./DisplayImages";
 import UploadImage from "./UploadImage";
 import { Container } from "react-bootstrap";
 
@@ -14,11 +14,13 @@ class ImageManagement extends Component {
     return (
       <Container>
         <h1>Apartment Management</h1>
+        <hr />
         <div>
           <h3>Create New Apartments</h3>
           <UploadImage />
+          <hr />
           <h3>List of Apartments</h3>
-          <DisplayImage items={images} />
+          <DisplayImages items={images} />
         </div>
       </Container>
     );

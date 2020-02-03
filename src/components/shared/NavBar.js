@@ -1,33 +1,136 @@
-import React, { Component } from 'react';
-import { Navbar, Nav, } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { Component } from "react";
+import "bootswatch/dist/minty/bootstrap.min.css";
 
 class NavBar extends Component {
-    render() {
-    return (
-      <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="/">SkyShute</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="signin">Sign In</Nav.Link>
-            <Nav.Link href="register">Register</Nav.Link>
-            {/* }
-            <Nav.Link href="createprojects">Create Projects</Nav.Link>
-            <Nav.Link href="createbuildings">Create Buildings</Nav.Link>
-            <Nav.Link href="createlevels">Create Levels</Nav.Link>
-            <Nav.Link href="createapartments">Create Apartments</Nav.Link>
-            <Nav.Link href="usermanagement">User Management</Nav.Link>
-            <Nav.Link href="userdashboard">User Dashboard</Nav.Link>
-            <Nav.Link href="userbuildings">User Buildings</Nav.Link>
-            {*/}
-            <Nav.Link href="annoate">User Annotation</Nav.Link>
-            <Nav.Link href="images">Manage Images</Nav.Link>
-            </Nav>
-            </Navbar.Collapse>
-            </Navbar>
-        )
+  render() {
+    const { user } = this.props;
+
+    if (!user) {
+      return (
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarColor02"
+            aria-controls="navbarColor02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+
+          <div className="collapse navbar-collapse" id="navbarColor02">
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item active">
+                <a className="nav-link" href="/home">
+                  Home <span className="sr-only">(current)</span>
+                </a>
+              </li>
+
+              <li className="nav-item active">
+                <a className="nav-link" href="/">
+                  Sign In
+                </a>
+              </li>
+              <li className="nav-item active">
+                <a className="nav-link" href="/register">
+                  Register
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      );
     }
+
+    if (user.is_admin) {
+      return (
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarColor02"
+            aria-controls="navbarColor02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+
+          <div className="collapse navbar-collapse" id="navbarColor02">
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item active">
+                <a className="nav-link" href="/home">
+                  Home <span className="sr-only">(current)</span>
+                </a>
+              </li>
+
+              <li className="nav-item active">
+                <a className="nav-link" href="/">
+                  Projects
+                </a>
+              </li>
+              <li className="nav-item active">
+                <a className="nav-link" href="/users">
+                  Users
+                </a>
+              </li>
+            </ul>
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item active">
+                <a className="nav-link" href="/logout">
+                  Log Out
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      );
+    }
+
+    if (!user.is_admin) {
+      return (
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarColor02"
+            aria-controls="navbarColor02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+
+          <div className="collapse navbar-collapse" id="navbarColor02">
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item active">
+                <a className="nav-link" href="/home">
+                  Home <span className="sr-only">(current)</span>
+                </a>
+              </li>
+
+              <li className="nav-item active">
+                <a className="nav-link" href="/">
+                  Annotation
+                </a>
+              </li>
+            </ul>
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item active">
+                <a className="nav-link" href="/logout">
+                  Log Out
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      );
+    }
+  }
 }
 
 export default NavBar;
