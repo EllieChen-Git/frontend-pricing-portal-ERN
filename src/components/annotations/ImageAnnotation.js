@@ -65,10 +65,12 @@ class ImageAnnotation extends Component {
     return (
       <>
         <div>
-          <Tags
-            handleSelect={t => this.setState({ selectedTag: t })}
-            selectedTag={this.state.selectedTag}
-          />
+          {!this.props.isReadOnly && (
+            <Tags
+              handleSelect={t => this.setState({ selectedTag: t })}
+              selectedTag={this.state.selectedTag}
+            />
+          )}
           <Canvas
             marks={this.props.marks}
             handleNewCoordinate={this.handleNewCoordinate}

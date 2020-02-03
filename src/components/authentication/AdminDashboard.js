@@ -5,6 +5,7 @@ import EditImage from "./../images/EditImage";
 import UserList from "./UserList";
 import Navbar from "./../shared/NavBar";
 import ReviewList from "./../annotations/ReviewList";
+import AnnotationPage from "./../annotations/AnnotationPage";
 
 function Logout(props) {
   props.setAuthToken();
@@ -34,6 +35,7 @@ class UserIsAdmin extends Component {
         <Route exact path="/annotations">
           <ReviewList />
         </Route>
+        <Route path="/annotations/:id" children={<AnnotationPage />} />
       </BrowserRouter>
     );
   }

@@ -28,7 +28,7 @@ class RegularUser extends Component {
         <Navbar {...this.props} />
         <Switch>
           <Route exact path="/">
-            <AnnotationList />
+            <AnnotationList {...this.props} />
           </Route>
           <Route path="/annotations/:id" children={<AnnotationPage />} />
           <Route path="/logout">

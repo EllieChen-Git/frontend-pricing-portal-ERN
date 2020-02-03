@@ -41,7 +41,6 @@ function AnnotationPage(props) {
     (annotation.status !== "NEW" && annotation.status !== "IN_PROGRESS");
 
   // Build image URL.
-
   const image = annotation.image_id;
   const url = `${process.env.REACT_APP_BASEURL}/images/${image._id}/file`;
 
