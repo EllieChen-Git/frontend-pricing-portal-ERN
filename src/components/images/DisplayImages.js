@@ -43,7 +43,7 @@ class UserAssignmentDropDown extends React.Component {
   }
 }
 
-class DisplayImage extends Component {
+class DisplayImages extends Component {
   state = {
     images: this.props.images,
     is_active: true
@@ -100,7 +100,6 @@ class DisplayImage extends Component {
                 style={{ marginLeft: 3 }}
                 variant="warning"
                 href={`/edit/${image._id}`}
-                onClick={e => this.imageUpdateHandler(image._id)}
               >
                 Edit Apartment
               </Button>
@@ -128,5 +127,5 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps, { fetchImages, fetchUsers })(
-  DisplayImage
+  DisplayImages
 );
