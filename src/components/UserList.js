@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { fetchUsers } from "./../actions";
+import LocalApi from '../apis/LocalApi';
 // import { ToggleButtonGroup } from 'react-bootstrap';
 
 class UserList extends Component { 
@@ -9,9 +10,14 @@ class UserList extends Component {
     
     //local api- post to backend on click. 
     usersBackend = () => {
-        console.log(this.state.updateAdmin) 
-    }
+        const {updateAdmin } = this.state
+        console.log(updateAdmin)
+        LocalApi.put("/users", {updateAdmin})
+        .then((r) => console.log("This is working fine!"))
+        .catch((e) => console.log(e))
+    };
     
+
     
     // reloadTags = () => {
     //     LocalApi.get("/tags")
@@ -23,6 +29,7 @@ class UserList extends Component {
     handleChange = (event) => {
      if (this.state.updateAdmin.includes(event.target.name)) {
          this.setState({ updateAdmin: this.state.updateAdmin.filter(element => element !== event.target.name) })
+         console.log(this.state.updateAdmin)
     
      } else {
         this.setState({updateAdmin: [...this.state.updateAdmin, event.target.name]});
@@ -37,7 +44,6 @@ class UserList extends Component {
 
     componentDidUpdate() {
         // console.log(this.state.updateAdmin)
-
         if (this.state.users !== this.props.users) {
             this.setState( {users: this.props.users} )
         }
