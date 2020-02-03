@@ -23,6 +23,7 @@ class AnnotationList extends Component {
                   <div> Lot: {image.lot}</div>
                   <div> Unit Number: {image.unitNumber}</div>
                   <div> Product Description:{image.productDescription}</div>
+                  <div> Status:{annotation.status}</div>
                   <Link to={"annotations/" + annotation._id}>
                     <Button variant="success"> Go to Annotation</Button>
                   </Link>
