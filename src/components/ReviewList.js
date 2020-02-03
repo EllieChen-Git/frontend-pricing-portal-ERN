@@ -4,7 +4,7 @@ import { fetchAnnotations } from "../actions";
 import { Container, ListGroup, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-class AnnotationList extends Component {
+class ReviewList extends Component {
   componentDidMount() {
     this.props.fetchAnnotations();
   }
@@ -13,11 +13,14 @@ class AnnotationList extends Component {
     const { annotations } = this.props;
     return (
       <Container>
-        <h1>Apartments Assigned to Me</h1>
+        <h1>Review List</h1>
         <ListGroup>
           {annotations &&
             annotations.map(annotation => {
               const image = annotation.image_id;
+              if (annotation.status !== "REVIEW") {
+                return null; //check remove null
+              }
               return (
                 <ListGroup.Item key={annotation._id}>
                   <div> Lot: {image.lot}</div>
@@ -42,4 +45,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { fetchAnnotations })(AnnotationList);
+export default connect(mapStateToProps, { fetchAnnotations })(ReviewList);

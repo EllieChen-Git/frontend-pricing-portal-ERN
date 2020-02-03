@@ -17,6 +17,7 @@ import SignInPage from "./components/pages/SignInPage";
 //import PrivateRoute from "./components/PrivateRoute";
 import { connect } from "react-redux";
 import AnnotationList from "./components/AnnotationList";
+import ReviewList from "./components/ReviewList";
 import UserList from "./components/UserList";
 
 function Logout(props) {
@@ -65,12 +66,17 @@ class App extends Component {
       return (
         <BrowserRouter>
           <Link to="/">Images</Link> | <Link to="/users">Users</Link> |
+          <Link to="/annotations">Review List</Link> | 
           <Link to="/logout">Logout</Link>
           <Switch>
             <Route exact path="/">
               <ImageManagement />
             </Route>
             <Route path="/edit/:id" component={EditImage} />
+            <Route exact path="/annotations">
+              <ReviewList />
+            </Route>
+            <Route path="/annotations/:id" children={<AnnotationPage />} />
             <Route path="/logout">
               <Logout {...this.props} />
             </Route>
