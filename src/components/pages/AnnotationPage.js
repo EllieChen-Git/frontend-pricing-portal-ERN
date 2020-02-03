@@ -14,7 +14,12 @@ function AnnotationPage(props) {
   }
 
   let handleNewMarks = m => props.fetchAnnotationDetails(id);
+  
   let handleSubmit = e => LocalApi.patch("/annotations/" + id + "/review/")
+    .then(res => props.fetchAnnotationDetails(id))
+    .catch(err => console.log(err));
+
+  let handleApprove = e => LocalApi.patch("/annotations/" + id + "/approve/")
     .then(res => props.fetchAnnotationDetails(id))
     .catch(err => console.log(err));
 
@@ -35,6 +40,9 @@ function AnnotationPage(props) {
       <h2>Status: {annotation.status}</h2>
       {annotation.status === "IN_PROGRESS" && isAuthor && 
         <button onClick={handleSubmit}>Submit for review</button>
+      }
+      {annotation.status === "REVIEW" && !isAuthor && 
+        <button onClick={handleApprove}>Approve</button>
       }
       <hr />
       <ImageAnnotation 

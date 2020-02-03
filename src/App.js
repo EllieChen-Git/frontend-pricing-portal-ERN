@@ -76,6 +76,7 @@ class App extends Component {
             <Route exact path="/annotations">
               <ReviewList />
             </Route>
+            <Route path="/annotations/:id" children={<AnnotationPage />} />
             <Route path="/logout">
               <Logout {...this.props} />
             </Route>
