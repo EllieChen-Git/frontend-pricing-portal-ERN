@@ -15,11 +15,17 @@ function AnnotationPage(props) {
 
   let handleNewMarks = m => props.fetchAnnotationDetails(id);
   
+  // Submit annotation by regular user
   let handleSubmit = e => LocalApi.patch("/annotations/" + id + "/review/")
     .then(res => props.fetchAnnotationDetails(id))
     .catch(err => console.log(err));
-
+  
+  // Annotation review process by admin 
   let handleApprove = e => LocalApi.patch("/annotations/" + id + "/approve/")
+    .then(res => props.fetchAnnotationDetails(id))
+    .catch(err => console.log(err));
+
+  let handleReject = e => LocalApi.patch("/annotations/" + id + "/reject/")
     .then(res => props.fetchAnnotationDetails(id))
     .catch(err => console.log(err));
 
@@ -43,6 +49,9 @@ function AnnotationPage(props) {
       }
       {annotation.status === "REVIEW" && !isAuthor && 
         <button onClick={handleApprove}>Approve</button>
+      }
+      {annotation.status === "REVIEW" && !isAuthor && 
+        <button onClick={handleReject}>Reject</button>
       }
       <hr />
       <ImageAnnotation 
