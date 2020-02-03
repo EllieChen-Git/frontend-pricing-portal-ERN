@@ -4,25 +4,19 @@ import { Form, Button, Container } from "react-bootstrap";
 
 class EditImage extends Component {
   state = {
-    selectedFile: null,
     lot: 0,
     unitNumber: "",
     productDescription: ""
   };
 
-  //When loading this page, retrive the data for this particular apartment from backend
   componentDidMount() {
-    LocalApi.get(`${process.env.REACT_APP_BASEURL}/images/`)
+    LocalApi.get("/images/" + this.props.match.params.id)
       .then(response => {
-        for (let i = 0; i < response.data.length; i++) {
-          if (response.data[i]._id === this.props.match.params.id) {
-            this.setState({
-              lot: response.data[i].lot,
-              unitNumber: response.data[i].unitNumber,
-              productDescription: response.data[i].productDescription
-            });
-          }
-        }
+        this.setState({
+          lot: response.data.lot,
+          unitNumber: response.data.unitNumber,
+          productDescription: response.data.productDescription
+        });
       })
       .catch(function(error) {
         console.log(error);
@@ -31,11 +25,10 @@ class EditImage extends Component {
 
   imageEditHandler = event => {
     event.preventDefault();
-    const { lot, selectedFile, unitNumber, productDescription } = this.state;
+    const { lot, unitNumber, productDescription } = this.state;
 
-    LocalApi.post(`/images/edit/${this.props.match.params.id}`, {
+    LocalApi.patch(`/images/${this.props.match.params.id}`, {
       lot: lot,
-      selectedFile: selectedFile[0].name,
       unitNumber: unitNumber,
       productDescription: productDescription
     })
@@ -46,12 +39,6 @@ class EditImage extends Component {
         console.log(err);
       });
     this.props.history.push("/");
-  };
-
-  fileSelectedHandler = event => {
-    this.setState({
-      selectedFile: event.target.files
-    });
   };
 
   onInputChange = (name, event) => {
@@ -98,15 +85,6 @@ class EditImage extends Component {
             />
           </Form.Group>
 
-          <Form.Group>
-            <Form.Label>Floor Plan: </Form.Label>
-            <Form.Control
-              type="file"
-              required="required"
-              multiple
-              onChange={this.fileSelectedHandler}
-            />
-          </Form.Group>
           <Button variant="info" type="submit">
             Edit Apartments
           </Button>

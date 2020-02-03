@@ -45,7 +45,8 @@ class UserAssignmentDropDown extends React.Component {
 
 class DisplayImage extends Component {
   state = {
-    images: this.props.images
+    images: this.props.images,
+    is_active: true
   };
 
   componentDidMount() {
@@ -56,19 +57,20 @@ class DisplayImage extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.images !== prevProps.images) {
       this.setState({ images: this.props.images });
-      console.log(this.props);
     }
   }
 
   imageDeleteHandler = id => {
-    for (let i = 0; i < this.props.images.length; i++) {
-      if (this.props.images[i]._id === id) {
-        LocalApi.delete(`images/${this.props.images[i]._id}`)
-          .then(console.log("Deleted"))
-          .catch(err => console.log(err));
-        this.props.fetchImages();
-      }
-    }
+    LocalApi.patch(`/images/${id}/inactive`, {
+      is_active: false
+    })
+      .then(res => {
+        console.log(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+    this.props.fetchImages();
   };
 
   render() {
@@ -88,7 +90,7 @@ class DisplayImage extends Component {
               <Button
                 style={{ marginLeft: 3 }}
                 variant="success"
-                href={`${process.env.REACT_APP_BASEURL}/images/${image.s3key}`}
+                href={`${process.env.REACT_APP_BASEURL}/images/${image._id}/file`}
               >
                 Show Floor Plan
               </Button>
@@ -98,7 +100,6 @@ class DisplayImage extends Component {
                 style={{ marginLeft: 3 }}
                 variant="warning"
                 href={`/edit/${image._id}`}
-                // I tried to change this one to link, but the app will break if I do so. At this moment, I decided to leave it as href.
                 onClick={e => this.imageUpdateHandler(image._id)}
               >
                 Edit Apartment
