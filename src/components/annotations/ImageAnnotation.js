@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Tags from "./Tags";
 import Canvas from "./Canvas";
 import LocalApi from "./../../apis/LocalApi";
+import Marks from "./Marks"
 
 class ImageAnnotation extends Component {
   state = {
@@ -75,6 +76,9 @@ class ImageAnnotation extends Component {
             marks={this.props.marks}
             handleNewCoordinate={this.handleNewCoordinate}
             imageSrc={this.props.imageSrc}
+          />
+          <Marks
+            marks={this.props.marks}
           />
         </div>
         <div>
