@@ -9,33 +9,58 @@ class UserList extends Component {
 
   usersBackend = () => {
     const { updateAdmin } = this.state;
-    console.log(updateAdmin);
     LocalApi.put("/users", { updateAdmin })
-      .then(r => console.log("This is working fine!"))
-      .catch(e => console.log(e));
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+  };
+
+  renderUsersList = () => {
+    const { users } = this.state;
+    return users.map(user => {
+      return (
+        <ListGroup.Item key={user._id}>
+          <div>Username: {user.username}</div>
+          Email: {user.email}
+          <input
+            onChange={this.handleChange}
+            type="checkbox"
+            name={user._id}
+            checked={user.is_admin}
+          ></input>
+        </ListGroup.Item>
+      );
+    });
+  };
+  findByIdAndUpdate = id => {
+    this.setState(state => {
+      const newUsers = state.users.map(user => {
+        if (id === user._id) {
+          user.is_admin = !user.is_admin;
+        }
+        return user;
+      });
+      return { users: newUsers };
+    });
   };
 
   handleChange = event => {
+    this.findByIdAndUpdate(event.target.name);
     if (this.state.updateAdmin.includes(event.target.name)) {
       this.setState({
         updateAdmin: this.state.updateAdmin.filter(
           element => element !== event.target.name
         )
       });
-      console.log(this.state.updateAdmin);
     } else {
       this.setState({
         updateAdmin: [...this.state.updateAdmin, event.target.name]
       });
-      console.log("line 28 is running");
     }
-    console.log(this.state.updateAdmin);
   };
 
   componentDidMount() {
     this.props.fetchUsers();
   }
-
   componentDidUpdate() {
     if (this.state.users !== this.props.users) {
       this.setState({ users: this.props.users });
@@ -43,27 +68,12 @@ class UserList extends Component {
   }
 
   render() {
-    const { users } = this.state;
     return (
       <Container>
         <h1>User Management</h1>
         <hr />
-        <ListGroup>
-          {users.map(user => {
-            return (
-              <ListGroup.Item key={user._id}>
-                <div>Username: {user.username}</div>
-                Email: {user.email}
-                <input
-                  onChange={this.handleChange}
-                  type="checkbox"
-                  name={user._id}
-                ></input>
-              </ListGroup.Item>
-            );
-          })}
-        </ListGroup>
         <button onClick={this.usersBackend}>Grant Admin Access</button>
+        <ListGroup>{this.renderUsersList()}</ListGroup>
       </Container>
     );
   }
