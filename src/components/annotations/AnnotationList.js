@@ -14,7 +14,7 @@ class AnnotationList extends Component {
     // console.log(this.props);
     return (
       <Container>
-        <h1>Apartments Assigned to Me</h1>
+        <h1 className="text-center">Apartments Assigned to Me</h1>
         <ListGroup>
           {annotations &&
             annotations.map(annotation => {

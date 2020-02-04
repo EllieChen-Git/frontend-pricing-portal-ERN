@@ -46,7 +46,7 @@ function AnnotationPage(props) {
 
   return (
     <>
-      <h2>Status: {annotation.status}</h2>
+      <h2 className="text-center">Annotation Status: {annotation.status}</h2>
       {annotation.status === "IN_PROGRESS" && isAuthor && (
         <button onClick={handleSubmit}>Submit for review</button>
       )}

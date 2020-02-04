@@ -13,7 +13,7 @@ class ImageManagement extends Component {
 
     return (
       <Container>
-        <h1>Apartment Management</h1>
+        <h1 className="text-center">Apartment Management</h1>
         <hr />
         <div>
           <h3>Create New Apartments</h3>

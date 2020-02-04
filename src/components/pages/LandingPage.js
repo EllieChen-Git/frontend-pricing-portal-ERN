@@ -5,20 +5,16 @@ class LandingPage extends Component {
   render() {
     return (
       <Container>
+        <h1 className="text-center">Pricing Portal</h1>
+
         <img src="landingpageimage.png" alt="Sydney nightview" />
-        <h1>Company</h1>
-        <p>
-          SkyChute, is a Sydney based technology company that makes software for
-          the property industry. SkyChutes' software, is breaking new ground and
-          changing the way technology and the building industry relates
-        </p>
         <h2>Purpose</h2>
         <p>
-          The purpose of this website is image annotation. We hope that through
-          the use of this software, various professionals within the
-          construction industry will be better able to price their inventory of
-          units and properties. This will enable developers and other intrested
-          parties to solve problems relating to how best to price their stock.
+          The purpose of this website is to allow accurate manual image
+          annotation of property features within apartment floor plans, in order
+          to more effectively evaluate apartment pricing. In the future, this
+          will also allow future incoporation with computer vision and machine
+          learning.
         </p>
       </Container>
     );

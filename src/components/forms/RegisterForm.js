@@ -39,7 +39,7 @@ class RegisterForm extends Component {
 
     return (
       <Container>
-        <h1>Register New Account</h1>
+        <h1 className="text-center">Register New Account</h1>
         <Form onClick={this.handleClick} onSubmit={this.onFormSubmit}>
           <Form.Group controlId="formBasicUsername">
             <Form.Label>Username:</Form.Label>

@@ -37,7 +37,7 @@ class SigninForm extends Component {
 
     return (
       <Container>
-        <h1>Sign In</h1>
+        <h1 className="text-center"> Sign In</h1>
         <Form onClick={this.handleClick} onSubmit={this.onFormSubmit}>
           <Form.Group controlId="formBasicUsername">
             <Form.Label>Username:</Form.Label>

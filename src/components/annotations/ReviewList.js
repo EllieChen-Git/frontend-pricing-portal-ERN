@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import { connect } from "react-redux";
 import { fetchAnnotations } from "./../../actions";
 import { Container, ListGroup, Button } from "react-bootstrap";
@@ -14,7 +13,7 @@ class ReviewList extends Component {
     const { annotations } = this.props;
     return (
       <Container>
-        <h1>Review List</h1>
+        <h1 className="text-center">Review List</h1>
         <ListGroup>
           {annotations &&
             annotations.map(annotation => {
