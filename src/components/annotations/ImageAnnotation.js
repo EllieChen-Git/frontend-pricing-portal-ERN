@@ -62,20 +62,21 @@ class ImageAnnotation extends Component {
   }
 
   handleDeleteCoordinates = (coordinates) => {
-    // console.log(coords)
-    // console.log("for delete" + coordinates)
     const { marks } = this.props;
-    console.log(marks)
-    
     let result = []
-
     for(let i in marks){
       result.push({coordinates: []})
       for(let j in marks[i].coordinates){
-        if(JSON.stringify(marks[i].coordinates[j]) === JSON.stringify(coordinates)){
+        // skip the coordinates we are deleting
+        if(marks[i].coordinates[j]._id === coordinates._id){
           continue;
         }
-        result[i].coordinates.push(marks[i].coordinates[j])
+        result[i].coordinates.push(
+          {
+            x: marks[i].coordinates[j].x, 
+            y: marks[i].coordinates[j].y
+          }
+        );
       }
       result[i].tag_id = marks[i].tag_id._id
     }
@@ -83,8 +84,6 @@ class ImageAnnotation extends Component {
     LocalApi.put(path, { marks: result })
       .then(res => this.props.handleNewMarks(res.data))
       .catch(err => console.log(err));
-  
-    
   }
 
   render() {

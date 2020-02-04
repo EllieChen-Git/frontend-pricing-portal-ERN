@@ -15,15 +15,8 @@ function Coordinates(props){
     </p>
     </>
   )
-  }
+}
   
-  // onMouseEnter={HandleMouseEnter}
-  // onMouseLeave={HandleMouseLeave}
-
-  // onMouseOut={HandleMouseOut}
-  // onMouseOver={HandleMouseOver}
-  
-
 
 function Marks(props){
   return(
