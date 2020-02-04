@@ -41,7 +41,7 @@ class SigninForm extends Component {
         <Form onClick={this.handleClick} onSubmit={this.onFormSubmit}>
           <Form.Group controlId="formBasicUsername">
             <Form.Label>Username:</Form.Label>
-            <Form.Control
+            <Form.Control className = "username"
               type="text"
               value={username}
               placeholder="Enter Username"
@@ -52,7 +52,7 @@ class SigninForm extends Component {
           </Form.Group>
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Password:</Form.Label>
-            <Form.Control
+            <Form.Control className = "password"
               type="password"
               placeholder="Enter Password"
               autoComplete="current-password"

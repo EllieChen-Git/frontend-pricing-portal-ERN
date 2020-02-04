@@ -43,7 +43,7 @@ class RegisterForm extends Component {
         <Form onClick={this.handleClick} onSubmit={this.onFormSubmit}>
           <Form.Group controlId="formBasicUsername">
             <Form.Label>Username:</Form.Label>
-            <Form.Control
+            <Form.Control className="username"
               type="text"
               value={username}
               autoComplete="current-username"
@@ -53,9 +53,9 @@ class RegisterForm extends Component {
             />
           </Form.Group>
 
-          <Form.Group controlId="formBasicEmail">
+          <Form.Group  controlId="formBasicEmail">
             <Form.Label>Email:</Form.Label>
-            <Form.Control
+            <Form.Control className="email"
               type="email"
               value={email}
               autoComplete="current-email"
@@ -66,7 +66,7 @@ class RegisterForm extends Component {
           </Form.Group>
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Password:</Form.Label>
-            <Form.Control
+            <Form.Control className="password"
               type="password"
               placeholder="Enter Password"
               autoComplete="current-password"
