@@ -43,12 +43,21 @@ class Canvas extends Component {
       const ctx = cv.getContext("2d");
       ctx.clearRect(0, 0, cv.width, cv.height);
       ctx.drawImage(this.state.image, 0, 0, cv.width, cv.height);
-      ctx.fillStyle = "#009900";
-      ctx.font = "16px Courier";
+      
       for(let i in this.props.marks){
         const mark = this.props.marks[i];
         for(let j in mark.coordinates){
+          ctx.fillStyle = "#009900";
+          ctx.font = "16px Courier";
           const {x, y} = mark.coordinates[j];
+          
+          if(this.props.hoveredCoordinates){
+            if (x === this.props.hoveredCoordinates.x && y === this.props.hoveredCoordinates.y){
+              ctx.fillStyle = "#990000";
+              ctx.font = "25px Courier";
+            }
+          }
+          
           // the coordinates are normalized, values are between 0 and 1
           ctx.fillText(mark.tag_id.title, x*cv.width, y*cv.height);
         };
@@ -56,6 +65,7 @@ class Canvas extends Component {
     }
 
     render() {
+      
       return(
         <div>
         <canvas

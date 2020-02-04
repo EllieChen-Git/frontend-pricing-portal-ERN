@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import Tags from "./Tags";
 import Canvas from "./Canvas";
 import LocalApi from "./../../apis/LocalApi";
+import Marks from "./Marks"
 
 class ImageAnnotation extends Component {
   state = {
-    selectedTag: null
+    selectedTag: null,
+    hoveredCoordinates: null
   };
 
   // update state with the coordinates
@@ -55,13 +57,47 @@ class ImageAnnotation extends Component {
       .catch(err => console.log(err));
   };
 
+  handleHoverCoordinates = (coordinates) => {
+    this.setState({hoveredCoordinates: coordinates})
+  }
+
+  handleDeleteCoordinates = (coordinates) => {
+    const { marks } = this.props;
+    let result = []
+    for(let i in marks){
+      let resultMark = {
+        tag_id: marks[i].tag_id._id,
+        coordinates: []
+      };
+      for(let j in marks[i].coordinates){
+        // skip the coordinates we are deleting
+        if(marks[i].coordinates[j]._id === coordinates._id){
+          continue;
+        }
+        resultMark.coordinates.push(
+          {
+            x: marks[i].coordinates[j].x, 
+            y: marks[i].coordinates[j].y
+          }
+        );
+      }
+      // Don't add empty marks.
+      if (resultMark.coordinates.length > 0) {
+        result.push(resultMark);
+      }
+    }
+    const path = "annotations/" + this.props.id + "/marks";
+    LocalApi.put(path, { marks: result })
+      .then(res => this.props.handleNewMarks(res.data))
+      .catch(err => console.log(err));
+  }
+
   render() {
     const data = {
       image: this.props.imageSrc,
       marks: this.props.marks
     };
 
-    console.log(this.props.id);
     return (
       <>
         <div>
@@ -75,6 +111,12 @@ class ImageAnnotation extends Component {
             marks={this.props.marks}
             handleNewCoordinate={this.handleNewCoordinate}
             imageSrc={this.props.imageSrc}
+            hoveredCoordinates={this.state.hoveredCoordinates}
+          />
+          <Marks
+            marks={this.props.marks}
+            handleHoverCoordinates={this.handleHoverCoordinates}
+            handleDeleteCoordinates={this.handleDeleteCoordinates}
           />
         </div>
         <div>
