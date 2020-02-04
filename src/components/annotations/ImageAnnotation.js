@@ -65,20 +65,26 @@ class ImageAnnotation extends Component {
     const { marks } = this.props;
     let result = []
     for(let i in marks){
-      result.push({coordinates: []})
+      let resultMark = {
+        tag_id: marks[i].tag_id._id,
+        coordinates: []
+      };
       for(let j in marks[i].coordinates){
         // skip the coordinates we are deleting
         if(marks[i].coordinates[j]._id === coordinates._id){
           continue;
         }
-        result[i].coordinates.push(
+        resultMark.coordinates.push(
           {
             x: marks[i].coordinates[j].x, 
             y: marks[i].coordinates[j].y
           }
         );
       }
-      result[i].tag_id = marks[i].tag_id._id
+      // Don't add empty marks.
+      if (resultMark.coordinates.length > 0) {
+        result.push(resultMark);
+      }
     }
     const path = "annotations/" + this.props.id + "/marks";
     LocalApi.put(path, { marks: result })
