@@ -6,7 +6,8 @@ import Marks from "./Marks"
 
 class ImageAnnotation extends Component {
   state = {
-    selectedTag: null
+    selectedTag: null,
+    hoveredCoordinates: null
   };
 
   // update state with the coordinates
@@ -56,13 +57,19 @@ class ImageAnnotation extends Component {
       .catch(err => console.log(err));
   };
 
+  handleHoverCoordinates = (coordinates) => {
+    // console.log(coordinates);
+    this.setState({hoveredCoordinates: coordinates})
+    console.log(this.state.hoveredCoordinates)
+  }
+
+
   render() {
     const data = {
       image: this.props.imageSrc,
       marks: this.props.marks
     };
 
-    console.log(this.props.id);
     return (
       <>
         <div>
@@ -76,9 +83,11 @@ class ImageAnnotation extends Component {
             marks={this.props.marks}
             handleNewCoordinate={this.handleNewCoordinate}
             imageSrc={this.props.imageSrc}
+            hoveredCoordinates={this.state.hoveredCoordinates}
           />
           <Marks
             marks={this.props.marks}
+            handleHoverCoordinates={this.handleHoverCoordinates}
           />
         </div>
         <div>

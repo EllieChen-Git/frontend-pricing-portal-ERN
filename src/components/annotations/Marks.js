@@ -1,10 +1,31 @@
 import React from "react";
 
 function Coordinates(props){
+  // const HandleMouseEnter = e => (console.log(e))
+  //const HandleMouseEnter = e => console.log(props.coordinates)
+  const HandleMouseEnter = e => props.handleHoverCoordinates(props.coordinates)
+  //const HandleMouseLeave = e => (console.log(e))
+  const HandleMouseLeave = e => props.handleHoverCoordinates(null)
+  // const HandleMouseOver = e => props.handleHoverCoordinates(props.coordinates)
+  // const HandleMouseOut = e => props.handleHoverCoordinates(null)
   return(
-    <p>{props.coordinates.x}, {props.coordinates.y}</p>
+    <p 
+      onMouseEnter={HandleMouseEnter}
+      onMouseLeave={HandleMouseLeave}
+    >
+      {props.coordinates.x}, {props.coordinates.y}
+      <button>Delete</button>
+    </p>
   )
   }
+  
+  // onMouseEnter={HandleMouseEnter}
+  // onMouseLeave={HandleMouseLeave}
+
+  // onMouseOut={HandleMouseOut}
+  // onMouseOver={HandleMouseOver}
+  
+
 
 function Marks(props){
   return(
@@ -13,7 +34,10 @@ function Marks(props){
         {props.marks.map(mark =>{
           const coordsTag = mark.coordinates.map(coordinates => {
             return (
-              <Coordinates coordinates={coordinates}/>
+              <Coordinates 
+                coordinates={coordinates}
+                handleHoverCoordinates={props.handleHoverCoordinates}
+              />
             );
           });
           return(
