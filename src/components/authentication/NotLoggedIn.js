@@ -11,10 +11,10 @@ class UserNotLoggedIn extends Component {
       <BrowserRouter>
         <Navbar {...this.props} />
         <Switch>
-          <Route exact path="/home">
+          <Route exact path="/">
             <LandingPage />
           </Route>
-          <Route exact path="/">
+          <Route exact path="/signin">
             <SigninForm />
           </Route>
           <Route

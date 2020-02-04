@@ -70,7 +70,7 @@ class UserList extends Component {
   render() {
     return (
       <Container>
-        <h1>User Management</h1>
+        <h1 className="text-center">User Management</h1>
         <hr />
         <button onClick={this.usersBackend}>Grant Admin Access</button>
         <ListGroup>{this.renderUsersList()}</ListGroup>

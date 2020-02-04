@@ -5,6 +5,7 @@ import AnnotationList from "./../annotations/AnnotationList";
 import { connect } from "react-redux";
 import { setAuthToken, setUserInfo } from "./../../actions";
 import Navbar from "./../shared/NavBar";
+import LandingPage from "./../pages/LandingPage";
 
 function Logout(props) {
   props.setAuthToken();
@@ -27,11 +28,17 @@ class RegularUser extends Component {
       <BrowserRouter>
         <Navbar {...this.props} />
         <Switch>
+          <Route exact path="/signin">
+            <AnnotationList />
+          </Route>
           <Route exact path="/">
+            <LandingPage />
+          </Route>
+          <Route exact path="/annotations">
             <AnnotationList {...this.props} />
           </Route>
-          <Route path="/annotations/:id" children={<AnnotationPage />} />
-          <Route path="/logout">
+          <Route exact path="/annotations/:id" children={<AnnotationPage />} />
+          <Route exact path="/logout">
             <Logout {...this.props} />
           </Route>
         </Switch>

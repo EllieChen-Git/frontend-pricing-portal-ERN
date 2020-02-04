@@ -37,11 +37,12 @@ class SigninForm extends Component {
 
     return (
       <Container>
-        <h1>Sign In</h1>
+        <h1 className="text-center"> Sign In</h1>
         <Form onClick={this.handleClick} onSubmit={this.onFormSubmit}>
           <Form.Group controlId="formBasicUsername">
             <Form.Label>Username:</Form.Label>
-            <Form.Control className = "username"
+            <Form.Control
+              className="username"
               type="text"
               value={username}
               placeholder="Enter Username"
@@ -52,7 +53,8 @@ class SigninForm extends Component {
           </Form.Group>
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Password:</Form.Label>
-            <Form.Control className = "password"
+            <Form.Control
+              className="password"
               type="password"
               placeholder="Enter Password"
               autoComplete="current-password"
