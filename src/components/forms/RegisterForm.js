@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { setAuthToken } from "./../../actions";
-import LocalApi from "../../apis/LocalApi";
 import { Form, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { setAuthToken } from "./../../actions";
+import LocalApi from "./../../apis/LocalApi";
 
 class RegisterForm extends Component {
   state = {

@@ -3,7 +3,6 @@
 import React, { Component } from "react";
 import LocalApi from "../../apis/LocalApi";
 import { Form, Button } from "react-bootstrap";
-// import 'fetchImages' here only to make auto refresh happens (in this way, we don't need to un-comment 'event.preventDefault()' on 'fileUploadHandler' for better user experience)
 import { fetchImages } from "../../actions";
 import { connect } from "react-redux";
 

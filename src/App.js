@@ -1,107 +1,46 @@
 import React, { Component } from "react";
-import {
-  BrowserRouter,
-  Route,
-  Switch,
-  Link,
-  useHistory
-} from "react-router-dom";
-import AnnotationPage from "./components/pages/AnnotationPage";
-import ImageManagement from "./components/images/ImageManagement";
-import EditImage from "./components/images/EditImage";
+import { connect } from "react-redux";
 import { setAuthToken, setUserInfo } from "./actions";
 import LocalApi from "./apis/LocalApi";
-import RegisterPage from "./components/pages/RegisterPage";
-import SignInPage from "./components/pages/SignInPage";
-
-//import PrivateRoute from "./components/PrivateRoute";
-import { connect } from "react-redux";
-import AnnotationList from "./components/AnnotationList";
-import ReviewList from "./components/ReviewList";
-import UserList from "./components/UserList";
-
-function Logout(props) {
-  console.log(props);
-  props.setAuthToken();
-  props.setUserInfo();
-  useHistory().push("/");
-  sessionStorage.removeItem("token");
-  return <p>logged out.</p>;
-}
+import UserDashboard from "./components/authentication/UserDashboard";
+import AdminDashboard from "./components/authentication/AdminDashboard";
+import NotLoggedIn from "./components/authentication/NotLoggedIn";
+import Footer from "./components/shared/Footer";
 
 class App extends Component {
   render() {
     const { user, token } = this.props;
+
+    // General setup to set user info
     if (!user && token !== null) {
-      LocalApi.get("/users/me") //Bug here: need to fix in the future
+      LocalApi.get("/users/me")
         .then(r => this.props.setUserInfo(r.data))
         .catch(e => console.log(e));
     }
+
+    //If users are not logged in
     if (!user) {
       return (
-        <BrowserRouter>
-          <Link to="/">Sign In</Link> | <Link to="/register">Register</Link>
-          <Switch>
-            <Route
-              exact
-              path="/"
-              render={props => {
-                return <SignInPage {...props} />;
-              }}
-            />
-
-            <Route
-              exact
-              path="/register"
-              render={props => {
-                return <RegisterPage {...props} />;
-              }}
-            />
-          </Switch>
-        </BrowserRouter>
+        <>
+          <NotLoggedIn {...this.props} />
+          <Footer />
+        </>
       );
-    }
-    // Logged in as admin.
-    if (user.is_admin) {
+    } else if (user.is_admin) {
+      //Users logged in as admin
       return (
-        <BrowserRouter>
-          <Link to="/">Images</Link> | <Link to="/users">Users</Link> |
-          <Link to="/annotations">Review List</Link> | 
-          <Link to="/logout">Logout</Link>
-          <Switch>
-            <Route exact path="/">
-              <ImageManagement />
-            </Route>
-            <Route path="/edit/:id" component={EditImage} />
-            <Route exact path="/annotations">
-              <ReviewList />
-            </Route>
-            <Route path="/annotations/:id" children={<AnnotationPage />} />
-            <Route path="/logout">
-              <Logout {...this.props} />
-            </Route>
-            <Route exact path="/users">
-              <UserList />
-            </Route>
-          </Switch>
-        </BrowserRouter>
+        <>
+          <AdminDashboard {...this.props} />
+          <Footer />
+        </>
       );
-    }
-    // Logged in as user.
-    if (!user.is_admin) {
+    } else if (!user.is_admin) {
+      //Users logged in as regular users
       return (
-        <BrowserRouter>
-          <Link to="/">Annotations</Link> | <Link to="/logout">Logout</Link>
-          <Switch>
-            <Route exact path="/">
-              <AnnotationList />
-            </Route>
-            <Route path="/annotations/:id" children={<AnnotationPage />} />
-            <Route path="/logout">
-              <Logout {...this.props} />
-            </Route>
-          </Switch>
-        </BrowserRouter>
+        <>
+          <UserDashboard {...this.props} />
+          <Footer />
+        </>
       );
     }
   }
