@@ -58,11 +58,34 @@ class ImageAnnotation extends Component {
   };
 
   handleHoverCoordinates = (coordinates) => {
-    // console.log(coordinates);
     this.setState({hoveredCoordinates: coordinates})
-    console.log(this.state.hoveredCoordinates)
   }
 
+  handleDeleteCoordinates = (coordinates) => {
+    // console.log(coords)
+    // console.log("for delete" + coordinates)
+    const { marks } = this.props;
+    console.log(marks)
+    
+    let result = []
+
+    for(let i in marks){
+      result.push({coordinates: []})
+      for(let j in marks[i].coordinates){
+        if(JSON.stringify(marks[i].coordinates[j]) === JSON.stringify(coordinates)){
+          continue;
+        }
+        result[i].coordinates.push(marks[i].coordinates[j])
+      }
+      result[i].tag_id = marks[i].tag_id._id
+    }
+    const path = "annotations/" + this.props.id + "/marks";
+    LocalApi.put(path, { marks: result })
+      .then(res => this.props.handleNewMarks(res.data))
+      .catch(err => console.log(err));
+  
+    
+  }
 
   render() {
     const data = {
@@ -88,6 +111,7 @@ class ImageAnnotation extends Component {
           <Marks
             marks={this.props.marks}
             handleHoverCoordinates={this.handleHoverCoordinates}
+            handleDeleteCoordinates={this.handleDeleteCoordinates}
           />
         </div>
         <div>

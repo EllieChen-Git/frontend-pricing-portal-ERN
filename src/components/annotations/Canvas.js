@@ -36,7 +36,6 @@ class Canvas extends Component {
     }
 
     componentDidUpdate() {
-      console.log(this.props.hoveredCoordinates)
       // !need to search more about prevProps for checking prev and current image   
       // returns a drawing context on the canvas
       const cv = this.canvasRef.current;
