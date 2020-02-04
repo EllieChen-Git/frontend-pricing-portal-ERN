@@ -24,13 +24,13 @@ class NavBar extends Component {
           <div className="collapse navbar-collapse" id="navbarColor02">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="/home">
+                <a className="nav-link" href="/">
                   Home <span className="sr-only">(current)</span>
                 </a>
               </li>
 
               <li className="nav-item active">
-                <a className="nav-link" href="/">
+                <a className="nav-link" href="/signin">
                   Sign In
                 </a>
               </li>
@@ -63,14 +63,14 @@ class NavBar extends Component {
           <div className="collapse navbar-collapse" id="navbarColor02">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="/home">
-                  Home <span className="sr-only">(current)</span>
+                <a className="nav-link" href="/">
+                  Home
                 </a>
               </li>
 
               <li className="nav-item active">
-                <a className="nav-link" href="/">
-                  Projects
+                <a className="nav-link" href="/images">
+                  Apartments
                 </a>
               </li>
               <li className="nav-item active">
@@ -114,13 +114,13 @@ class NavBar extends Component {
           <div className="collapse navbar-collapse" id="navbarColor02">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="/home">
+                <a className="nav-link" href="/">
                   Home <span className="sr-only">(current)</span>
                 </a>
               </li>
 
               <li className="nav-item active">
-                <a className="nav-link" href="/">
+                <a className="nav-link" href="/annotations">
                   Annotation
                 </a>
               </li>

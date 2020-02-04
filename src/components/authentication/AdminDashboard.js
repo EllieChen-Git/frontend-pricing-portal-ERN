@@ -6,6 +6,7 @@ import UserList from "./UserList";
 import Navbar from "./../shared/NavBar";
 import ReviewList from "./../annotations/ReviewList";
 import AnnotationPage from "./../annotations/AnnotationPage";
+import LandingPage from "./../pages/LandingPage";
 
 function Logout(props) {
   props.setAuthToken();
@@ -22,12 +23,16 @@ class UserIsAdmin extends Component {
         <Navbar {...this.props} />
         <Switch>
           <Route exact path="/">
+            <LandingPage />
+          </Route>
+          <Route exact path="/signin">
+            <ImageManagement />
+          </Route>
+
+          <Route exact path="/images">
             <ImageManagement />
           </Route>
           <Route path="/edit/:id" component={EditImage} />
-          <Route path="/logout">
-            <Logout {...this.props} />
-          </Route>
           <Route exact path="/users">
             <UserList />
           </Route>
@@ -36,6 +41,9 @@ class UserIsAdmin extends Component {
           <ReviewList />
         </Route>
         <Route path="/annotations/:id" children={<AnnotationPage />} />
+        <Route path="/logout">
+          <Logout {...this.props} />
+        </Route>
       </BrowserRouter>
     );
   }
