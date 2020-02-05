@@ -16,10 +16,10 @@ class ImageManagement extends Component {
         <h1 className="text-center">Apartment Management</h1>
         <hr />
         <div>
-          <h3>Create New Apartments</h3>
+          <h3 className="pb-2 text-center">Create New Apartments</h3>
           <UploadImage />
           <hr />
-          <h3>List of Apartments</h3>
+          <h3 className="pb-2 text-center">List of Apartments</h3>
           <DisplayImages items={images} />
         </div>
       </Container>

@@ -24,18 +24,26 @@ class NavBar extends Component {
           <div className="collapse navbar-collapse" id="navbarColor02">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="/">
-                  Home <span className="sr-only">(current)</span>
+                <a className="nav-link" style={{ fontSize: "2em" }} href="/">
+                  Home | <span className="sr-only">(current)</span>
                 </a>
               </li>
 
               <li className="nav-item active">
-                <a className="nav-link" href="/signin">
-                  Sign In
+                <a
+                  className="nav-link"
+                  style={{ fontSize: "2em" }}
+                  href="/signin"
+                >
+                  Sign In |
                 </a>
               </li>
               <li className="nav-item active">
-                <a className="nav-link" href="/register">
+                <a
+                  className="nav-link"
+                  style={{ fontSize: "2em" }}
+                  href="/register"
+                >
                   Register
                 </a>
               </li>
@@ -63,30 +71,46 @@ class NavBar extends Component {
           <div className="collapse navbar-collapse" id="navbarColor02">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="/">
-                  Home
+                <a className="nav-link" style={{ fontSize: "2em" }} href="/">
+                  Home |
                 </a>
               </li>
 
               <li className="nav-item active">
-                <a className="nav-link" href="/images">
-                  Apartments
+                <a
+                  className="nav-link"
+                  style={{ fontSize: "2em" }}
+                  href="/images"
+                >
+                  Apartments |
                 </a>
               </li>
               <li className="nav-item active">
-                <a className="nav-link" href="/users">
-                  Users
+                <a
+                  className="nav-link"
+                  style={{ fontSize: "2em" }}
+                  href="/users"
+                >
+                  Users |
                 </a>
               </li>
               <li className="nav-item active">
-                <a className="nav-link" href="/annotations">
+                <a
+                  className="nav-link"
+                  style={{ fontSize: "2em" }}
+                  href="/annotations"
+                >
                   Review List
                 </a>
               </li>
             </ul>
             <ul className="navbar-nav ml-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="/logout">
+                <a
+                  className="nav-link"
+                  style={{ fontSize: "2em" }}
+                  href="/logout"
+                >
                   Log Out
                 </a>
               </li>
@@ -114,20 +138,28 @@ class NavBar extends Component {
           <div className="collapse navbar-collapse" id="navbarColor02">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="/">
-                  Home <span className="sr-only">(current)</span>
+                <a className="nav-link" style={{ fontSize: "2em" }} href="/">
+                  Home | <span className="sr-only">(current)</span>
                 </a>
               </li>
 
               <li className="nav-item active">
-                <a className="nav-link" href="/annotations">
-                  Annotation
+                <a
+                  className="nav-link"
+                  style={{ fontSize: "2em" }}
+                  href="/annotations"
+                >
+                  Annotations
                 </a>
               </li>
             </ul>
             <ul className="navbar-nav ml-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="/logout">
+                <a
+                  className="nav-link"
+                  style={{ fontSize: "2em" }}
+                  href="/logout"
+                >
                   Log Out
                 </a>
               </li>

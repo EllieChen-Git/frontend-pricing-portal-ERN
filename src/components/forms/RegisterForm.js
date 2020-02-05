@@ -38,11 +38,11 @@ class RegisterForm extends Component {
     const { username, email, password } = this.state;
 
     return (
-      <Container>
-        <h1 className="text-center">Register New Account</h1>
+      <Container style={{ width: "40%" }}>
+        <h1 className="text-center pb-4">Register New Account</h1>
         <Form onClick={this.handleClick} onSubmit={this.onFormSubmit}>
           <Form.Group controlId="formBasicUsername">
-            <Form.Label>Username:</Form.Label>
+            <Form.Label style={{ fontSize: "1.5em" }}>Username:</Form.Label>
             <Form.Control
               className="username"
               type="text"
@@ -55,7 +55,7 @@ class RegisterForm extends Component {
           </Form.Group>
 
           <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email:</Form.Label>
+            <Form.Label style={{ fontSize: "1.5em" }}>Email:</Form.Label>
             <Form.Control
               className="email"
               type="email"
@@ -67,7 +67,7 @@ class RegisterForm extends Component {
             />
           </Form.Group>
           <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password:</Form.Label>
+            <Form.Label style={{ fontSize: "1.5em" }}>Password:</Form.Label>
             <Form.Control
               className="password"
               type="password"
@@ -82,7 +82,8 @@ class RegisterForm extends Component {
             Register
           </Button>
         </Form>
-        <h3>Already have an account?</h3>
+
+        <h3 className="pt-4">Already have an account?</h3>
         <Link to="/signin">
           <Button variant="success">Sign In</Button>
         </Link>
