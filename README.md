@@ -1,5 +1,15 @@
 # README
 
+## GitHub repository
+
+### Frontend 
+
+https://github.com/EllieChen-Git/frontend-pricing-portal-ERN
+
+### Backend 
+
+https://github.com/INRokh/backend-pricing-portal-ERN
+
 ## NPM packages
 
 ### Frontend 
