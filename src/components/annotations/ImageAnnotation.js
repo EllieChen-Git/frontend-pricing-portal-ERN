@@ -3,6 +3,7 @@ import Tags from "./Tags";
 import Canvas from "./Canvas";
 import LocalApi from "./../../apis/LocalApi";
 import Marks from "./Marks"
+import {Container, Row, Col} from "react-bootstrap"
 
 class ImageAnnotation extends Component {
   state = {
@@ -93,37 +94,38 @@ class ImageAnnotation extends Component {
   }
 
   render() {
-    const data = {
-      image: this.props.imageSrc,
-      marks: this.props.marks
-    };
-
     return (
-      <>
-        <div>
-          {!this.props.isReadOnly && (
-            <Tags
-              handleSelect={t => this.setState({ selectedTag: t })}
-              selectedTag={this.state.selectedTag}
+      <Container>
+        {!this.props.isReadOnly && (
+          <Row className="mt-5">
+            <Col>
+              <Tags
+                handleSelect={t => this.setState({ selectedTag: t })}
+                selectedTag={this.state.selectedTag}
+              />
+            </Col>
+          </Row>
+        )}
+        <Row className="mt-5">
+          <Col md={12} xl={8}>
+            <Canvas
+              marks={this.props.marks}
+              handleNewCoordinate={this.handleNewCoordinate}
+              imageSrc={this.props.imageSrc}
+              hoveredCoordinates={this.state.hoveredCoordinates}
             />
-          )}
-          <Canvas
-            marks={this.props.marks}
-            handleNewCoordinate={this.handleNewCoordinate}
-            imageSrc={this.props.imageSrc}
-            hoveredCoordinates={this.state.hoveredCoordinates}
-          />
-          <Marks
-            marks={this.props.marks}
-            handleHoverCoordinates={this.handleHoverCoordinates}
-            handleDeleteCoordinates={this.handleDeleteCoordinates}
-          />
-        </div>
-        <div>
-          <h4>Data</h4>
-          <pre>{JSON.stringify(data, null, 2)}</pre>
-        </div>
-      </>
+          </Col>
+          <Col>
+            <h2>Marks</h2>
+            <Marks
+              marks={this.props.marks}
+              handleHoverCoordinates={this.handleHoverCoordinates}
+              handleDeleteCoordinates={this.handleDeleteCoordinates}
+              isReadOnly={this.props.isReadOnly}
+            />
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }

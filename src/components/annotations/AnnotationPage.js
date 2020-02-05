@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { fetchAnnotationDetails } from "./../../actions";
 import ImageAnnotation from "./ImageAnnotation";
 import LocalApi from "./../../apis/LocalApi";
+import { Container, Col, Row, Button } from "react-bootstrap";
 
 function AnnotationPage(props) {
   let { id } = useParams();
@@ -45,18 +46,28 @@ function AnnotationPage(props) {
   const url = `${process.env.REACT_APP_BASEURL}/images/${image._id}/file`;
 
   return (
-    <>
-      <h2 className="text-center">Annotation Status: {annotation.status}</h2>
-      {annotation.status === "IN_PROGRESS" && isAuthor && (
-        <button onClick={handleSubmit}>Submit for review</button>
-      )}
-      {annotation.status === "REVIEW" && !isAuthor && (
-        <button onClick={handleApprove}>Approve</button>
-      )}
-      {annotation.status === "REVIEW" && !isAuthor && (
-        <button onClick={handleReject}>Reject</button>
-      )}
-      <hr />
+    <Container>
+      <h1 className="text-center mb-8">Image Annotation</h1>
+      <hr/>
+      <Row>
+        <Col md={12} xl={8}>
+          <h2>Lot: {annotation.image_id.lot}</h2>
+          <h2>Unit: {annotation.image_id.unitNumber}</h2>
+          <h4>{annotation.image_id.productDescription}</h4>
+        </Col>
+        <Col>
+          <h4>{annotation.status}</h4>
+          {annotation.status === "IN_PROGRESS" && isAuthor && (
+            <Button style={{fontSize: "16px"}} onClick={handleSubmit}>Submit for review</Button>
+          )}
+          {annotation.status === "REVIEW" && !isAuthor && (
+            <Button style={{fontSize: "16px"}} onClick={handleApprove}>Approve</Button>
+          )}
+          {annotation.status === "REVIEW" && !isAuthor && (
+            <Button style={{fontSize: "16px"}} onClick={handleReject}>Reject</Button>
+          )}
+        </Col>
+      </Row>
       <ImageAnnotation
         imageSrc={url}
         id={id}
@@ -64,7 +75,7 @@ function AnnotationPage(props) {
         handleNewMarks={handleNewMarks}
         isReadOnly={isReadOnly}
       />
-    </>
+    </Container>
   );
 }
 
