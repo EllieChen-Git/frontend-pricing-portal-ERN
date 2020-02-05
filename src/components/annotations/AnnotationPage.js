@@ -48,7 +48,7 @@ function AnnotationPage(props) {
   return (
     <Container>
       <h1 className="text-center mb-8">Image Annotation</h1>
-      <hr/>
+      <hr />
       <Row>
         <Col md={12} xl={8}>
           <h2>Lot: {annotation.image_id.lot}</h2>
@@ -58,13 +58,27 @@ function AnnotationPage(props) {
         <Col>
           <h4>{annotation.status}</h4>
           {annotation.status === "IN_PROGRESS" && isAuthor && (
-            <Button style={{fontSize: "16px"}} onClick={handleSubmit}>Submit for review</Button>
+            <Button style={{ fontSize: "16px" }} onClick={handleSubmit}>
+              Submit for review
+            </Button>
           )}
           {annotation.status === "REVIEW" && !isAuthor && (
-            <Button style={{fontSize: "16px"}} onClick={handleApprove}>Approve</Button>
+            <Button
+              style={{ fontSize: "16px" }}
+              className="m-2"
+              onClick={handleApprove}
+            >
+              Approve
+            </Button>
           )}
           {annotation.status === "REVIEW" && !isAuthor && (
-            <Button style={{fontSize: "16px"}} onClick={handleReject}>Reject</Button>
+            <Button
+              style={{ fontSize: "16px" }}
+              className="m-2"
+              onClick={handleReject}
+            >
+              Reject
+            </Button>
           )}
         </Col>
       </Row>

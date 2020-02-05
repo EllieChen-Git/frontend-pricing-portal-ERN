@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import "bootswatch/dist/minty/bootstrap.min.css";
 
 class NavBar extends Component {

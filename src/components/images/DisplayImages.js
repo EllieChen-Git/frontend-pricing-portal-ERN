@@ -69,12 +69,12 @@ class DisplayImages extends Component {
       is_active: false
     })
       .then(res => {
+        this.props.fetchImages();
         console.log(res.data);
       })
       .catch(err => {
         console.log(err);
       });
-    this.props.fetchImages();
   };
 
   render() {

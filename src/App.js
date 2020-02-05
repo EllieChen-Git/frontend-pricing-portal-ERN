@@ -5,7 +5,6 @@ import LocalApi from "./apis/LocalApi";
 import UserDashboard from "./components/authentication/UserDashboard";
 import AdminDashboard from "./components/authentication/AdminDashboard";
 import NotLoggedIn from "./components/authentication/NotLoggedIn";
-import Footer from "./components/shared/Footer";
 
 class App extends Component {
   render() {
@@ -23,7 +22,6 @@ class App extends Component {
       return (
         <>
           <NotLoggedIn {...this.props} />
-          <Footer />
         </>
       );
     } else if (user.is_admin) {
@@ -31,7 +29,6 @@ class App extends Component {
       return (
         <>
           <AdminDashboard {...this.props} />
-          {/* <Footer /> */}
         </>
       );
     } else if (!user.is_admin) {
@@ -39,7 +36,6 @@ class App extends Component {
       return (
         <>
           <UserDashboard {...this.props} />
-          <Footer />
         </>
       );
     }
