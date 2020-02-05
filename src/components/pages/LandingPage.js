@@ -23,27 +23,39 @@ class LandingPage extends Component {
             </p>
           </Jumbotron>
         </Row>
-        <Row>
+        <Row className="mt-5">
           <Col lg={6}>
             <Card>
-              <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
               <Card.Body>
-                <Card.Title style={{ fontSize: "2em" }} className="text-center">
+                <Card.Title
+                  style={{ fontSize: "2em", fontWeight: "bold" }}
+                  className="text-center"
+                >
                   Image Uploading
                 </Card.Title>
-                {/* <Card.Text>How you create apartment and upload iamge</Card.Text> */}
               </Card.Body>
+              <Card.Img
+                style={{ height: "350px" }}
+                variant="top"
+                src="image-uploading.gif"
+              />
             </Card>
           </Col>
           <Col lg={6}>
             <Card>
-              <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
               <Card.Body>
-                <Card.Title style={{ fontSize: "2em" }} className="text-center">
+                <Card.Title
+                  style={{ fontSize: "2em", fontWeight: "bold" }}
+                  className="text-center"
+                >
                   Image Annotation
                 </Card.Title>
-                {/* <Card.Text>How you implement image annotation</Card.Text> */}
               </Card.Body>
+              <Card.Img
+                style={{ height: "350px" }}
+                variant="top"
+                src="image-annotation.gif"
+              />
             </Card>
           </Col>
         </Row>

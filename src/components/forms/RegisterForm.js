@@ -22,7 +22,7 @@ class RegisterForm extends Component {
     LocalApi.post("users", { username, email, password })
       .then(response => {
         setAuthToken(response.data.token);
-        history.push("/");
+        history.push("/signin");
       })
       .catch(error => {
         console.log(error);
