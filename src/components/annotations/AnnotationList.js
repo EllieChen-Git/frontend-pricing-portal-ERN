@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchAnnotations } from "./../../actions";
-import { Container, ListGroup, Button, Row, Col, Badge } from "react-bootstrap";
+import { Container, ListGroup, Row, Col, Badge } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const statusColourSchema = {
