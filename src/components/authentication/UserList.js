@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchUsers } from "./../../actions";
 import LocalApi from "./../../apis/LocalApi";
-import { Container, ListGroup, Button, Form } from "react-bootstrap";
+import { Container, ListGroup, Button } from "react-bootstrap";
 
 class UserList extends Component {
   state = { users: [], updateAdmin: [] };
