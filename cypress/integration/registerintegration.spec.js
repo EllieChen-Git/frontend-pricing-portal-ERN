@@ -1,4 +1,4 @@
-describe("Test our register Page and functionality", () => {
+
     it("visit the register page", () => {
         //test that we can visit our register page. 
         cy.visit("http://localhost:3000/register")
@@ -19,7 +19,7 @@ describe("Test our register Page and functionality", () => {
             username: "robbiethetester3",
             email: "robbiethetester3@hotmail.com",
             password: "robbiethetester3"
-        })
+        })describe("Test our register Page and functionality", () => {
        
         cy.url().should("include", "/")
     })
