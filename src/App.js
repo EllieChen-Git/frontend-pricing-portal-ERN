@@ -31,7 +31,7 @@ class App extends Component {
       return (
         <>
           <AdminDashboard {...this.props} />
-          <Footer />
+          {/* <Footer /> */}
         </>
       );
     } else if (!user.is_admin) {

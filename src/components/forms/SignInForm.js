@@ -36,11 +36,11 @@ class SigninForm extends Component {
     const { username, password } = this.state;
 
     return (
-      <Container>
-        <h1 className="text-center"> Sign In</h1>
+      <Container style={{ width: "40%" }}>
+        <h1 className="text-center pb-4">Sign In</h1>
         <Form onClick={this.handleClick} onSubmit={this.onFormSubmit}>
           <Form.Group controlId="formBasicUsername">
-            <Form.Label>Username:</Form.Label>
+            <Form.Label style={{ fontSize: "1.5em" }}>Username:</Form.Label>
             <Form.Control
               className="username"
               type="text"
@@ -52,7 +52,7 @@ class SigninForm extends Component {
             />
           </Form.Group>
           <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password:</Form.Label>
+            <Form.Label style={{ fontSize: "1.5em" }}>Password:</Form.Label>
             <Form.Control
               className="password"
               type="password"
@@ -68,7 +68,7 @@ class SigninForm extends Component {
             Sign In
           </Button>
         </Form>
-        <h3>Don't Have An Account?</h3>
+        <h3 className="pt-4">Don't Have An Account?</h3>
 
         <Link to="/register">
           <Button variant="danger"> Register</Button>

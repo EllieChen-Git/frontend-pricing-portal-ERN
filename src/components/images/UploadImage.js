@@ -64,9 +64,16 @@ class UploadImage extends Component {
     const { lot, unitNumber, productDescription } = this.state;
 
     return (
-      <Form onSubmit={this.fileUploadHandler}>
+      <Form
+        onSubmit={this.fileUploadHandler}
+        style={{ width: "40%", margin: "auto" }}
+      >
         <Form.Group>
-          <Form.Label>Lot:</Form.Label>
+          <Form.Label
+            style={{ fontSize: "1.5em", padding: "3px", fontWeight: "normal" }}
+          >
+            Lot:
+          </Form.Label>
           <Form.Control
             type="number"
             min="1"
@@ -76,7 +83,11 @@ class UploadImage extends Component {
           />
         </Form.Group>
         <Form.Group>
-          <Form.Label>Unit Number:</Form.Label>
+          <Form.Label
+            style={{ fontSize: "1.5em", padding: "3px", fontWeight: "normal" }}
+          >
+            Unit Number:
+          </Form.Label>
           <Form.Control
             type="text"
             value={unitNumber}
@@ -86,7 +97,11 @@ class UploadImage extends Component {
           />
         </Form.Group>
         <Form.Group>
-          <Form.Label>Product Description: </Form.Label>
+          <Form.Label
+            style={{ fontSize: "1.5em", padding: "3px", fontWeight: "normal" }}
+          >
+            Product Description:{" "}
+          </Form.Label>
           <Form.Control
             type="text"
             value={productDescription}
@@ -97,7 +112,11 @@ class UploadImage extends Component {
         </Form.Group>
 
         <Form.Group>
-          <Form.Label>Floor Plan: </Form.Label>
+          <Form.Label
+            style={{ fontSize: "1.5em", padding: "3px", fontWeight: "normal" }}
+          >
+            Floor Plan:{" "}
+          </Form.Label>
           <Form.Control
             type="file"
             required="required"

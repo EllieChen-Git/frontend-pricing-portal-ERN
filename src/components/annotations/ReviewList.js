@@ -13,8 +13,9 @@ class ReviewList extends Component {
     const { annotations } = this.props;
     return (
       <Container>
-        <h1 className="text-center">Review List</h1>
-        <ListGroup>
+        <h1 className="text-center pb-2">Review List</h1>
+        <hr />
+        <ListGroup style={{ width: "60%", margin: "auto" }}>
           {annotations &&
             annotations.map(annotation => {
               const image = annotation.image_id;
@@ -23,10 +24,42 @@ class ReviewList extends Component {
               }
               return (
                 <ListGroup.Item key={annotation._id}>
-                  <div> Lot: {image.lot}</div>
-                  <div> Unit Number: {image.unitNumber}</div>
-                  <div> Product Description:{image.productDescription}</div>
-                  <div> Status:{annotation.status}</div>
+                  <div
+                    style={{
+                      fontSize: "1.5em",
+                      padding: "3px",
+                      fontWeight: "normal"
+                    }}
+                  >
+                    Lot: {image.lot}
+                  </div>
+                  <div
+                    style={{
+                      fontSize: "1.5em",
+                      padding: "3px",
+                      fontWeight: "normal"
+                    }}
+                  >
+                    Unit Number: {image.unitNumber}
+                  </div>
+                  <div
+                    style={{
+                      fontSize: "1.5em",
+                      padding: "3px",
+                      fontWeight: "normal"
+                    }}
+                  >
+                    Product Description:{image.productDescription}
+                  </div>
+                  <div
+                    style={{
+                      fontSize: "1.5em",
+                      padding: "3px",
+                      fontWeight: "normal"
+                    }}
+                  >
+                    Status:{annotation.status}
+                  </div>
                   <Link to={"annotations/" + annotation._id}>
                     <Button variant="success"> Go to Annotation</Button>
                   </Link>

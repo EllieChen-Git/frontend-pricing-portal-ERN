@@ -38,7 +38,7 @@ class EditImage extends Component {
       .catch(err => {
         console.log(err);
       });
-    this.props.history.push("/");
+    this.props.history.push("/images");
   };
 
   onInputChange = (name, event) => {
@@ -50,10 +50,23 @@ class EditImage extends Component {
 
     return (
       <Container>
-        <h3>Edit Apartments</h3>
-        <Form onSubmit={this.imageEditHandler}>
+        <h3 className="text-center" style={{ fontSize: "2.5rem" }}>
+          Edit Apartment
+        </h3>
+        <Form
+          onSubmit={this.imageEditHandler}
+          style={{ width: "40%", margin: "auto" }}
+        >
           <Form.Group>
-            <Form.Label>Lot:</Form.Label>
+            <Form.Label
+              style={{
+                fontSize: "1.5em",
+                padding: "3px",
+                fontWeight: "normal"
+              }}
+            >
+              Lot:
+            </Form.Label>
             <Form.Control
               type="number"
               min="1"
@@ -63,7 +76,15 @@ class EditImage extends Component {
             />
           </Form.Group>
           <Form.Group>
-            <Form.Label>Unit Number:</Form.Label>
+            <Form.Label
+              style={{
+                fontSize: "1.5em",
+                padding: "3px",
+                fontWeight: "normal"
+              }}
+            >
+              Unit Number:
+            </Form.Label>
             <Form.Control
               type="text"
               value={unitNumber}
@@ -73,7 +94,15 @@ class EditImage extends Component {
             />
           </Form.Group>
           <Form.Group>
-            <Form.Label>Product Description: </Form.Label>
+            <Form.Label
+              style={{
+                fontSize: "1.5em",
+                padding: "3px",
+                fontWeight: "normal"
+              }}
+            >
+              Product Description:{" "}
+            </Form.Label>
             <Form.Control
               type="text"
               value={productDescription}

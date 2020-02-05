@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchUsers } from "./../../actions";
 import LocalApi from "./../../apis/LocalApi";
-import { Container, ListGroup } from "react-bootstrap";
+import { Container, ListGroup, Button, Form } from "react-bootstrap";
 
 class UserList extends Component {
   state = { users: [], updateAdmin: [] };
@@ -12,6 +12,7 @@ class UserList extends Component {
     LocalApi.put("/users", { updateAdmin })
       .then(res => console.log(res))
       .catch(err => console.log(err));
+    alert("You have changed user access!");
   };
 
   renderUsersList = () => {
@@ -19,14 +20,22 @@ class UserList extends Component {
     return users.map(user => {
       return (
         <ListGroup.Item key={user._id}>
-          <div>Username: {user.username}</div>
-          Email: {user.email}
-          <input
-            onChange={this.handleChange}
-            type="checkbox"
-            name={user._id}
-            checked={user.is_admin}
-          ></input>
+          <div
+            style={{ fontSize: "1.5em", padding: "3px", fontWeight: "normal" }}
+          >
+            Username: {user.username}
+          </div>
+          <div
+            style={{ fontSize: "1.5em", padding: "3px", fontWeight: "normal" }}
+          >
+            Email: {user.email}
+            <input
+              onChange={this.handleChange}
+              type="checkbox"
+              name={user._id}
+              checked={user.is_admin}
+            ></input>
+          </div>
         </ListGroup.Item>
       );
     });
@@ -72,8 +81,18 @@ class UserList extends Component {
       <Container>
         <h1 className="text-center">User Management</h1>
         <hr />
-        <button onClick={this.usersBackend}>Grant Admin Access</button>
-        <ListGroup>{this.renderUsersList()}</ListGroup>
+
+        <ListGroup style={{ width: "60%", margin: "auto" }}>
+          <Button
+            variant="info"
+            onClick={this.usersBackend}
+            className="mb-3"
+            style={{ width: "25%", margin: "auto" }}
+          >
+            Grant Admin Access
+          </Button>
+          {this.renderUsersList()}
+        </ListGroup>
       </Container>
     );
   }

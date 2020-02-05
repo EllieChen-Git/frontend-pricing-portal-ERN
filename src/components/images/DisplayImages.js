@@ -23,21 +23,25 @@ class UserAssignmentDropDown extends React.Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        Assign Users:
-        <select value={this.state.value} onChange={this.handleChange}>
-          <option value="unknown">Choose one</option>
-          {users &&
-            users.map(user => {
-              return (
-                <option key={user._id} value={user._id}>
-                  {user.username}
-                </option>
-              );
-            })}
-        </select>
-        {this.state.value !== "unknown" && ( // Show submit buttion only when selected a user.
-          <input type="submit" value="Assign" />
-        )}
+        <div style={{ fontSize: "1.5em", padding: "3px" }}>
+          Assign Users:
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value="unknown">Choose one</option>
+            {users &&
+              users.map(user => {
+                return (
+                  <option key={user._id} value={user._id}>
+                    {user.username}
+                  </option>
+                );
+              })}
+          </select>
+          {this.state.value !== "unknown" && (
+            <Button variant="info" type="submit" className="ml-2">
+              Assign
+            </Button>
+          )}
+        </div>
       </form>
     );
   }
@@ -77,13 +81,20 @@ class DisplayImages extends Component {
     const { users } = this.props;
     const { images } = this.state;
     return (
-      <ListGroup>
+      <ListGroup className="pb-4" style={{ width: "75%", margin: "auto" }}>
         {images.map(image => {
           return (
             <ListGroup.Item key={image._id}>
-              <div> Lot: {image.lot}</div>
-              <div> Unit Number: {image.unitNumber}</div>
-              <div> Product Description:{image.productDescription}</div>
+              <div style={{ fontSize: "1.5em", padding: "3px" }}>
+                {" "}
+                Lot: {image.lot}
+              </div>
+              <div style={{ fontSize: "1.5em", padding: "3px" }}>
+                Unit Number: {image.unitNumber}
+              </div>
+              <div style={{ fontSize: "1.5em", padding: "3px" }}>
+                Product Description:{image.productDescription}
+              </div>
 
               <UserAssignmentDropDown imageId={image._id} users={users} />
 
