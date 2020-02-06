@@ -2,7 +2,7 @@
 
 ---
 
-#### Links
+### Links
 
 - **Deployed Website (React Application)**: http://pricing-portal-prod-ern.s3-website-ap-southeast-2.amazonaws.com/
 
@@ -87,14 +87,17 @@ After that, clients (the project manager and the lead engineer) and us (Robbie, 
 
 The lead engineer actually came to our presentation and also did manual testing on the spot for us, and the project manager sent us a video before the presentation. They are both very happy with our end results and will incorporate our project in their future product.
 
-- Client reached out to us
-  ![](./docs/client-communication/LinkedIN_1.png)
+- **Client reached out to us**
 
-- Client described project idea
-  ![](./docs/client-communication/LinkedIN_2.png)
+![](./docs/client-communication/LinkedIN_1.png)
 
-- Client provided more data through slack
-  ![](./docs/client-communication/Slack_2.JPG)
+- **Client described project idea**
+
+![](./docs/client-communication/LinkedIN_2.png)
+
+- **Client provided more data through slack**
+
+![](./docs/client-communication/Slack_2.JPG)
 
 ---
 
@@ -106,53 +109,60 @@ In terms of team collaboration, Nina has strong knowledge and background in back
 
 We distributed the major tasks based on features and created different branches for this project based on features. Nina was in charge of image annotation (both backend and frontend), Ellie was on image uploading (both backend and frontend) while Robbie helped with the frontend design and testing of the application.
 
+---
+
 ### Screenshots of Trello board
 
 - **Part A - Documentation** - Started the project
   ![](./docs/trello/Trello_0113.png)
 
 - **Part A - Documentation** - Submitted Part A
-  ![](./docs/trello/Trello_0117_Sumbitted_Documentation.png)
 
-- **Part B- Implementation (Coding)** - Started coding
+![](./docs/trello/Trello_0117_Sumbitted_Documentation.png)
+
+- **Part B- Implementation (Coding) - Started coding**
 
 ![](./docs/trello/Trello_0125_Started_Coding.JPG)
 
-- **Part B- Implementation (Coding)** - Tasks breakdown
+- **Part B- Implementation (Coding) - Tasks breakdown**
 
 ![](<./docs/trello/Trello_0125_Task_Breakdown_(image_uploading).JPG>)
 
-- **Part B- Implementation (Coding)** - After demonstrating our MVP to client
+- **Part B- Implementation (Coding) - After demonstrating our MVP to client**
 
 ![](./docs/trello/Trello_0131_After_MVP_demo_to_client.JPG)
 
 ### Screenshots of Pricing Portal
 
-- Landing Page
+- **Landing Page**
 
 ![](./docs/website-screenshots/1_Landing.JPG)
 
-- Register
+- **Register**
 
 ![](./docs/website-screenshots/2_Register.JPG)
 
-- Apartments Management (Create apartments, assign annotation to users, show floor plan, show list of apartments)
+- **Apartments Management (Create apartments, assign annotation to users, show floor plan, show list of apartments)**
 
 ![](./docs/website-screenshots/3_Apt-Mgmt.JPG)
 
-- Manage Users
+- **Manage Users**
 
 ![](./docs/website-screenshots/4_User-Mgmt.JPG)
 
-- Review List & Annotation Review
-  ![](<./docs/website-screenshots/5_Review-List(1).JPG>)
-  ![](<./docs/website-screenshots/5_Review-List(2).JPG>)
+- **Review List & Annotation Review**
 
-- Annotation List
-  ![](./docs/website-screenshots/6_Apt-to-ME.JPG)
+![](<./docs/website-screenshots/5_Review-List(1).JPG>)
 
-- Image Annotation
-  ![](./docs/website-screenshots/7_IMG-Annotation.JPG)
+![](<./docs/website-screenshots/5_Review-List(2).JPG>)
+
+- **Annotation List**
+
+![](./docs/website-screenshots/6_Apt-to-ME.JPG)
+
+- **Image Annotation**
+
+![](./docs/website-screenshots/7_IMG-Annotation.JPG)
 
 ---
 
@@ -185,35 +195,45 @@ We distributed the major tasks based on features and created different branches 
 
 ### Wireframes
 
-- **All Users** - Landing Page
-  ![Landing](./docs/wireframe/1_landing.JPG)
+- **All Users - Landing Page**
 
-- **All Users** - Register Account
-  ![Register](./docs/wireframe/2_Register.JPG)
+![Landing](./docs/wireframe/1_landing.JPG)
 
-- **All Users** - Landing Page
-  ![Sign-In](./docs/wireframe/3_Sign-In.JPG)
+- **All Users- Register Account**
 
-- **Admin** - Create Projects
-  ![Create_Projects](./docs/wireframe/4_Create_Projects.JPG)
+![Register](./docs/wireframe/2_Register.JPG)
 
-- **Admin** - Create Buildings
-  ![Create_Buildings](./docs/wireframe/5_Create_Buildings.JPG)
+- **All Users - Landing Page**
 
-- **Admin** - Create Apartments
-  ![Create_Projects](./docs/wireframe/6_Create_Apartments.JPG)
+![Sign-In](./docs/wireframe/3_Sign-In.JPG)
 
-- **Admin** - Manage Users
-  ![Create_Projects](./docs/wireframe/7_Manage_Users.JPG)
+- **Admin - Create Projects**
 
-- **Users** - User Dashboard
-  ![Create_Projects](./docs/wireframe/8_User_Dashboard.JPG)
+![Create_Projects](./docs/wireframe/4_Create_Projects.JPG)
 
-- **Users** - User Buildings
-  ![Create_Projects](./docs/wireframe/9_User_Buildings.JPG)
+- **Admin - Create Buildings**
 
-- **Users** - User Dashboard
-  ![Create_Projects](./docs/wireframe/10_User_Image_Annotation.JPG)
+![Create_Buildings](./docs/wireframe/5_Create_Buildings.JPG)
+
+- **Admin - Create Apartments**
+
+![Create_Projects](./docs/wireframe/6_Create_Apartments.JPG)
+
+- **Admin - Manage Users**
+
+![Create_Projects](./docs/wireframe/7_Manage_Users.JPG)
+
+- **Users - User Dashboard**
+
+![Create_Projects](./docs/wireframe/8_User_Dashboard.JPG)
+
+- **Users - User Buildings**
+
+![Create_Projects](./docs/wireframe/9_User_Buildings.JPG)
+
+- **Users - User Dashboard**
+
+![Create_Projects](./docs/wireframe/10_User_Image_Annotation.JPG)
 
 ---
 
@@ -234,6 +254,7 @@ We distributed the major tasks based on features and created different branches 
 - **Amazon S3**: A service offered by Amazon Web Services that provides object storage through a web service interface.
 
 - **HTML5**: A software solution stack that defines the properties and behaviours of web page content by implementing a markup-based pattern to it.
+
 - **CSS3**: A style sheet language used for describing the presentation of a document written in a markup language like HTML.
 
 **Utilities**
