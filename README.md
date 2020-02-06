@@ -5,22 +5,17 @@
 ### Links
 
 - **Deployed Website (React Application)**: http://pricing-portal-prod-ern.s3-website-ap-southeast-2.amazonaws.com/
-
 - **GitHub Repo - Frontend**: https://github.com/EllieChen-Git/frontend-pricing-portal-ERN
-
 - **Deployed Server (Express API)**: https://pricing-portal.herokuapp.com/
-
 - **GitHub Repo - Backend**: https://github.com/INRokh/backend-pricing-portal-ERN
-
 - **Trello Board for Part A - Documentation**: https://trello.com/b/0v9PguSo/mern-project-russian-revolution
-
 - **Trello Board for Part B - Implementation**: https://trello.com/b/uaooTZA0/russian-revolution-implementataion-coding
 
 ---
 
 ### Purpose
 
-The purpose of Pricing Portal is to allow accurate manual image annotation of property features within apartment floor plans, in order to more effectively evaluate apartment pricing. In the future, this will also allow our client to incorporate this project with computer vision and machine learning.
+The purpose of Pricing Portal is to allow accurate manual image annotation of property features within apartment floor plans, to more effectively evaluate apartment pricing. In the future, this will also allow our client to incorporate this project with computer vision and machine learning.
 
 ---
 
@@ -32,15 +27,15 @@ The target audience for our application is our client Skychute and professionals
 
 ### Features
 
-**1. Image Annotation** - Users are able to tag certain features of an image using one or more tags. The data will automatically be saved to the database every time a user modifies a tag. The users are able to indicate when the annotation of an image is finished through saving the amended image (all the tags are placed). After submitting the image, the users are not be able to modify their tags.
+**1. Image Annotation** - Users can tag certain features of an image using one or more tags. The data will automatically be saved to the database every time a user modifies a tag. The users can indicate when the annotation of an image is finished by saving the amended image (all the tags are placed). After submitting the image, the users are not able to modify their tags.
 
-**2. Basic Tag Management** - Users are able to create and delete tags for image annotation. Tags are globally accessible to users across the system.
+**2. Basic Tag Management** - Users can create and delete tags for image annotation. Tags are globally accessible to users across the system.
 
 **3. Role-based authentication** - Users have access to different elements of the application based on their roles (admin or regular users) and basic Access Control Lists (ACLs).
 
-**4. Annotation Review** - Users are able to review annotation results, and decide to either approve or reject annotations (If an annotation is rejected, it will be sent back to users for re-annotation).
+**4. Annotation Review** - Users can review annotation results, and decide to either approve or reject annotations (If an annotation is rejected, it will be sent back to users for re-annotation).
 
-**6. Basic Image Metadata Management** - Users are able to add metadata to the image annotation through manually adding key and value pairs.
+**6. Basic Image Metadata Management** - Users can add metadata to the image annotation through manually adding key and value pairs.
 
 ---
 
@@ -73,8 +68,11 @@ The target audience for our application is our client Skychute and professionals
 - **Logical dataflow diagram Level 1**: A more detailed breakdown of the Context Level Diagram (Level 0).
 
 ![Level_1_Legend](./docs/diagrams/DFD_Level_1_Legend.png)
+
 ![Level_1_Users](./docs/diagrams/DFD_Level_1_User.png)
+
 ![Level_1_Admin](./docs/diagrams/DFD_Level_1_Admin.png)
+
 ![Level_1_Export](./docs/diagrams/DFD_Level_1_Export.png)
 
 ---
@@ -83,9 +81,9 @@ The target audience for our application is our client Skychute and professionals
 
 Initially, our client reached out to us on LinkedIn about this project idea. After several exchanges, Ellie and Nina went to the client's office for the first client meeting to discuss their requirements for the pricing portal system.
 
-After that, the clients (the project manager and the lead engineer) and us (Robbie, Nina and Ellie) have communicated through our slack channel. We had 4 meetings with our client during the whole project time and we also demonstrated our MVP to them in order to collect their feedback before we completed the project.
+After that, the clients (the project manager and the lead engineer) and us (Robbie, Nina, and Ellie) have communicated through our slack channel. We had 4 meetings with our client during the whole project time and we also demonstrated our MVP to them to collect their feedback before we completed the project.
 
-The lead engineer actually came to our presentation and also did manual testing on the spot for us, and the project manager sent us a video before the presentation. They are both very happy with our end results and will incorporate our project in their future products.
+The lead engineer came to our presentation and also did manual testing on the spot for us, and the project manager sent us a video before the presentation. They are both very happy with our results and will incorporate our project in their future products.
 
 - **Client reached out to us**
 
@@ -103,11 +101,11 @@ The lead engineer actually came to our presentation and also did manual testing 
 
 ### Project Management Methodology
 
-For this project, we followed the agile methodology and use Kanban board to record our project management process. We would first list out all the tasks and use planning poker to categorise our tasks based on complexity and priority.
+For this project, we followed the agile methodology and use Kanban board to record our project management process. We would first list out all the tasks and use planning poker to categorize our tasks based on complexity and priority.
 
 ![](./docs/project-management/Kanban.jpg)
 
-In terms of team collaboration, Nina has strong knowledge and background in backend, so she designed our database schema and implemented the data structure for our application. Ellie and Robbie spent more time on frontend design and the documentation. From time to time, Ellie and Robbie also worked on some backend functions while Nina also helped with the front-end styling.
+In terms of team collaboration, Nina has strong knowledge and background in the backend, so she designed our database schema and implemented the data structure for our application. Ellie and Robbie spent more time on frontend design and the documentation. From time to time, Ellie and Robbie also worked on some backend functions while Nina also helped with the front-end styling.
 
 We distributed the major tasks based on features and created different branches for these features on our GitHub repos. Nina was in charge of image annotation (both backend and frontend), Ellie was on image uploading (both backend and frontend) while Robbie implemented different user components to make role-based authentication (admin and users) happened. Robbie also did testing of the application.
 
@@ -116,7 +114,8 @@ We distributed the major tasks based on features and created different branches 
 ### Screenshots of Trello board
 
 - **Part A - Documentation** - Started the project
-  ![](./docs/trello/Trello_0113.png)
+
+![](./docs/trello/Trello_0113.png)
 
 - **Part A - Documentation** - Submitted Part A
 
@@ -173,13 +172,11 @@ We distributed the major tasks based on features and created different branches 
 **ALL USERS**
 
 - **Angel**: As a user, I would like to sign-up for an account, so I can log into my account on the website later.
-- **Jurra**: As a user, I would like to log into my existing account, so I can use the functionalities provided by the website.
+- **Jurra**: As a user, I would like to log in to my existing account, so I can use the functionalities provided by the website.
 - **Tom**: As a user, I would like to browse the website on my mobile, computer and my tablet, so I can use this application on different devices.
 - **Ellie**: As a user, I would like to sign-out from the website, so my account is more secure.
-
-**ADMINS**
-
-- **Nina**: As the CEO of Skychute, I would like to organise images in a certain structure, so it is easier for our company to maintain the data.
+  **ADMINS**
+- **Nina**: As the CEO of Skychute, I would like to organize images in a certain structure, so it is easier for our company to maintain the data.
 - **Mark**: As a developer at Skychute, I would like to grant some users admin access, so we can have more admin users to manage our projects.
 - **Robbie**: As a Project Manager at Skychute, I would like to assign projects and buildings to regular users, so users can tag the features on the floor plan images.
 - **Elliot**: As a Project Manager at a construction company, I would like to add, view, update and delete projects.
@@ -188,9 +185,7 @@ We distributed the major tasks based on features and created different branches 
 - **Prad**: As a Project Manager at Skychute, I would like to upload floor plan images and enter apartment information to apartments.
 - **Ragan**: As a Project Manager at Skychute, I would like to review tagged floor plans submitted by regular users, so I can manage the project progress.
 - **Dale**: As a Project Manager at Skychute, I would like to have the ability to reverse the status tagged floor plans (from ‘completed’ back to ‘editable’), so users can edit it again.
-
-**Regular Users**
-
+  **Regular Users**
 - **Luke**: As a Property Valuer, I would like to tag the property features on the floor plans, so I can better evaluate the property price.
 - **Chelsea**: As a Real Estate Agent, I would like to create, read, remove and delete tags, so I can manage the tags as I wish.
 - **Max**: As a Real Estate Agent, I would like to save the tagged plans multiple times before submission, so I can go on a coffee break and come back to the image I am working on.
@@ -246,45 +241,31 @@ We distributed the major tasks based on features and created different branches 
 **Application and Data**
 
 - **JavaScript**: A high-level, just-in-time compiled, multi-paradigm programming language that conforms to the ECMAScript specification.
-
 - **React**: A JavaScript library for building user interfaces.
-
 - **MongoDB**: A cross-platform document-oriented (non-relational) database program.
-
 - **Express**: A web application framework for Node.js.
-
 - **Node**: An open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a browser.
-
 - **Amazon S3**: A service offered by Amazon Web Services that provides object storage through a web service interface.
-
-- **HTML5**: A software solution stack that defines the properties and behaviours of web page content by implementing a markup-based pattern to it.
-
+- **HTML5**: A software solution stack that defines the properties and behaviors of web page content by implementing a markup-based pattern to it.
 - **CSS3**: A style sheet language used for describing the presentation of a document written in a markup language like HTML.
 
 **Utilities**
 
 - **Balsamiq**: A mockup tool for wireframing.
-
 - **Trello**: A web-based Kanban-style list-making application.
-
 - **Pinterest**: A tool to store images for ideas of mood board.
 
 **Developer Operations**
 
 - **GIT**: A free and open version control system.
-
-- **GitHub**: A platform for source control.
-
-- **GitKraken**: A Git GUI client for Windows, Mac and Linux. It helps developers become more productive and efficient with Git.
-
+- **GitHub** A platform for source control.
+- **GitKraken**: A Git GUI client for Windows, Mac, and Linux. It helps developers become more productive and efficient with Git.
 - **Heroku**: A platform for deploying our application.
-
 - **JEST**: A delightful JavaScript Testing Framework with a focus on simplicity.
 
 **Business Tools**
 
-- **Slack**: A cloud-based proprietary instant messaging platform for communication within team and with client.
-
+- **Slack**: A cloud-based proprietary instant messaging platform for communication within the team and with the client.
 - **Google Docs**: A tool for documentation collaboration.
 
 ---
@@ -293,39 +274,37 @@ We distributed the major tasks based on features and created different branches 
 
 **Frontend**
 
-- **axios**: A promise based HTTP client similar to the Fetch API.
-- **bootstrap**: An open source toolkit for developing with HTML, CSS and JavaScript.
-- **bootswatch**: An open source resource for Bootstrap themes.
-- **jquery**: A fast, feature-rich JavaScript library which makes JavaScript easier to use.
+- **axios**: A promise-based HTTP client similar to the Fetch API.
+- **bootstrap**: An open-source toolkit for developing with HTML, CSS, and JavaScript.
+- **bootswatch**: An open-source resource for Bootstrap themes.
+- **jquery**: A fast, feature-rich JavaScript library that makes JavaScript easier to use.
 - **popper.js**: A positioning engine. It calculates the position of an element to make it possible to position it near a given reference element.
 - **react-bootstrap**: Predefined styling for react components.
 - **react-redux**: The official Redux UI binding library for REACT.
-- **react-router-dom**: A package that enables for routing within our REACT application.
-- **redux**: A package that allow one to write applications that behave consistently, run in different environments and are easy to test. Also manage state!
+- **react-router-dom**: A package that enables routing within our REACT application.
+- **redux**: A package that allows one to write applications that behave consistently, run in different environments and are easy to test. Also, it manages state.
 - **redux-form**: A package that helps manage state in the creation of forms.
 - **redux-thunk**: A redux middleware.
 - **cypress**: A package that enables the testing of various features within our applications.
-
-**Backend**
-
+  **Backend**
 - **aws-sdk**: The SDK helps take the complexity out of coding by providing JavaScript objects for AWS services including Amazon S3, Amazon EC2, DynamoDB, and Amazon SWF.
 - **celebrate**: Celebrate is an express middleware function that wraps the Job validation library. This allows you to use this middleware in any single route, or globally, and ensure that all of your inputs are correct before any handler function.
 - **cors**: Cross-Origin Resource Sharing (CORS) is a mechanism that uses additional HTTP headers to tell browsers to give a web application running at one origin, access to selected resources from a different origin. A web application executes a cross-origin HTTP request when it requests a resource that has a different origin (domain, protocol, or port) from its own.
 - **dotenv**: Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology.
 - **jsonwebtoken**: JSON Web Token (JWT) is a compact, URL-safe means of representing claims to be transferred between two parties. The claims in a JWT are encoded as a JSON object that is used as the payload of a JSON Web Signature (JWS) structure or as the plaintext of a JSON Web Encryption (JWE) structure, enabling the claims to be digitally signed or integrity protected with a Message Authentication Code (MAC) and/or encrypted.
 - **local**: A Node server that acts as a local npm registry. It serves modules, caches them, and updates them whenever they change.
-- **mongoose**: Mongoose is a MongoDB object modelling tool designed to work in an asynchronous environment.
+- **mongoose**: Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment.
 - **morgan**: HTTP request logger middleware for node.js
 - **multer**: Multer is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files. It is written on top of busboy for maximum efficiency.
 - **multer-s3**: Streaming multer storage engine for AWS S3.
 - **passport**: Passport is Express-compatible authentication middleware for Node.js. Passport's sole purpose is to authenticate requests, which it does through an extensible set of plugins known as strategies.
 - **passport-jwt**: A Passport strategy for authenticating with a JSON Web Token.
 - **passport-local**: Passport strategy for authenticating with a username and password.
-- **passport-local-mongoose**: Passport-Local Mongoose is a Mongoose plugin that simplifies building username and password login with Passport.
+- **passport-local-mongoose**: Passport-Local Mongoose is a Mongoose plugin that simplifies building a username and password login with Passport.
 - **uuid**: image name on S3
 - **forever**: A simple CLI tool for ensuring that a given node script runs continuously (i.e. forever)
-- **nodemon**: Simple monitor script for use during development of a node.js app.
-- **jest**: Complete and ready to set-up JavaScript testing solution. Works out of the box for any React project.
+- **nodemon**: Simple monitor script for use during the development of a node.js app.
+- **jest**: Complete and ready to set-up a JavaScript testing solution. Works out of the box for any React project.
 - **supertest**: HTTP assertions made easy via superagent.
 
 ---
@@ -341,7 +320,6 @@ We distributed the major tasks based on features and created different branches 
 ![](./docs/testing/2RegisterPageTest.png)
 
 - **Testing 3**
-
-![](./docs/testing/3SignInTest.png)
+  ![](./docs/testing/3SignInTest.png)
 
 ©2020 Robbie, Nina & Ellie (Coder Academy)
