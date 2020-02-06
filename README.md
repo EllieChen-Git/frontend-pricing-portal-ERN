@@ -1,10 +1,10 @@
-# MERN Project - Pricing Portal (Robbie, Nina & Ellie)
+# MERN Project - Pricing Portal (Ellie, Robbie & Nina)
 
 ---
 
 ### Links
 
-- **Deployed Website (React Application)**: http://pricing-portal-prod-ern.s3-website-ap-southeast-2.amazonaws.com/
+- **Deployed Website (React App)**: http://pricing-portal-prod-ern.s3-website-ap-southeast-2.amazonaws.com/
 - **GitHub Repo - Frontend**: https://github.com/EllieChen-Git/frontend-pricing-portal-ERN
 - **Deployed Server (Express API)**: https://pricing-portal.herokuapp.com/
 - **GitHub Repo - Backend**: https://github.com/INRokh/backend-pricing-portal-ERN
@@ -133,13 +133,15 @@ We distributed the major tasks based on features and created different branches 
 
 ![](./docs/trello/Trello_0131_After_MVP_demo_to_client.JPG)
 
+---
+
 ### Screenshots of Pricing Portal
 
 - **Landing Page**
 
 ![](./docs/website-screenshots/1_Landing.JPG)
 
-- **Register**
+- **Register Account**
 
 ![](./docs/website-screenshots/2_Register.JPG)
 
@@ -175,7 +177,9 @@ We distributed the major tasks based on features and created different branches 
 - **Jurra**: As a user, I would like to log in to my existing account, so I can use the functionalities provided by the website.
 - **Tom**: As a user, I would like to browse the website on my mobile, computer and my tablet, so I can use this application on different devices.
 - **Ellie**: As a user, I would like to sign-out from the website, so my account is more secure.
-  **ADMINS**
+
+**ADMIN**
+
 - **Nina**: As the CEO of Skychute, I would like to organize images in a certain structure, so it is easier for our company to maintain the data.
 - **Mark**: As a developer at Skychute, I would like to grant some users admin access, so we can have more admin users to manage our projects.
 - **Robbie**: As a Project Manager at Skychute, I would like to assign projects and buildings to regular users, so users can tag the features on the floor plan images.
@@ -185,7 +189,9 @@ We distributed the major tasks based on features and created different branches 
 - **Prad**: As a Project Manager at Skychute, I would like to upload floor plan images and enter apartment information to apartments.
 - **Ragan**: As a Project Manager at Skychute, I would like to review tagged floor plans submitted by regular users, so I can manage the project progress.
 - **Dale**: As a Project Manager at Skychute, I would like to have the ability to reverse the status tagged floor plans (from ‘completed’ back to ‘editable’), so users can edit it again.
-  **Regular Users**
+
+**Regular Users**
+
 - **Luke**: As a Property Valuer, I would like to tag the property features on the floor plans, so I can better evaluate the property price.
 - **Chelsea**: As a Real Estate Agent, I would like to create, read, remove and delete tags, so I can manage the tags as I wish.
 - **Max**: As a Real Estate Agent, I would like to save the tagged plans multiple times before submission, so I can go on a coffee break and come back to the image I am working on.
@@ -286,7 +292,9 @@ We distributed the major tasks based on features and created different branches 
 - **redux-form**: A package that helps manage state in the creation of forms.
 - **redux-thunk**: A redux middleware.
 - **cypress**: A package that enables the testing of various features within our applications.
-  **Backend**
+
+**Backend**
+
 - **aws-sdk**: The SDK helps take the complexity out of coding by providing JavaScript objects for AWS services including Amazon S3, Amazon EC2, DynamoDB, and Amazon SWF.
 - **celebrate**: Celebrate is an express middleware function that wraps the Job validation library. This allows you to use this middleware in any single route, or globally, and ensure that all of your inputs are correct before any handler function.
 - **cors**: Cross-Origin Resource Sharing (CORS) is a mechanism that uses additional HTTP headers to tell browsers to give a web application running at one origin, access to selected resources from a different origin. A web application executes a cross-origin HTTP request when it requests a resource that has a different origin (domain, protocol, or port) from its own.
@@ -311,15 +319,20 @@ We distributed the major tasks based on features and created different branches 
 
 ### Screenshots of Testing
 
-- **Testing 1**
+- **Testing 1 (Cypress)**
 
-![](./docs/testing/1HomePageTest.png)
+![](./docs/testing/1_Home-Page-Test.png)
 
-- **Testing 2**
+- **Testing 2 (Cypress)**
 
-![](./docs/testing/2RegisterPageTest.png)
+![](./docs/testing/2_Register-Page-Test.png)
 
-- **Testing 3**
-  ![](./docs/testing/3SignInTest.png)
+- **Testing 3 (Cypress)**
 
-©2020 Robbie, Nina & Ellie (Coder Academy)
+![](./docs/testing/3_Sign-In-Test.png)
+
+- **Testing 4 (Manual Testing)**
+
+![](./docs/testing/4_Manual-Testing.JPG)
+
+©2020 Ellie, Robbie & Nina (Coder Academy)
