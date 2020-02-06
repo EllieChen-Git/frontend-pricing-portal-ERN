@@ -48,7 +48,7 @@ The target audience for our application is our client Skychute and professionals
 
 **1. Advanced Image Metadata Management** - Users will be able to upload a CSV document, which contains metadata of an image (including image URLs).
 
-**2. Image Flow Management** - Users will be able to organise images hierarchically through the system (e.g. Project -> Building -> Level -> Apartments).
+**2. Image Flow Management** - Users will be able to organise images hierarchically through the system (e.g. Projects -> Buildings -> Levels -> Apartments).
 
 **3. Advanced Tag Management and Tag Search** - Users will be able to search from existing tags and modify/update tags during the image annotation process.
 
@@ -83,9 +83,9 @@ The target audience for our application is our client Skychute and professionals
 
 Initially, our client reached out to us on LinkedIn about this project idea. After several exchanges, Ellie and Nina went to the client's office for the first client meeting to discuss their requirements for the pricing portal system.
 
-After that, clients (the project manager and the lead engineer) and us (Robbie, Nina and Ellie) have been communicated through our slack channel. We had 4 meetings with our client during the whole project time and we also demonstrated our MVP to them to collect their feedback before we complete the project.
+After that, the clients (the project manager and the lead engineer) and us (Robbie, Nina and Ellie) have communicated through our slack channel. We had 4 meetings with our client during the whole project time and we also demonstrated our MVP to them in order to collect their feedback before we completed the project.
 
-The lead engineer actually came to our presentation and also did manual testing on the spot for us, and the project manager sent us a video before the presentation. They are both very happy with our end results and will incorporate our project in their future product.
+The lead engineer actually came to our presentation and also did manual testing on the spot for us, and the project manager sent us a video before the presentation. They are both very happy with our end results and will incorporate our project in their future products.
 
 - **Client reached out to us**
 
@@ -103,11 +103,13 @@ The lead engineer actually came to our presentation and also did manual testing 
 
 ### Project Management Methodology
 
-For this project, we follow the agile methodology and use Kanban board to record our project management process. We would first list out all the tasks and use planning poker to categorise our tasks based on complexity and priority.
+For this project, we followed the agile methodology and use Kanban board to record our project management process. We would first list out all the tasks and use planning poker to categorise our tasks based on complexity and priority.
+
+![](./docs/project-management/Kanban.jpg)
 
 In terms of team collaboration, Nina has strong knowledge and background in backend, so she designed our database schema and implemented the data structure for our application. Ellie and Robbie spent more time on frontend design and the documentation. From time to time, Ellie and Robbie also worked on some backend functions while Nina also helped with the front-end styling.
 
-We distributed the major tasks based on features and created different branches for this project based on features. Nina was in charge of image annotation (both backend and frontend), Ellie was on image uploading (both backend and frontend) while Robbie helped with the frontend design and testing of the application.
+We distributed the major tasks based on features and created different branches for these features on our GitHub repos. Nina was in charge of image annotation (both backend and frontend), Ellie was on image uploading (both backend and frontend) while Robbie implemented different user components to make role-based authentication (admin and users) happened. Robbie also did testing of the application.
 
 ---
 
@@ -192,6 +194,8 @@ We distributed the major tasks based on features and created different branches 
 - **Luke**: As a Property Valuer, I would like to tag the property features on the floor plans, so I can better evaluate the property price.
 - **Chelsea**: As a Real Estate Agent, I would like to create, read, remove and delete tags, so I can manage the tags as I wish.
 - **Max**: As a Real Estate Agent, I would like to save the tagged plans multiple times before submission, so I can go on a coffee break and come back to the image I am working on.
+
+---
 
 ### Wireframes
 
