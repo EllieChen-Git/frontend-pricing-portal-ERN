@@ -8,7 +8,7 @@
 
 - **GitHub Repo - Frontend**: https://github.com/EllieChen-Git/frontend-pricing-portal-ERN
 
-- **Deployed Server (Express API)**: (Nina please add the link)
+- **Deployed Server (Express API)**: https://pricing-portal.herokuapp.com/
 
 - **GitHub Repo - Backend**: https://github.com/INRokh/backend-pricing-portal-ERN
 
@@ -81,9 +81,11 @@ The target audience for our application is our client Skychute and professionals
 
 ### Client Communication
 
-Initially, our client reached out to us on LinkedIn about this project idea. After several exchange, Ellie and Nina went to the client's office for the first client meeting.
+Initially, our client reached out to us on LinkedIn about this project idea. After several exchanges, Ellie and Nina went to the client's office for the first client meeting to discuss their requirements for the pricing portal system.
 
-After that, clients (project manager and lead engineer) and us (Robbie, Nina and Ellie) have been communicated through our slack channel. We had 4 meetings with our client during the whole project time and we also demonstrated our MVP to them to collect their feedback before we complete the project.
+After that, clients (the project manager and the lead engineer) and us (Robbie, Nina and Ellie) have been communicated through our slack channel. We had 4 meetings with our client during the whole project time and we also demonstrated our MVP to them to collect their feedback before we complete the project.
+
+The lead engineer actually came to our presentation and also did manual testing on the spot for us, and the project manager sent us a video before the presentation. They are both very happy with our end results and will incorporate our project in their future product.
 
 - Client reached out to us
   ![](./docs/client-communication/LinkedIN_1.png)
@@ -102,7 +104,7 @@ For this project, we follow the agile methodology and use Kanban board to record
 
 In terms of team collaboration, Nina has strong knowledge and background in backend, so she designed our database schema and implemented the data structure for our application. Ellie and Robbie spent more time on frontend design and the documentation. From time to time, Ellie and Robbie also worked on some backend functions while Nina also helped with the front-end styling.
 
-We created different branches for this project based on features.
+We distributed the major tasks based on features and created different branches for this project based on features. Nina was in charge of image annotation (both backend and frontend), Ellie was on image uploading (both backend and frontend) while Robbie helped with the frontend design and testing of the application.
 
 ### Screenshots of Trello board
 
@@ -110,7 +112,7 @@ We created different branches for this project based on features.
   ![](./docs/trello/Trello_0113.png)
 
 - **Part A - Documentation** - Submitted Part A
-  ![](./docs/trello/Trello_0117_Sumbitted_Documentation.JPG)
+  ![](./docs/trello/Trello_0117_Sumbitted_Documentation.png)
 
 - **Part B- Implementation (Coding)** - Started coding
 
@@ -267,7 +269,7 @@ We created different branches for this project based on features.
 **Frontend**
 
 - **axios**: A promise based HTTP client similar to the Fetch API.
-- **bootstrap**: An open source toolkit for developing with HTML, CSS and JS.
+- **bootstrap**: An open source toolkit for developing with HTML, CSS and JavaScript.
 - **bootswatch**: An open source resource for Bootstrap themes.
 - **jquery**: A fast, feature-rich JavaScript library which makes JavaScript easier to use.
 - **popper.js**: A positioning engine. It calculates the position of an element to make it possible to position it near a given reference element.
@@ -277,7 +279,6 @@ We created different branches for this project based on features.
 - **redux**: A package that allow one to write applications that behave consistently, run in different environments and are easy to test. Also manage state!
 - **redux-form**: A package that helps manage state in the creation of forms.
 - **redux-thunk**: A redux middleware.
-
 - **cypress**: A package that enables the testing of various features within our applications.
 
 **Backend**
