@@ -44,6 +44,11 @@ class Canvas extends Component {
       ctx.clearRect(0, 0, cv.width, cv.height);
       ctx.drawImage(this.state.image, 0, 0, cv.width, cv.height);
       
+      // TIP: I talked about `for ... in` on the backend. I explain why 
+      // it is a good practice to avoid using it.
+      // TIP: You can use const in `for ... in` and `for ... of`. This will
+      // reduce the chance of issues as reassigning `i` will make some
+      // confusing code, const will prevent people from doing so.
       for(let i in this.props.marks){
         const mark = this.props.marks[i];
         for(let j in mark.coordinates){

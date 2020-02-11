@@ -25,6 +25,13 @@ class ReviewList extends Component {
               return (
                 <ListGroup.Item key={annotation._id}>
                   <div
+                    // TIP: It's a good practice to avoid using
+                    // `style` like this, especially if you plan
+                    // to use the same style over many elements.
+                    // This is because:
+                    // You are repeating yourself and if you need to
+                    // change the style you need to change it in many places.
+                    // Instead you should create and use a variable.
                     style={{
                       fontSize: "1.5em",
                       padding: "3px",

@@ -14,6 +14,10 @@ function AnnotationPage(props) {
     return <p>Loading...</p>;
   }
 
+  // TIP: Don't plan to reassign a variable? Use const
+  // const will help clearly state the intention for the use of the
+  // variable. It will also help prevent issues where someone "accidentally"
+  // reassigns a variable you didn't expect to change.
   let handleNewMarks = m => props.fetchAnnotationDetails(id);
   // Submit annotation by regular user
   let handleSubmit = e =>
