@@ -39,6 +39,40 @@ The target audience for our application is our client Skychute and professionals
 
 ---
 
+### Screenshots of Pricing Portal
+
+- **Landing Page**
+
+![](./docs/website-screenshots/1_Landing.JPG)
+
+- **Register Account**
+
+![](./docs/website-screenshots/2_Register.JPG)
+
+- **Apartments Management (Create apartments, assign annotation to users, show floor plan, show list of apartments)**
+
+![](./docs/website-screenshots/3_Apt-Mgmt.JPG)
+
+- **Manage Users**
+
+![](./docs/website-screenshots/4_User-Mgmt.JPG)
+
+- **Review List & Annotation Review**
+
+![](<./docs/website-screenshots/5_Review-List(1).JPG>)
+
+![](<./docs/website-screenshots/5_Review-List(2).JPG>)
+
+- **Annotation List**
+
+![](./docs/website-screenshots/6_Apt-to-ME.JPG)
+
+- **Image Annotation**
+
+![](./docs/website-screenshots/7_IMG-Annotation.JPG)
+
+---
+
 ### Future Features
 
 **1. Advanced Image Metadata Management** - Users will be able to upload a CSV document, which contains metadata of an image (including image URLs).
@@ -132,40 +166,6 @@ We distributed the major tasks based on features and created different branches 
 - **Part B- Implementation (Coding) - After demonstrating our MVP to client**
 
 ![](./docs/trello/Trello_0131_After_MVP_demo_to_client.JPG)
-
----
-
-### Screenshots of Pricing Portal
-
-- **Landing Page**
-
-![](./docs/website-screenshots/1_Landing.JPG)
-
-- **Register Account**
-
-![](./docs/website-screenshots/2_Register.JPG)
-
-- **Apartments Management (Create apartments, assign annotation to users, show floor plan, show list of apartments)**
-
-![](./docs/website-screenshots/3_Apt-Mgmt.JPG)
-
-- **Manage Users**
-
-![](./docs/website-screenshots/4_User-Mgmt.JPG)
-
-- **Review List & Annotation Review**
-
-![](<./docs/website-screenshots/5_Review-List(1).JPG>)
-
-![](<./docs/website-screenshots/5_Review-List(2).JPG>)
-
-- **Annotation List**
-
-![](./docs/website-screenshots/6_Apt-to-ME.JPG)
-
-- **Image Annotation**
-
-![](./docs/website-screenshots/7_IMG-Annotation.JPG)
 
 ---
 
